@@ -23,6 +23,7 @@ end
 group :development do
   gem 'thin'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  gem "faker"
 end
 
 group :test, :development do
