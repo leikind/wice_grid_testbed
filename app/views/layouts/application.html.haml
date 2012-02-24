@@ -1,0 +1,71 @@
+!!! 5
+%html
+  %head
+    %title Sophia
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+
+
+    .container-fluid
+
+      %header
+        %h1 WiceGrid examples
+
+
+
+      .row-fluid
+        .span3
+          .well.sidebar-nav
+            %ul.nav.nav-list
+              %li.nav-header Sidebar
+              %li.active
+                %a{:href=>"#"} Link
+              %li
+                %a{:href=>"#"} Link
+              %li
+                %a{:href=>"#"} Link
+              %li
+                %a{:href=>"#"} Link
+              %li.nav-header Sidebar
+              %li
+                %a{:href=>"#"} Link
+              %li
+                %a{:href=>"#"} Link
+              %li
+                %a{:href=>"#"} Link
+              %li
+                %a{:href=>"#"} Link
+              %li
+                %a{:href=>"#"} Link
+              %li
+                %a{:href=>"#"} Link
+              %li.nav-header Sidebar
+              %li
+                %a{:href=>"#"} Link
+              %li
+                %a{:href=>"#"} Link
+              %li
+                %a{:href=>"#"} Link
+
+        .span9
+          .hero-unit
+            %h2 name of the example
+            %p tra ta ta
+            %p
+              %a.btn.btn-primary.btn-large Learn more &raquo;
+
+          .row-fluid
+
+            .span12
+              =yield
+
+
+
+      %hr
+
+      %footer
+        %p &copy; Yury Leikind 2012
+
+
