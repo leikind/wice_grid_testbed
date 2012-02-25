@@ -1,4 +1,50 @@
 Examples::Application.routes.draw do
+
+  get "saved_queries/index"
+
+  get "custom_filter_params/index"
+
+  get "resultset_processings/index"
+
+  get "negation/index"
+
+  resources :action_column,
+    :localization,
+    :integration_with_application,
+    :integration_with_application_view,
+    :detached_filters,
+    :csv_export,
+    :all_records,
+    :dates,
+    :auto_reloads,
+    :integration_with_forms,
+    :erb_mode,
+    :no_records,
+    :adding_rows,
+    :styling,
+    :buttons,
+    :null_values,
+    :custom_filters4,
+    :custom_filters3,
+    :custom_filters2,
+    :custom_filters1,
+    :custom_ordering2,
+    :custom_ordering,
+    :many_grids_on_page,
+    :two_associations,
+    :joining_tables,
+    :basics6,
+    :basics5,
+    :basics4,
+    :basics3,
+    :upper_pagination_panel,
+    :basics2,
+    :basics1,
+    :negation,
+    :resultset_processings,
+    :custom_filter_params,
+    :saved_queries
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

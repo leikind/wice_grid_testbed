@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title Sophia
+    %title WiceGrid Examples
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -19,39 +19,23 @@
         .span3
           .well.sidebar-nav
             %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li.active
-                %a{:href=>"#"} Link
-              %li
-                %a{:href=>"#"} Link
-              %li
-                %a{:href=>"#"} Link
-              %li
-                %a{:href=>"#"} Link
-              %li.nav-header Sidebar
-              %li
-                %a{:href=>"#"} Link
-              %li
-                %a{:href=>"#"} Link
-              %li
-                %a{:href=>"#"} Link
-              %li
-                %a{:href=>"#"} Link
-              %li
-                %a{:href=>"#"} Link
-              %li
-                %a{:href=>"#"} Link
-              %li.nav-header Sidebar
-              %li
-                %a{:href=>"#"} Link
-              %li
-                %a{:href=>"#"} Link
-              %li
-                %a{:href=>"#"} Link
+
+              - @example_map.each do |title, examples|
+
+                %li.nav-header= title
+
+                - examples.each do |example_controller, name, _|
+                  - if example_controller.to_s == controller_name
+                    - active_klass = 'active'
+                    - @example_name = name
+                  - else
+                    - active_klass = nil
+                  %li{:class => active_klass}
+                    = link_to name, :controller => example_controller, :action => :index
 
         .span9
-          .hero-unit
-            %h2 name of the example
+          .well
+            %h2= @example_name
             %p tra ta ta
             %p
               %a.btn.btn-primary.btn-large Learn more &raquo;

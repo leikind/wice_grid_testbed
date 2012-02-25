@@ -1,0 +1,2 @@
+module UpperPaginationPanelHelper
+end

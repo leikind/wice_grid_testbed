@@ -1,0 +1,2 @@
+module AutoReloadsHelper
+end

@@ -1,0 +1,2 @@
+module ErbModeHelper
+end

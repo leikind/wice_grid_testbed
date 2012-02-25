@@ -1,0 +1,2 @@
+module TwoAssociationsHelper
+end

@@ -1,0 +1,2 @@
+module ActionColumnHelper
+end

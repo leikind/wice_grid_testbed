@@ -1,0 +1,2 @@
+module NegationHelper
+end

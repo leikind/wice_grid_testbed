@@ -1,0 +1,2 @@
+module ManyGridsOnPageHelper
+end

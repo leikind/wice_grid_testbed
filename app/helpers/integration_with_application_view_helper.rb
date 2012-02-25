@@ -1,0 +1,2 @@
+module IntegrationWithApplicationViewHelper
+end
