@@ -8,6 +8,9 @@ gem 'rails', '3.2.1'
 gem 'mysql2'
 gem 'haml'
 
+gem 'will_paginate', '3.0.3'
+gem "wice_grid",  :path => 'vendor/wice_grid'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

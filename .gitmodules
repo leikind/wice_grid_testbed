@@ -1,0 +1,3 @@
+[submodule "vendor/wice_grid"]
+	path = vendor/wice_grid
+	url = git@github.com:leikind/wice_grid.git

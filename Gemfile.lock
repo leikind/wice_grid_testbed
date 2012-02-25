@@ -4,6 +4,11 @@ GIT
   specs:
     annotate (2.4.1.beta1)
 
+PATH
+  remote: vendor/wice_grid
+  specs:
+    wice_grid (3.0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -132,6 +137,7 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    will_paginate (3.0.3)
 
 PLATFORMS
   ruby
@@ -151,3 +157,5 @@ DEPENDENCIES
   therubyracer
   thin
   uglifier (>= 1.0.3)
+  wice_grid!
+  will_paginate (= 3.0.3)
