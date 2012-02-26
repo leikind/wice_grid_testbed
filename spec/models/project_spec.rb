@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Project do
+  it {should have_many(:tasks)}
   it { should have_many(:tasks)}
   it { should have_many(:user_project_participations)}
   it { should have_many(:users)}

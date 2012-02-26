@@ -1,12 +1,9 @@
 Examples::Application.routes.draw do
 
-  get "saved_queries/index"
+  # just in order to have the helpers defined
+  resources :tasks
+  resources :projects
 
-  get "custom_filter_params/index"
-
-  get "resultset_processings/index"
-
-  get "negation/index"
 
   resources :action_column,
     :localization,
