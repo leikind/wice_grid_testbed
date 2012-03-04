@@ -1,2 +1,29 @@
-<h1>CustomOrdering#index</h1>
-<p>Find me in app/views/custom_ordering/index.html.erb</p>
+<div class="span6">
+<%= grid(@status_grid1, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Status Name', :attribute_name => 'name'
+
+  g.column  :column_name => 'Created' do |status|
+    status.created_at.to_s(:db) if status.created_at
+  end
+end -%>
+
+</div>
+<div class="span6">
+
+<%= grid(@status_grid2, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Status Name', :attribute_name => 'name'
+
+  g.column  :column_name => 'Created' do |status|
+    status.created_at.to_s(:db) if status.created_at
+  end
+
+end -%>
+
+</div>
+

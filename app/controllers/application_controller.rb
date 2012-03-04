@@ -39,7 +39,6 @@ class ApplicationController < ActionController::Base
           [:styling, 'Styling the grid', 'stylingthegrid'],
           [:adding_rows, 'Adding custom rows', 'addingrowstothegrid'],
           [:no_records, 'A grid without records', 'renderingagridwithoutrecords'],
-          [:erb_mode, 'ERB mode', 'erbmode'],
           [:integration_with_forms, 'Integration with other forms', 'integrationofthegridwithotherformsonpage'],
           [:dates, 'Date/Datetime helpers', 'javascriptcalendarfordateanddatetimefilters.'],
           [:all_records, 'Removing link "All Records"', 'showallrecords'],

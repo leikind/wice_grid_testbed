@@ -1,4 +1,4 @@
-<%= grid(@tasks_grid) do |g|
+<%= grid(@tasks_grid, :show_filters => :when_filtered) do |g|
 
   g.column :column_name => 'ID', :attribute_name => 'id' do |task|
     task.id

@@ -5,8 +5,13 @@ Examples::Application.routes.draw do
   resources :projects
 
 
-  resources :action_column,
-    :localization,
+  resources :action_column do
+    collection do
+      post :process_issues
+    end
+  end
+
+  resources :localization,
     :integration_with_application,
     :integration_with_application_view,
     :detached_filters,

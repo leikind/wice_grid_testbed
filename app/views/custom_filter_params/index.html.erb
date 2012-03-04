@@ -1,2 +1,56 @@
-<h1>CustomFilterParams#index</h1>
-<p>Find me in app/views/custom_filter_params/index.html.erb</p>
+<table><tr><td>
+<%= grid(@versions_grid1, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Project', :attribute_name => 'name', :model_class => 'Project' do |version|
+    version.project.name if version.project
+  end
+
+  g.column :column_name => 'Version name', :attribute_name => 'name'
+
+  g.column :column_name => 'Status', :attribute_name => 'status',
+           :custom_filter => {'Development' => 'development', 'Testing' => 'testing', 'Production' => 'production'}
+end -%>
+</td><td>
+  <%= grid(@versions_grid2, :show_filters => :always) do |g|
+
+    g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+    g.column :column_name => 'Project', :attribute_name => 'name', :model_class => 'Project' do |version|
+      version.project.name if version.project
+    end
+
+    g.column :column_name => 'Version name', :attribute_name => 'name'
+
+    g.column :column_name => 'Status', :attribute_name => 'status',
+             :custom_filter => [['Development', 'development'], ['Testing', 'testing'], ['Production', 'production']]
+  end -%>
+</td></tr><tr><td>
+  <%= grid(@versions_grid3, :show_filters => :always) do |g|
+
+    g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+    g.column :column_name => 'Project', :attribute_name => 'name', :model_class => 'Project' do |version|
+      version.project.name if version.project
+    end
+
+    g.column :column_name => 'Version name', :attribute_name => 'name'
+
+    g.column :column_name => 'Status', :attribute_name => 'status',
+             :custom_filter => ['development', 'testing', 'production']
+  end -%>
+</td><td>
+  <%= grid(@versions_grid4, :show_filters => :always) do |g|
+
+    g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+    g.column :column_name => 'Project', :attribute_name => 'name', :model_class => 'Project' do |version|
+      version.project.name if version.project
+    end
+
+    g.column :column_name => 'Version name', :attribute_name => 'name'
+
+    g.column :column_name => 'Status', :attribute_name => 'status', :custom_filter => :auto
+  end -%>
+</td></tr></table>
