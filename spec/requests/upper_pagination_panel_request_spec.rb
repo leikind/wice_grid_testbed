@@ -7,9 +7,14 @@ describe "upper pagination panel WiceGrid", :type => :request do
   end
 
   include_examples "basic task table specs"
+  include_examples "names of columns"
 
-  it "should be present" do
+  it "upper pagination panel should be present" do
     page.should have_selector('table.wice_grid thead tr td .pagination em.current')
+
+    within 'table.wice_grid thead tr td .pagination_status' do
+      page.should have_content('1-20 / 50')
+    end
   end
 
 
