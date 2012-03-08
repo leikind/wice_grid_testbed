@@ -11,5 +11,6 @@ describe "basisc4 WiceGrid", :type => :request, :js => true do
   include_examples "names of columns"
   include_examples "sorting columns"
   include_examples "sorting columns in all records mode"
+  include_examples 'basic filtering'
 
 end
