@@ -16,7 +16,7 @@ shared_examples "basic task table specs" do
       click_link '2'
     end
 
-    within 'em.current' do
+    within '.wice_grid li.active' do
       page.should have_content('2')
     end
 
@@ -28,7 +28,7 @@ shared_examples "basic task table specs" do
       click_link '3'
     end
 
-    within 'em.current' do
+    within '.wice_grid li.active' do
       page.should have_content('3')
     end
 
@@ -43,8 +43,8 @@ shared_examples "basic task table specs" do
       page.should have_selector('div.pagination')
 
       within 'div.pagination' do
-        page.should have_selector('em.current')
-        within 'em.current' do
+        page.should have_selector('li.active')
+        within 'li.active' do
           page.should have_content('1')
         end
 
@@ -123,7 +123,7 @@ shared_examples 'sorting columns' do
       click_link '2'
     end
 
-    within 'em.current' do
+    within 'li.active' do
       page.should have_content('2')
     end
 
@@ -167,7 +167,7 @@ shared_examples 'sorting columns' do
       click_link '2'
     end
 
-    within 'em.current' do
+    within 'li.active' do
       page.should have_content('2')
     end
 
@@ -211,7 +211,7 @@ shared_examples 'sorting columns' do
       click_link '2'
     end
 
-    within 'em.current' do
+    within 'li.active' do
       page.should have_content('2')
     end
 
@@ -256,7 +256,7 @@ shared_examples 'sorting columns' do
       click_link '2'
     end
 
-    within 'em.current' do
+    within 'li.active' do
       page.should have_content('2')
     end
 
@@ -301,7 +301,7 @@ shared_examples 'sorting columns' do
       click_link '2'
     end
 
-    within 'em.current' do
+    within 'li.active' do
       page.should have_content('2')
     end
 

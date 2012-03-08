@@ -55,7 +55,7 @@ module Populate
     priorities = Priority.find(:all)
 
 
-    50.times do
+    500.times do
 
       task_name = Faker::Lorem.words(rand(3) + 1).join(' ')
 
