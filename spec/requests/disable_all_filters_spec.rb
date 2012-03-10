@@ -1,9 +1,9 @@
 require 'acceptance_helper'
 
-describe "basisc4 WiceGrid", :type => :request, :js => true do
+describe "disable_all_filters WiceGrid", :type => :request, :js => true do
 
   before :each do
-    visit '/basics4'
+    visit '/disable_all_filters'
   end
 
   if ALL_TESTS
@@ -12,7 +12,6 @@ describe "basisc4 WiceGrid", :type => :request, :js => true do
     include_examples "names of columns"
     include_examples "sorting columns"
     include_examples "sorting columns in all records mode"
-    include_examples 'basic filtering'
   end
 
   it "should not have disabled filters" do
@@ -24,6 +23,9 @@ describe "basisc4 WiceGrid", :type => :request, :js => true do
 
     page.should have_no_selector('#grid_f_created_at_to_year')
     page.should have_no_selector('#grid_f_created_at_to_month')
+
+    page.should have_no_selector('#grid_f_title')
+    page.should have_no_selector('#grid_f_archived')
 
   end
 

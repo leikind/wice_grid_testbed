@@ -12,6 +12,8 @@ require 'faker'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+ALL_TESTS = false
+
 RSpec.configure do |config|
   # config.mock_with :mocha
   # config.mock_with :flexmock

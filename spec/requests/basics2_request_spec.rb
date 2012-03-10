@@ -6,8 +6,10 @@ describe "basisc1 WiceGrid", :type => :request, :js => true do
     visit '/basics2'
   end
 
-  include_examples "basic task table specs"
-  include_examples "show all and back"
+  if ALL_TESTS
+    include_examples "basic task table specs"
+    include_examples "show all and back"
+  end
   include_examples "names of columns"
 
 end

@@ -1,9 +1,9 @@
 require 'acceptance_helper'
 
-describe "blockless_column_definition WiceGrid", :type => :request, :js => true do
+describe "disable_all_filters WiceGrid", :type => :request, :js => true do
 
   before :each do
-    visit '/blockless_column_definition'
+    visit '/when_filtered'
   end
 
   if ALL_TESTS
@@ -12,7 +12,7 @@ describe "blockless_column_definition WiceGrid", :type => :request, :js => true 
     include_examples "names of columns"
     include_examples "sorting columns"
     include_examples "sorting columns in all records mode"
-    include_examples 'basic filtering'
-    include_examples 'basic filtering extended'
   end
+
+
 end

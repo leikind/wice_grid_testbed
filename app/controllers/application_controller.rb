@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
           [:blockless_column_definition, 'Dropping the block in #column'],
 
           [:basics4, 'Disabling filters'],
+          [:disable_all_filters, 'Disabling all filters'],
+          [:when_filtered, 'Hidden filter panel'],
           [:basics5, 'Disabling ordering'],
           [:basics6, 'Initial conditions and ordering']
         ]

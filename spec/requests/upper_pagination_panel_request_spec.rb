@@ -6,8 +6,10 @@ describe "upper pagination panel WiceGrid", :type => :request do
     visit '/upper_pagination_panel'
   end
 
-  include_examples "basic task table specs"
-  include_examples "names of columns"
+  if ALL_TESTS
+    include_examples "basic task table specs"
+    include_examples "names of columns"
+  end
 
   it "upper pagination panel should be present" do
     page.should have_selector('table.wice_grid thead tr td .pagination li.active')
