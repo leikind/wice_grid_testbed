@@ -499,6 +499,50 @@ end
 
 
 shared_examples 'basic filtering extended' do
+
+
+  it "should filter by Added" do
+    select '2011', :from => 'grid_f_created_at_fr_year'
+    select 'February', :from => 'grid_f_created_at_fr_month'
+    select '8', :from => 'grid_f_created_at_fr_day'
+    select '00', :from => 'grid_f_created_at_fr_hour'
+    select '00', :from => 'grid_f_created_at_fr_minute'
+
+
+    select '2011', :from => 'grid_f_created_at_to_year'
+    select 'September', :from => 'grid_f_created_at_to_month'
+    select '10', :from => 'grid_f_created_at_to_day'
+    select '00', :from => 'grid_f_created_at_to_hour'
+    select '00', :from => 'grid_f_created_at_to_minute'
+
+    find(:css, '#grid_submit_grid_icon').click
+
+    within '.pagination_status' do
+      page.should have_content('1-16 / 16')
+    end
+
+    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.active_filter' do
+      page.should have_content('13 Aug 22:11')
+    end
+
+    within 'div.wice_grid_container table.wice_grid thead' do
+      click_on 'ID'
+    end
+
+    within '.pagination_status' do
+      page.should have_content('1-16 / 16')
+    end
+
+
+
+    find(:css, '#grid_reset_grid_icon').click
+    within '.pagination_status' do
+      page.should have_content('1-20 / 50')
+    end
+
+  end
+
+
   it "should filter by Description" do
     fill_in('grid_f_description', :with => 've')
 
@@ -724,47 +768,6 @@ end
 shared_examples 'basic filtering' do
 
 
-
-  it "should filter by Added" do
-    select '2011', :from => 'grid_f_created_at_fr_year'
-    select 'February', :from => 'grid_f_created_at_fr_month'
-    select '8', :from => 'grid_f_created_at_fr_day'
-    select '00', :from => 'grid_f_created_at_fr_hour'
-    select '00', :from => 'grid_f_created_at_fr_minute'
-
-
-    select '2011', :from => 'grid_f_created_at_to_year'
-    select 'September', :from => 'grid_f_created_at_to_month'
-    select '10', :from => 'grid_f_created_at_to_day'
-    select '00', :from => 'grid_f_created_at_to_hour'
-    select '00', :from => 'grid_f_created_at_to_minute'
-
-    find(:css, '#grid_submit_grid_icon').click
-
-    within '.pagination_status' do
-      page.should have_content('1-16 / 16')
-    end
-
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.active_filter' do
-      page.should have_content('13 Aug 22:11')
-    end
-
-    within 'div.wice_grid_container table.wice_grid thead' do
-      click_on 'ID'
-    end
-
-    within '.pagination_status' do
-      page.should have_content('1-16 / 16')
-    end
-
-
-
-    find(:css, '#grid_reset_grid_icon').click
-    within '.pagination_status' do
-      page.should have_content('1-20 / 50')
-    end
-
-  end
 
   it "should filter by Archived" do
     select 'yes', :from => 'grid_f_archived'

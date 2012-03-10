@@ -1,22 +1,22 @@
 <%= grid(@tasks_grid) do |g|
 
-  g.column :column_name => 'ID' do |task|
+  g.column :name => 'ID' do |task|
     task.id
   end
 
-  g.column :column_name => 'Title'  do |task|
+  g.column :name => 'Title'  do |task|
     task.title
   end
 
-  g.column  :column_name => 'Description' do |task|
+  g.column  :name => 'Description' do |task|
     task.description
   end
 
-  g.column  :column_name => 'Archived' do |task|
+  g.column  :name => 'Archived' do |task|
     task.archived? ? 'Yes' : 'No'
   end
 
-  g.column :column_name => 'Added' do |task|
+  g.column :name => 'Added' do |task|
     task.created_at.to_s(:short)
   end
 

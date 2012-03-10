@@ -1,0 +1,10 @@
+.well
+  %h2= current_page_title
+  %p
+    To disable ordering columns use
+    %code :allow_ordering => false
+    \.
+
+.row-fluid
+  .span12
+    = render :partial => 'grid'

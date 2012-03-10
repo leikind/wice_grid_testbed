@@ -27,23 +27,16 @@
                 - examples.each do |example_controller, name, _|
                   - if example_controller.to_s == controller_name
                     - active_klass = 'active'
+
                     - @example_name = name
+                    /- puts @example_name
                   - else
                     - active_klass = nil
                   %li{:class => active_klass}
                     = link_to name, :controller => example_controller, :action => :index
 
         .span9
-          .well
-            %h2= @example_name
-            %p tra ta ta
-            %p
-              %a.btn.btn-primary.btn-large Learn more &raquo;
-
-          .row-fluid
-
-            .span12
-              =yield
+          =yield
 
 
 

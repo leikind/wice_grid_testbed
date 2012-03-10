@@ -45,7 +45,8 @@ Examples::Application.routes.draw do
     :negation,
     :resultset_processings,
     :custom_filter_params,
-    :saved_queries
+    :saved_queries,
+    :blockless_column_definition
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
