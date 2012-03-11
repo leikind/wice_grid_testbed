@@ -1,0 +1,62 @@
+.well
+  %h2= current_page_title
+  %p
+    Filters can also be detached from the grid table. To do so, use
+    %code :detach_with_id => :some_filter_name
+    in the
+    %code column
+    definition, and then use
+    %code grid_filter(grid, :some_filter_name)
+    to render the filter.
+  %p
+    The tricky part is that once at least one column has
+    %code :detach_with_id
+    in a column definition, the
+    %code grid
+    helper returns an empty string on the first call, and you have to call it the
+    second time without any block with column definitions to actually render the table:
+    %code grid(@tasks_grid)
+    \.
+  %p
+    In other words, to use external filters you have to define the grid first, and then
+    render filters and the grid in any order you like.
+
+= render :partial => 'grid'
+
+.row-fluid
+  .span12
+
+.row-fluid
+  .span2
+    ID:
+  .span10
+    = grid_filter @tasks_grid, :id_filter
+
+.row-fluid
+  .span2
+    Title:
+  .span10
+    = grid_filter @tasks_grid, :title_filter
+
+.row-fluid
+  .span2
+    Description:
+  .span10
+    = grid_filter @tasks_grid, :description_filter
+
+.row-fluid
+  .span2
+    Archived:
+  .span10
+    = grid_filter @tasks_grid, :archived_filter
+
+.row-fluid
+  .span12
+    .external-buttons
+      = button_to_function "Submit", submit_grid_javascript(@tasks_grid), :class => 'btn btn-primary'
+      = button_to_function "Reset",  reset_grid_javascript(@tasks_grid), :class => 'btn'
+
+.row-fluid
+  .span12
+
+    = grid(@tasks_grid)

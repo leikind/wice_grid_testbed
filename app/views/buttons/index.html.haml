@@ -1,0 +1,24 @@
+.well
+  %h2= current_page_title
+  %p
+    You can use
+    %code submit_grid_javascript(grid)
+    and
+    %code reset_grid_javascript(grid)
+    to replace the default submit/replace icons of the grid.
+  %p
+    %code grid
+    parameters
+    %code hide_submit_button => true
+    and
+    %code :hide_reset_button => true
+    hide the default icons.
+
+.row-fluid
+  .span12
+    .external-buttons
+      = button_to_function "Submit", submit_grid_javascript(@tasks_grid), :class => 'btn btn-primary'
+      = button_to_function "Reset",  reset_grid_javascript(@tasks_grid), :class => 'btn'
+
+
+    = render :partial => 'grid'

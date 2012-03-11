@@ -19,7 +19,9 @@ class ApplicationController < ActionController::Base
           [:disable_all_filters, 'Disabling all filters'],
           [:when_filtered, 'Hidden filter panel'],
           [:basics5, 'Disabling ordering'],
-          [:basics6, 'Initial conditions and ordering']
+          [:basics6, 'Initial conditions and ordering'],
+          [:buttons, 'External submit/reset buttons'],
+          [:detached_filters, 'External filters']
         ]
       ],
 
@@ -39,15 +41,15 @@ class ApplicationController < ActionController::Base
           [:null_values, 'Custom filters (null values)'],
           [:auto_reloads, 'Auto reloading filters'],
           [:action_column, 'Action column'],
-          [:buttons, 'Using custom submit/reset buttons'],
+
           [:styling, 'Styling the grid'],
           [:adding_rows, 'Adding custom rows'],
           [:no_records, 'A grid without records'],
           [:integration_with_forms, 'Integration with other forms'],
           [:dates, 'Date/Datetime helpers'],
           [:all_records, 'Removing link "All Records"'],
-          [:csv_export, 'CSV Export'],
-          [:detached_filters, 'Detached filters']
+          [:csv_export, 'CSV Export']
+
         ]
       ],
 

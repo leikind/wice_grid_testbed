@@ -1,11 +1,11 @@
 shared_examples "basic task table specs" do
   it "is present on the page" do
-    page.should have_selector('div.wice_grid_container table.wice_grid')
+    page.should have_selector('div.wice-grid-container table.wice-grid')
   end
 
 
   it "should have a show all link" do
-    within 'div.wice_grid_container table.wice_grid' do
+    within 'div.wice-grid-container table.wice-grid' do
       page.should have_selector('span.show_all_link')
     end
   end
@@ -16,7 +16,7 @@ shared_examples "basic task table specs" do
       click_link '2'
     end
 
-    within '.wice_grid li.active' do
+    within '.wice-grid li.active' do
       page.should have_content('2')
     end
 
@@ -28,7 +28,7 @@ shared_examples "basic task table specs" do
       click_link '3'
     end
 
-    within '.wice_grid li.active' do
+    within '.wice-grid li.active' do
       page.should have_content('3')
     end
 
@@ -39,7 +39,7 @@ shared_examples "basic task table specs" do
   end
 
   it "should have a pagination status with page 1 as the current page" do
-    within 'div.wice_grid_container table.wice_grid' do
+    within 'div.wice-grid-container table.wice-grid' do
       page.should have_selector('div.pagination')
 
       within 'div.pagination' do
@@ -61,7 +61,7 @@ shared_examples "show all and back" do
   it "should show all records when asked" do
     click_on 'show all'
 
-    within 'div.wice_grid_container table.wice_grid' do
+    within 'div.wice-grid-container table.wice-grid' do
       page.should have_selector('span.show_all_link')
     end
 
@@ -82,7 +82,7 @@ end
 shared_examples "names of columns" do
 
   it 'should have names of columns' do
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       page.should have_content('ID')
       page.should have_content('Title')
       page.should have_content('Description')
@@ -94,28 +94,28 @@ end
 
 shared_examples 'sorting columns' do
   it 'should sort column ID' do
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('ID')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('507')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('ID')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('556')
     end
 
@@ -123,43 +123,43 @@ shared_examples 'sorting columns' do
       click_link '2'
     end
 
-    within '.wice_grid li.active' do
+    within '.wice-grid li.active' do
       page.should have_content('2')
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('ID')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('536')
     end
   end
 
   it 'should sort column Title' do
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('Title')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('ab')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Title')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('voluptatum non')
     end
 
@@ -167,43 +167,43 @@ shared_examples 'sorting columns' do
       click_link '2'
     end
 
-    within '.wice_grid li.active' do
+    within '.wice-grid li.active' do
       page.should have_content('2')
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Title')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('quia dignissimos maiores')
     end
   end
 
   it 'should sort column Description' do
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Description'
     end
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('Description')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('Accusamus voluptas sunt deleniti iusto dolorem repudiandae.')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Description'
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Description')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('Voluptate occaecati quisquam in et qui nostrum eos minus.')
     end
 
@@ -211,44 +211,44 @@ shared_examples 'sorting columns' do
       click_link '2'
     end
 
-    within '.wice_grid li.active' do
+    within '.wice-grid li.active' do
       page.should have_content('2')
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Description')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('Iure tenetur cum aut optio et quia similique debitis.')
     end
   end
 
 
   it 'should sort column Archived' do
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Archived'
     end
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('Archived')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('No')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Archived'
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Archived')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('Yes')
     end
 
@@ -256,44 +256,44 @@ shared_examples 'sorting columns' do
       click_link '2'
     end
 
-    within '.wice_grid li.active' do
+    within '.wice-grid li.active' do
       page.should have_content('2')
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Archived')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('No')
     end
   end
 
 
   it 'should sort column Added' do
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Added'
     end
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('Added')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('11 Aug 22:11')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Added'
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Added')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('16 Nov 22:11')
     end
 
@@ -301,16 +301,16 @@ shared_examples 'sorting columns' do
       click_link '2'
     end
 
-    within '.wice_grid li.active' do
+    within '.wice-grid li.active' do
       page.should have_content('2')
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Added')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('02 Oct 22:11')
     end
   end
@@ -328,28 +328,28 @@ shared_examples 'sorting columns in all records mode' do
       page.should have_content('1-50 / 50')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('ID')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('507')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('ID')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('556')
     end
 
@@ -363,28 +363,28 @@ shared_examples 'sorting columns in all records mode' do
       page.should have_content('1-50 / 50')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('Title')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('ab')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Title')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('voluptatum non')
     end
 
@@ -397,28 +397,28 @@ shared_examples 'sorting columns in all records mode' do
       page.should have_content('1-50 / 50')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Description'
     end
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('Description')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('Accusamus voluptas sunt deleniti iusto dolorem repudiandae.')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Description'
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Description')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('Voluptate occaecati quisquam in et qui nostrum eos minus.')
     end
 
@@ -433,28 +433,28 @@ shared_examples 'sorting columns in all records mode' do
       page.should have_content('1-50 / 50')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Archived'
     end
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('Archived')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('No')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Archived'
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Archived')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('Yes')
     end
 
@@ -468,28 +468,28 @@ shared_examples 'sorting columns in all records mode' do
       page.should have_content('1-50 / 50')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Added'
     end
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('Added')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('11 Aug 22:11')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Added'
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Added')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('16 Nov 22:11')
     end
 
@@ -521,11 +521,11 @@ shared_examples 'basic filtering extended' do
       page.should have_content('1-16 / 16')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
       page.should have_content('13 Aug 22:11')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
@@ -552,13 +552,13 @@ shared_examples 'basic filtering extended' do
       page.should have_content('1-12 / 12')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
       page.should have_content('Velit atque sapiente aspernatur sint fuga.')
     end
 
     page.should have_content('Vero sit voluptate sed tempora et provident sequi nihil.')
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Description'
     end
 
@@ -567,13 +567,13 @@ shared_examples 'basic filtering extended' do
     end
 
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
       page.should have_content('Ad sunt vel maxime labore temporibus incidunt quidem.')
     end
 
     page.should have_content('Adipisci voluptate sed esse velit.')
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
@@ -602,7 +602,7 @@ shared_examples 'basic filtering extended' do
       page.should have_content('1-7 / 7')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
       page.should have_content('550')
     end
 
@@ -610,7 +610,7 @@ shared_examples 'basic filtering extended' do
       page.should have_content(i)
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
@@ -619,7 +619,7 @@ shared_examples 'basic filtering extended' do
     end
 
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active_filter' do
       page.should have_content('550')
     end
 
@@ -628,7 +628,7 @@ shared_examples 'basic filtering extended' do
     end
 
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
@@ -637,11 +637,11 @@ shared_examples 'basic filtering extended' do
     end
 
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('556')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
 
@@ -672,7 +672,7 @@ shared_examples 'basic filtering extended' do
       page.should have_content('1-3 / 3')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
       page.should have_content('507')
     end
 
@@ -680,7 +680,7 @@ shared_examples 'basic filtering extended' do
     page.should have_content('509')
 
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
@@ -689,7 +689,7 @@ shared_examples 'basic filtering extended' do
     end
 
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active_filter' do
       page.should have_content('507')
     end
 
@@ -697,7 +697,7 @@ shared_examples 'basic filtering extended' do
     page.should have_content('509')
 
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
@@ -706,11 +706,11 @@ shared_examples 'basic filtering extended' do
     end
 
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.sorted' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('509')
     end
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
 
@@ -744,7 +744,7 @@ shared_examples 'basic filtering extended' do
     page.should have_content('Inventore iure eos labore ipsum.')
     page.should have_content('Velit atque sapiente aspernatur sint fuga.')
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Description'
     end
 
@@ -824,13 +824,13 @@ shared_examples 'basic filtering' do
       page.should have_content('1-2 / 2')
     end
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
       page.should have_content('sed impedit iste')
     end
 
     page.should have_content('corporis expedita vel')
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
 
@@ -839,13 +839,13 @@ shared_examples 'basic filtering' do
     end
 
 
-    within 'div.wice_grid_container table.wice_grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
       page.should have_content('corporis expedita vel')
     end
 
     page.should have_content('sed impedit iste')
 
-    within 'div.wice_grid_container table.wice_grid thead' do
+    within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
 
@@ -865,3 +865,4 @@ shared_examples 'basic filtering' do
   end
 
 end
+

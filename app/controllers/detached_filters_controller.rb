@@ -1,14 +1,6 @@
 class DetachedFiltersController < ApplicationController
   def index
-    @tasks_grid = initialize_grid(Task,
-      :include => [:priority, :status, :project, :assigned_users],
-      :order => 'statuses.name',
-      :custom_order => {
-        'tasks.priority_id' => 'priorities.name',
-        'tasks.status_id' => 'statuses.position',
-        'tasks.project_id' => 'projects.name'
-      }
-    )
+    @tasks_grid = initialize_grid(Task)
 
   end
 end
