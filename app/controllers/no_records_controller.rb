@@ -3,6 +3,5 @@ class NoRecordsController < ApplicationController
     @tasks_grid  = initialize_grid(Task,  :conditions => ['title = ?', 'a title that does not exist'])
     @tasks_grid2 = initialize_grid(Task,  :conditions => ['title = ?', 'a title that does not exist'])
     @tasks_grid3 = initialize_grid(Task,  :conditions => ['title = ?', 'a title that does not exist'])
-
   end
 end

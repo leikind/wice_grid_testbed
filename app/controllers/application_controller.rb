@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
           [:basics5, 'Disabling ordering'],
           [:basics6, 'Initial conditions and ordering'],
           [:buttons, 'External submit/reset buttons'],
-          [:detached_filters, 'External filters']
+          [:detached_filters, 'External filters'],
+          [:no_records, 'A grid without records'],
         ]
       ],
 
@@ -44,7 +45,6 @@ class ApplicationController < ActionController::Base
 
           [:styling, 'Styling the grid'],
           [:adding_rows, 'Adding custom rows'],
-          [:no_records, 'A grid without records'],
           [:integration_with_forms, 'Integration with other forms'],
           [:dates, 'Date/Datetime helpers'],
           [:all_records, 'Removing link "All Records"'],
