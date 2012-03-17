@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
           [:buttons, 'External submit/reset buttons'],
           [:detached_filters, 'External filters'],
           [:no_records, 'A grid without records'],
+          [:many_grids_on_page, 'More than 1 grid on a page']
         ]
       ],
 
@@ -32,7 +33,7 @@ class ApplicationController < ActionController::Base
           [:negation, 'Text filters with negation'],
           [:joining_tables, 'Joined tables'],
           [:two_associations, '2 associations to the same table'],
-          [:many_grids_on_page, 'More than 1 grid on a page'], # !!!
+
           [:custom_ordering, 'Custom ordering'],
           [:custom_ordering2, 'Custom ordering (2)'],
           [:custom_filters1, 'Custom filters (one table)'],
