@@ -12,6 +12,16 @@
 
       %header
         %h1 WiceGrid examples
+        .example-navigator
+          %ul.pager
+            - previous_example_controller, next_example_controller = previous_next_example_urls
+            - if previous_example_controller
+              %li.previous
+                =link_to "← Previous", :controller => previous_example_controller, :action => :index
+            -if next_example_controller
+              %li.next
+                =link_to "Next →", :controller => next_example_controller, :action => :index
+        .clear
 
 
 
@@ -29,12 +39,10 @@
                     - active_klass = 'active'
 
                     - @example_name = name
-                    /- puts @example_name
                   - else
                     - active_klass = nil
                   %li{:class => active_klass}
                     = link_to name, :controller => example_controller, :action => :index
-
         .span9
           =yield
 

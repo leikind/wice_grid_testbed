@@ -21,3 +21,8 @@ header h1{font-size: 48px;}
 .external-buttons {margin-bottom: 20px;}
 
 input.range-start, input.range-end{width: 100px;}
+
+header h1 {float: left;}
+header .example-navigator {float: right;}
+li.next {margin-left: 10px;}
+.clear {clear:both;}
