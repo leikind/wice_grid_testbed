@@ -6,7 +6,7 @@ shared_examples "basic task table specs" do
 
   it "should have a show all link" do
     within 'div.wice-grid-container table.wice-grid' do
-      page.should have_selector('span.show_all_link')
+      page.should have_selector('a.wg-show-all-link')
     end
   end
 
@@ -62,7 +62,7 @@ shared_examples "show all and back" do
     click_on 'show all'
 
     within 'div.wice-grid-container table.wice-grid' do
-      page.should have_selector('span.show_all_link')
+      page.should have_selector('a.wg-back-to-pagination-link')
     end
 
     within '.pagination_status' do

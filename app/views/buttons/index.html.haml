@@ -17,8 +17,8 @@
 .row-fluid
   .span12
     .external-buttons
-      = button_to_function "Submit", submit_grid_javascript(@tasks_grid), :class => 'btn btn-primary'
-      = button_to_function "Reset",  reset_grid_javascript(@tasks_grid), :class => 'btn'
+      %button.btn.btn-primary.wg-external-submit-button{'data-grid-name' => 'grid'} Submit
+      %button.btn.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
 
 
     = render :partial => 'grid'

@@ -23,7 +23,7 @@ describe "when_filtered WiceGrid", :type => :request, :js => true do
 
   it "should filter by Description" do
 
-    find(:css, '#grid_show_icon').click
+    find(:css, '.wg-show-filter').click
 
 
     fill_in('grid_f_description', :with => 've')
@@ -78,7 +78,7 @@ describe "when_filtered WiceGrid", :type => :request, :js => true do
 
   it "should filter by multiple columns" do
 
-    find(:css, '#grid_show_icon').click
+    find(:css, '.wg-show-filter').click
 
     fill_in('grid_f_description', :with => 'v')
     fill_in('grid_f_title', :with => 's')
@@ -115,7 +115,7 @@ describe "when_filtered WiceGrid", :type => :request, :js => true do
 
   it "should filter by Archived" do
 
-    find(:css, '#grid_show_icon').click
+    find(:css, '.wg-show-filter').click
 
     select 'yes', :from => 'grid_f_archived'
     find(:css, '#grid_submit_grid_icon').click
@@ -163,7 +163,7 @@ describe "when_filtered WiceGrid", :type => :request, :js => true do
 
   it "should filter by Title" do
 
-    find(:css, '#grid_show_icon').click
+    find(:css, '.wg-show-filter').click
 
     fill_in('grid_f_title', :with => 'ed')
 

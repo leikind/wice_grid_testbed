@@ -1,12 +1,10 @@
 require 'acceptance_helper'
 
-describe "disable_all_filters WiceGrid", :type => :request, :js => true do
+describe "many_grids_on_page WiceGrid", :type => :request, :js => true do
 
   before :each do
-    visit '/many_grids_on_page_spec'
+    visit '/many_grids_on_page'
   end
-
-
 
   it 'should sort independantly' do
 
@@ -30,7 +28,7 @@ describe "disable_all_filters WiceGrid", :type => :request, :js => true do
     end
 
 
-    within 'div#g1.wice-grid-container table.wice-grid thead th.sorted a.asc' do
+    within 'div#g2.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('Description')
     end
 
@@ -60,7 +58,7 @@ describe "disable_all_filters WiceGrid", :type => :request, :js => true do
     end
 
 
-    within '#g1 .pagination li.active' do
+    within '#g2 .pagination li.active' do
       page.should have_content('3')
     end
 
@@ -72,7 +70,7 @@ describe "disable_all_filters WiceGrid", :type => :request, :js => true do
     end
 
     within 'div#g1.wice-grid-container table.wice-grid' do
-      page.should have_selector('span.show_all_link')
+      page.should have_selector('a.wg-back-to-pagination-link')
     end
 
     within '#g1 .pagination_status' do
@@ -98,7 +96,7 @@ describe "disable_all_filters WiceGrid", :type => :request, :js => true do
     end
 
     within 'div#g1.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
-      page.should have_content('Vel quas dolores nobis.')
+      page.should have_content('Velit atque sapiente aspernatur sint fuga.')
     end
 
     fill_in('g2_f_description', :with => 'voluptas')
@@ -110,7 +108,7 @@ describe "disable_all_filters WiceGrid", :type => :request, :js => true do
     end
 
     within 'div#g2.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
-      page.should have_content('voluptas id')
+      page.should have_content('Accusamus voluptas sunt deleniti iusto dolorem repudiandae.')
     end
 
     within '#g1 .pagination_status' do
@@ -118,7 +116,7 @@ describe "disable_all_filters WiceGrid", :type => :request, :js => true do
     end
 
     within 'div#g1.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
-      page.should have_content('Vel quas dolores nobis.')
+      page.should have_content('Velit atque sapiente aspernatur sint fuga.')
     end
 
   end
