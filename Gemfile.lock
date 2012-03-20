@@ -7,7 +7,7 @@ GIT
 PATH
   remote: vendor/wice_grid
   specs:
-    wice_grid (3.0.4)
+    wice_grid (3.2.0.pre1)
 
 GEM
   remote: https://rubygems.org/
