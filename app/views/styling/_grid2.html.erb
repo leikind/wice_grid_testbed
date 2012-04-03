@@ -1,0 +1,25 @@
+<%= grid(@versions_grid2) do |g|
+
+  g.row_attributes do |version|
+    if version.status == 'production'
+      {:style => 'background-color: rgb(255, 255, 204);'}
+    end
+  end
+
+  g.column :name => 'ID', :attribute => 'id', :filter => false do |version|
+    if version.id.to_s.index('9')
+      [version.id, {:style => 'background-color: rgb(255, 105, 104);'}]
+    else
+      version.id
+    end
+  end
+
+  g.column :name => 'Project', :attribute => 'name', :model_class => 'Project' do |version|
+    version.project.name if version.project
+  end
+
+  g.column :name => 'Version name', :attribute => 'name'
+
+  g.column :name => 'Status', :attribute => 'status', :custom_filter => {'Development' => 'development', 'Testing' => 'testing', 'Production' => 'production'}
+end -%>
+

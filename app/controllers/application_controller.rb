@@ -27,30 +27,38 @@ class ApplicationController < ActionController::Base
         ]
       ],
 
-
-      ['Other',
+      ['Joined tables',
         [
-          [:negation, 'Text filters with negation'],
           [:joining_tables, 'Joined tables'],
-          [:two_associations, '2 associations to the same table'],
+          [:two_associations, '2 associations to the same table']
+        ]
+      ],
 
+      ['Custom filters',
+        [
           [:custom_ordering, 'Custom ordering'],
           [:custom_ordering2, 'Custom ordering (2)'],
           [:custom_filters1, 'Custom filters (one table)'],
           [:custom_filters2, 'Custom filters (joined tables)'],
           [:custom_filters3, 'Custom filters (method chains)'],
           [:custom_filters4, 'Custom filters: disallowing multiple selection'],
-          [:null_values, 'Custom filters (null values)'],
+          [:null_values, 'Custom filters (null values)']
+        ]
+      ],
+
+
+
+      ['Miscellaneous',
+        [
+          [:styling, 'Styling the grid'],
+          [:negation, 'Text filters with negation'],
           [:auto_reloads, 'Auto reloading filters'],
           [:action_column, 'Action column'],
-
-          [:styling, 'Styling the grid'],
           [:adding_rows, 'Adding custom rows'],
           [:integration_with_forms, 'Integration with other forms'],
           [:dates, 'Date/Datetime helpers'],
           [:all_records, 'Removing link "All Records"'],
           [:csv_export, 'CSV Export']
-
         ]
       ],
 
