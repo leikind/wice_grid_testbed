@@ -1,22 +1,22 @@
 <%= grid(@tasks_grid, :show_filters => :always) do |g|
 
-  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+  g.column :name => 'ID', :attribute => 'id', :filter => false
 
-  g.column :column_name => 'Title', :attribute_name => 'title'
+  g.column :name => 'Title', :attribute => 'title'
 
-  g.column :column_name => 'Priority', :attribute_name => 'name', :model_class => 'Priority' do |task|
+  g.column :name => 'Priority', :attribute => 'name', :model_class => 'Priority' do |task|
     task.priority.name if task.priority
   end
 
-  g.column :column_name => 'Status', :attribute_name => 'name', :model_class => 'Status' do |task|
+  g.column :name => 'Status', :attribute => 'name', :model_class => 'Status' do |task|
     task.status.name if task.status
   end
 
-  g.column :column_name => 'Project Name', :attribute_name => 'name', :model_class => 'Project' do |task|
+  g.column :name => 'Project Name', :attribute => 'name', :model_class => 'Project' do |task|
     task.project.name if task.project
   end
 
-  g.column :column_name => 'Assigned To', :attribute_name => 'name', :model_class => 'User' do |task|
+  g.column :name => 'Assigned To', :attribute => 'name', :model_class => 'User' do |task|
     task.assigned_users.collect{|user| user.name}.to_sentence
   end
 

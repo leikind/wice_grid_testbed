@@ -1,11 +1,11 @@
 <div class="span6">
 <%= grid(@status_grid1, :show_filters => :always) do |g|
 
-  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+  g.column :name => 'ID', :attribute => 'id', :filter => false
 
-  g.column :column_name => 'Status Name', :attribute_name => 'name'
+  g.column :name => 'Status Name', :attribute => 'name'
 
-  g.column  :column_name => 'Created' do |status|
+  g.column  :name => 'Created' do |status|
     status.created_at.to_s(:db) if status.created_at
   end
 end -%>
@@ -15,11 +15,11 @@ end -%>
 
 <%= grid(@status_grid2, :show_filters => :always) do |g|
 
-  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+  g.column :name => 'ID', :attribute => 'id', :filter => false
 
-  g.column :column_name => 'Status Name', :attribute_name => 'name'
+  g.column :name => 'Status Name', :attribute => 'name'
 
-  g.column  :column_name => 'Created' do |status|
+  g.column  :name => 'Created' do |status|
     status.created_at.to_s(:db) if status.created_at
   end
 

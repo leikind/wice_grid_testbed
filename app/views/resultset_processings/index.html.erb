@@ -1,13 +1,13 @@
 
 <%= grid(@tasks_grid) do |g|
 
-  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+  g.column :name => 'ID', :attribute => 'id', :filter => false
 
-  g.column :column_name => 'Title', :attribute_name => 'title'
+  g.column :name => 'Title', :attribute => 'title'
 
-  g.column :column_name => 'Project ID', :attribute_name => 'project_id'
+  g.column :name => 'Project ID', :attribute => 'project_id'
 
-  g.column :column_name => 'Project Data' do |task|
+  g.column :name => 'Project Data' do |task|
   @project_data[task.project_id]
   end
 

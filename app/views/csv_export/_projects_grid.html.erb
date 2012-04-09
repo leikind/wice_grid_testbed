@@ -4,17 +4,17 @@
 
 <%= grid(@projects_grid, :show_filters => :always, :hide_csv_button => true) do |g|
 
-  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+  g.column :name => 'ID', :attribute => 'id', :filter => false
 
-  g.column :column_name => 'Project Name', :attribute_name => 'name'
-  
+  g.column :name => 'Project Name', :attribute => 'name'
 
-  g.column  :column_name => 'Customer company', :model_class => 'Company', :attribute_name => 'name' do |task|
+
+  g.column  :name => 'Customer company', :model_class => 'Company', :attribute => 'name' do |task|
     task.customer.name if task.customer
   end
 
-  g.column  :column_name => 'Supplier company', 
-            :model_class => 'Company', :attribute_name => 'name', :table_alias => 'suppliers_projects' do |task|
+  g.column  :name => 'Supplier company',
+            :model_class => 'Company', :attribute => 'name', :table_alias => 'suppliers_projects' do |task|
     task.supplier.name if task.supplier
   end
 

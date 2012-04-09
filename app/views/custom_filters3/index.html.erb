@@ -1,14 +1,14 @@
 <%= grid(@tasks_grid, :show_filters => :always) do |g|
 
-  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+  g.column :name => 'ID', :attribute => 'id', :filter => false
 
-  g.column :column_name => 'Title', :attribute_name => 'title'
+  g.column :name => 'Title', :attribute => 'title'
 
-  g.column :column_name => 'Found in version', :model_class => 'Version', :attribute_name => 'name', :custom_filter => :auto do |task|
+  g.column :name => 'Found in version', :model_class => 'Version', :attribute => 'name', :custom_filter => :auto do |task|
     task.relevant_version.name if task.relevant_version
   end
 
-  g.column :column_name => 'Expected in version', :attribute_name => 'expected_version_id',
+  g.column :name => 'Expected in version', :attribute => 'expected_version_id',
            :custom_filter => [:expected_version, :to_option] do |task|
     task.expected_version.name if task.expected_version
   end

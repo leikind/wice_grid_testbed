@@ -10,11 +10,11 @@
 
   <%= grid(@tasks_grid, :show_filters => :always) do |g|
 
-    g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+    g.column :name => 'ID', :attribute => 'id', :filter => false
 
-    g.column :column_name => 'Title', :attribute_name => 'title'
+    g.column :name => 'Title', :attribute => 'title'
 
-    g.column :column_name => 'Priority', :attribute_name => 'priority_id', :custom_filter => Priority.to_dropdown do |task|
+    g.column :name => 'Priority', :attribute => 'priority_id', :custom_filter => Priority.to_dropdown do |task|
       task.priority.name if task.priority
     end
 
