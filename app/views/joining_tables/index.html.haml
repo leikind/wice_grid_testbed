@@ -1,0 +1,15 @@
+.well
+  %h2= current_page_title
+  %p
+    Use
+    %code :include
+    in
+    %code :initialize_grid
+    to include associated tables.
+  %p
+    To define a column from a joined table, use
+    %code :model_class
+    to specify a the corresponding ActiveRecord model.
+
+
+= render :partial => 'grid'
