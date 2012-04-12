@@ -34,10 +34,9 @@ class ApplicationController < ActionController::Base
         ]
       ],
 
-      ['Custom filters',
+      ['Custom filters and ordering',
         [
           [:custom_ordering, 'Custom ordering'],
-          [:custom_ordering2, 'Custom ordering (2)'],
           [:custom_filters1, 'Custom filters (one table)'],
           [:custom_filters2, 'Custom filters (joined tables)'],
           [:custom_filters3, 'Custom filters (method chains)'],
