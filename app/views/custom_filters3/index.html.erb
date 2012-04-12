@@ -4,7 +4,7 @@
 
   g.column :name => 'Title', :attribute => 'title'
 
-  g.column :name => 'Found in version', :model_class => 'Version', :attribute => 'name', :custom_filter => :auto do |task|
+  g.column :name => 'Found in version', :model => 'Version', :attribute => 'name', :custom_filter => :auto do |task|
     task.relevant_version.name if task.relevant_version
   end
 

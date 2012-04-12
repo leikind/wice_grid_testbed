@@ -3,7 +3,7 @@
 
   g.column :name => 'ID', :attribute => 'id', :filter => false
 
-  g.column :name => 'Project', :attribute => 'name', :model_class => 'Project' do |version|
+  g.column :name => 'Project', :attribute => 'name', :model => 'Project' do |version|
     version.project.name if version.project
   end
 
@@ -17,7 +17,7 @@ end -%>
 
     g.column :name => 'ID', :attribute => 'id', :filter => false
 
-    g.column :name => 'Project', :attribute => 'name', :model_class => 'Project' do |version|
+    g.column :name => 'Project', :attribute => 'name', :model => 'Project' do |version|
       version.project.name if version.project
     end
 
@@ -31,7 +31,7 @@ end -%>
 
     g.column :name => 'ID', :attribute => 'id', :filter => false
 
-    g.column :name => 'Project', :attribute => 'name', :model_class => 'Project' do |version|
+    g.column :name => 'Project', :attribute => 'name', :model => 'Project' do |version|
       version.project.name if version.project
     end
 
@@ -45,7 +45,7 @@ end -%>
 
     g.column :name => 'ID', :attribute => 'id', :filter => false
 
-    g.column :name => 'Project', :attribute => 'name', :model_class => 'Project' do |version|
+    g.column :name => 'Project', :attribute => 'name', :model => 'Project' do |version|
       version.project.name if version.project
     end
 
