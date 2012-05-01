@@ -48,6 +48,14 @@
   .span10
     = grid_filter @tasks_grid, :archived_filter
 
+
+.row-fluid
+  .span2
+    Due date:
+  .span10
+    = grid_filter @tasks_grid, :due_date
+
+
 .row-fluid
   .span12
     .external-buttons
