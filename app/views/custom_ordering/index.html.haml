@@ -1,0 +1,23 @@
+:css
+  table.my-grid {
+    border: 1px solid red;
+  }
+  table.my-grid tr.my-header {
+    background-color: #ebebeb;
+  }
+
+
+.well
+  %h2= current_page_title
+  %ul
+    It is possible to override the default ordering by custom sql code. "Status Name" in the first table is done
+    by the length of the status name. Ordering "Status Name" in the second table is actually replaced by ordering
+    by column.
+
+
+.row-fluid
+  .span6
+    = render :partial => 'grid', :locals => {:grid => @status_grid1}
+
+  .span6
+    = render :partial => 'grid', :locals => {:grid => @status_grid2}
