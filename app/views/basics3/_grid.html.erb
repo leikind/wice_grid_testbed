@@ -17,8 +17,8 @@
     task.archived? ? 'Yes' : 'No'
   end
 
-  g.column :name => 'Added', :attribute => 'created_at' do |task|
-    task.created_at.to_s(:short)
+  g.column :name => 'Due Date', :attribute => 'due_date' do |task|
+    task.due_date
   end
 
 
