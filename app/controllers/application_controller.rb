@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
           [:basics2, 'Named columns'],
           [:upper_pagination_panel, 'Two pagination panels'],
           [:basics3, 'Associating columns with database fields'],
+          [:dates, 'Date/Datetime helpers'],
           [:blockless_column_definition, 'Dropping the block in #column'],
 
           [:basics4, 'Disabling filters'],
@@ -55,7 +56,7 @@ class ApplicationController < ActionController::Base
           [:action_column, 'Action column'],
           [:adding_rows, 'Adding custom rows'],
           [:integration_with_forms, 'Integration with other forms'],
-          [:dates, 'Date/Datetime helpers'],
+
           [:all_records, 'Removing link "All Records"'],
           [:csv_export, 'CSV Export']
         ]
