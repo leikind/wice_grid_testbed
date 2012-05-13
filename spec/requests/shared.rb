@@ -500,8 +500,67 @@ end
 
 shared_examples 'basic filtering extended' do
 
+  def set_datepicker(context, picker, year, month, day)
+    context.find(:css, "##{picker} .ui-datepicker-trigger").click
+
+    year_select = context.find(:css, '.ui-datepicker-year')
+    year_select.click
+    opt = context.find(:css, ".ui-datepicker-year option[value=\"#{year}\"]")
+    opt.click
+
+    year_select = context.find(:css, '.ui-datepicker-month')
+    year_select.click
+    opt = context.find(:css, ".ui-datepicker-month option[value=\"#{month}\"]")
+    opt.click
+
+    context.within '.ui-datepicker-calendar' do
+      context.click_on(day.to_s)
+    end
+
+  end
+
 
   it "should filter by Due Date" do
+
+    set_datepicker(self, 'grid_f_due_date_fr_date_placeholder', 2012, 0, 1)
+
+    set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2013, 0, 1)
+
+    find(:css, '#grid_submit_grid_icon').click
+
+    within '.pagination_status' do
+      page.should have_content('1-20 / 35')
+    end
+
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+      page.should have_content('2012-07-29')
+    end
+
+    within 'div.wice-grid-container table.wice-grid thead' do
+      click_on 'ID'
+    end
+
+    within '.pagination_status' do
+      page.should have_content('1-20 / 35')
+    end
+
+    within '.pagination' do
+      click_link '2'
+    end
+
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+      page.should have_content('2012-07-15')
+    end
+
+
+    find(:css, '#grid_reset_grid_icon').click
+    within '.pagination_status' do
+      page.should have_content('1-20 / 50')
+    end
+
+  end
+
+  # it "should filter by Due Date (standard filter)" do
     # select '2011', :from => 'grid_f_created_at_fr_year'
     # select 'February', :from => 'grid_f_created_at_fr_month'
     # select '8', :from => 'grid_f_created_at_fr_day'
@@ -538,7 +597,7 @@ shared_examples 'basic filtering extended' do
     #   page.should have_content('1-20 / 50')
     # end
 
-  end
+  # end
 
 
   # it "should filter by Added" do
