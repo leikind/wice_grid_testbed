@@ -540,7 +540,7 @@ shared_examples 'Due Date datepicker filtering' do
       page.should have_content('1-20 / 35')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('2012-07-29')
     end
 
@@ -556,7 +556,7 @@ shared_examples 'Due Date datepicker filtering' do
       click_link '2'
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('2012-07-15')
     end
 
@@ -605,7 +605,7 @@ shared_examples 'Added datepicker filtering' do
       page.should have_content('1-20 / 29')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('2011-09-13 22:11:12')
     end
 
@@ -621,7 +621,7 @@ shared_examples 'Added datepicker filtering' do
       click_link '2'
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('2011-08-14 22:11:12')
     end
 
@@ -657,7 +657,7 @@ shared_examples 'Due Date standard filtering' do
       page.should have_content('1-16 / 16')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('13 Aug 22:11')
     end
 
@@ -699,7 +699,7 @@ shared_examples 'Created At standard filtering' do
       page.should have_content('1-14 / 14')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('2011-11-26 22:11:12')
     end
 
@@ -731,7 +731,7 @@ shared_examples 'Description filtering' do
       page.should have_content('1-12 / 12')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('Velit atque sapiente aspernatur sint fuga.')
     end
 
@@ -746,7 +746,7 @@ shared_examples 'Description filtering' do
     end
 
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('Ad sunt vel maxime labore temporibus incidunt quidem.')
     end
 
@@ -783,7 +783,7 @@ shared_examples 'ID filtering' do
       page.should have_content('1-7 / 7')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('550')
     end
 
@@ -800,7 +800,7 @@ shared_examples 'ID filtering' do
     end
 
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active-filter' do
       page.should have_content('550')
     end
 
@@ -854,7 +854,7 @@ shared_examples 'ID two limits filtering' do
       page.should have_content('1-3 / 3')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('507')
     end
 
@@ -871,7 +871,7 @@ shared_examples 'ID two limits filtering' do
     end
 
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active-filter' do
       page.should have_content('507')
     end
 
@@ -957,7 +957,7 @@ shared_examples 'Archived filtering' do
       page.should have_content('1-4 / 4')
     end
 
-    within 'td.active_filter' do
+    within 'td.active-filter' do
       page.should have_content('Yes')
     end
 
@@ -968,7 +968,7 @@ shared_examples 'Archived filtering' do
       page.should have_content('1-20 / 46')
     end
 
-    within 'td.active_filter' do
+    within 'td.active-filter' do
       page.should have_content('No')
     end
 
@@ -981,7 +981,7 @@ shared_examples 'Archived filtering' do
       page.should have_content('21-40 / 46')
     end
 
-    within 'td.active_filter' do
+    within 'td.active-filter' do
       page.should have_content('No')
     end
 
@@ -1003,7 +1003,7 @@ shared_examples 'Title filtering' do
       page.should have_content('1-2 / 2')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('sed impedit iste')
     end
 
@@ -1018,7 +1018,7 @@ shared_examples 'Title filtering' do
     end
 
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('corporis expedita vel')
     end
 

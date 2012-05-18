@@ -15,7 +15,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('1-4 / 4')
     end
 
-    within 'td.active_filter' do
+    within 'td.active-filter' do
       page.should have_content('Yes')
     end
 
@@ -26,7 +26,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('1-20 / 46')
     end
 
-    within 'td.active_filter' do
+    within 'td.active-filter' do
       page.should have_content('No')
     end
 
@@ -39,7 +39,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('21-40 / 46')
     end
 
-    within 'td.active_filter' do
+    within 'td.active-filter' do
       page.should have_content('No')
     end
 
@@ -61,7 +61,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('1-2 / 2')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('sed impedit iste')
     end
 
@@ -76,7 +76,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
     end
 
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('corporis expedita vel')
     end
 
@@ -113,7 +113,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('1-12 / 12')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('Velit atque sapiente aspernatur sint fuga.')
     end
 
@@ -128,7 +128,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
     end
 
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('Ad sunt vel maxime labore temporibus incidunt quidem.')
     end
 

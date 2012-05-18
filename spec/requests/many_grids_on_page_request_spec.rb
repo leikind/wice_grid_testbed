@@ -95,7 +95,7 @@ describe "many_grids_on_page WiceGrid", :type => :request, :js => true do
       page.should have_content('1-12 / 12')
     end
 
-    within 'div#g1.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div#g1.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('Velit atque sapiente aspernatur sint fuga.')
     end
 
@@ -107,7 +107,7 @@ describe "many_grids_on_page WiceGrid", :type => :request, :js => true do
       page.should have_content('1-1 / 1')
     end
 
-    within 'div#g2.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div#g2.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('Accusamus voluptas sunt deleniti iusto dolorem repudiandae.')
     end
 
@@ -115,7 +115,7 @@ describe "many_grids_on_page WiceGrid", :type => :request, :js => true do
       page.should have_content('1-12 / 12')
     end
 
-    within 'div#g1.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+    within 'div#g1.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('Velit atque sapiente aspernatur sint fuga.')
     end
 
