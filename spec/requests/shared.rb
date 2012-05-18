@@ -92,7 +92,8 @@ shared_examples "names of columns" do
   end
 end
 
-shared_examples 'sorting columns' do
+shared_examples 'sorting ID' do
+
   it 'should sort column ID' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
@@ -136,6 +137,10 @@ shared_examples 'sorting columns' do
       page.should have_content('536')
     end
   end
+
+end
+
+shared_examples 'sorting Title' do
 
   it 'should sort column Title' do
     within 'div.wice-grid-container table.wice-grid thead' do
@@ -181,6 +186,9 @@ shared_examples 'sorting columns' do
     end
   end
 
+end
+
+shared_examples 'sorting Description' do
   it 'should sort column Description' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Description'
@@ -224,8 +232,9 @@ shared_examples 'sorting columns' do
       page.should have_content('Iure tenetur cum aut optio et quia similique debitis.')
     end
   end
+end
 
-
+shared_examples 'sorting Archived' do
   it 'should sort column Archived' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Archived'
@@ -269,8 +278,9 @@ shared_examples 'sorting columns' do
       page.should have_content('No')
     end
   end
+end
 
-
+shared_examples 'sorting Due Date' do
   it 'should sort column Due Date' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Due Date'
@@ -314,13 +324,10 @@ shared_examples 'sorting columns' do
       page.should have_content('2012-12-13')
     end
   end
-
-
 end
 
 
-shared_examples 'sorting columns in all records mode' do
-
+shared_examples 'sorting ID in all records mode' do
   it 'should sort column ID' do
     click_on 'show all'
 
@@ -354,8 +361,9 @@ shared_examples 'sorting columns in all records mode' do
     end
 
   end
+end
 
-
+shared_examples 'sorting Title in all records mode' do
   it 'should sort column Title' do
     click_on 'show all'
 
@@ -389,7 +397,9 @@ shared_examples 'sorting columns in all records mode' do
     end
 
   end
+end
 
+shared_examples 'sorting Description in all records mode' do
   it 'should sort column Description' do
     click_on 'show all'
 
@@ -423,9 +433,9 @@ shared_examples 'sorting columns in all records mode' do
     end
 
   end
+end
 
-
-
+shared_examples 'sorting Archived in all records mode' do
   it 'should sort column Archived' do
     click_on 'show all'
 
@@ -459,8 +469,9 @@ shared_examples 'sorting columns in all records mode' do
     end
 
   end
+end
 
-
+shared_examples 'sorting Due Date in all records mode' do
   it 'should sort column Due Date' do
     click_on 'show all'
 
@@ -494,32 +505,29 @@ shared_examples 'sorting columns in all records mode' do
     end
 
   end
-
 end
 
 
-shared_examples 'basic filtering extended' do
+def set_datepicker(context, picker, year, month, day)
+  context.find(:css, "##{picker} .ui-datepicker-trigger").click
 
-  def set_datepicker(context, picker, year, month, day)
-    context.find(:css, "##{picker} .ui-datepicker-trigger").click
+  year_select = context.find(:css, '.ui-datepicker-year')
+  year_select.click
+  opt = context.find(:css, ".ui-datepicker-year option[value=\"#{year}\"]")
+  opt.click
 
-    year_select = context.find(:css, '.ui-datepicker-year')
-    year_select.click
-    opt = context.find(:css, ".ui-datepicker-year option[value=\"#{year}\"]")
-    opt.click
+  year_select = context.find(:css, '.ui-datepicker-month')
+  year_select.click
+  opt = context.find(:css, ".ui-datepicker-month option[value=\"#{month}\"]")
+  opt.click
 
-    year_select = context.find(:css, '.ui-datepicker-month')
-    year_select.click
-    opt = context.find(:css, ".ui-datepicker-month option[value=\"#{month}\"]")
-    opt.click
-
-    context.within '.ui-datepicker-calendar' do
-      context.click_on(day.to_s)
-    end
-
+  context.within '.ui-datepicker-calendar' do
+    context.click_on(day.to_s)
   end
 
+end
 
+shared_examples 'Due Date datepicker filtering' do
   it "should filter by Due Date" do
 
     set_datepicker(self, 'grid_f_due_date_fr_date_placeholder', 2012, 0, 1)
@@ -559,89 +567,138 @@ shared_examples 'basic filtering extended' do
     end
 
   end
+end
 
-  # it "should filter by Due Date (standard filter)" do
-    # select '2011', :from => 'grid_f_created_at_fr_year'
-    # select 'February', :from => 'grid_f_created_at_fr_month'
-    # select '8', :from => 'grid_f_created_at_fr_day'
-    # select '00', :from => 'grid_f_created_at_fr_hour'
-    # select '00', :from => 'grid_f_created_at_fr_minute'
+shared_examples 'Added datepicker filtering' do
+  it "should filter by Added" do
 
+    set_datepicker(self, 'grid_f_created_at_fr_date_placeholder', 2011, 5, 1)
 
-    # select '2011', :from => 'grid_f_created_at_to_year'
-    # select 'September', :from => 'grid_f_created_at_to_month'
-    # select '10', :from => 'grid_f_created_at_to_day'
-    # select '00', :from => 'grid_f_created_at_to_hour'
-    # select '00', :from => 'grid_f_created_at_to_minute'
+    set_datepicker(self, 'grid_f_created_at_to_date_placeholder', 2011, 9, 1)
 
-    # find(:css, '#grid_submit_grid_icon').click
+    find(:css, '#grid_submit_grid_icon').click
 
-    # within '.pagination_status' do
-    #   page.should have_content('1-16 / 16')
-    # end
+    within '.pagination_status' do
+      page.should have_content('1-20 / 29')
+    end
 
-    # within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
-    #   page.should have_content('13 Aug 22:11')
-    # end
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+      page.should have_content('2011-09-13 22:11:12')
+    end
 
-    # within 'div.wice-grid-container table.wice-grid thead' do
-    #   click_on 'ID'
-    # end
+    within 'div.wice-grid-container table.wice-grid thead' do
+      click_on 'ID'
+    end
 
-    # within '.pagination_status' do
-    #   page.should have_content('1-16 / 16')
-    # end
+    within '.pagination_status' do
+      page.should have_content('1-20 / 29')
+    end
 
-    # find(:css, '#grid_reset_grid_icon').click
-    # within '.pagination_status' do
-    #   page.should have_content('1-20 / 50')
-    # end
+    within '.pagination' do
+      click_link '2'
+    end
 
-  # end
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+      page.should have_content('2011-08-14 22:11:12')
+    end
 
 
-  # it "should filter by Added" do
-  #   select '2011', :from => 'grid_f_created_at_fr_year'
-  #   select 'February', :from => 'grid_f_created_at_fr_month'
-  #   select '8', :from => 'grid_f_created_at_fr_day'
-  #   select '00', :from => 'grid_f_created_at_fr_hour'
-  #   select '00', :from => 'grid_f_created_at_fr_minute'
+    find(:css, '#grid_reset_grid_icon').click
+    within '.pagination_status' do
+      page.should have_content('1-20 / 50')
+    end
+
+  end
+end
 
 
-  #   select '2011', :from => 'grid_f_created_at_to_year'
-  #   select 'September', :from => 'grid_f_created_at_to_month'
-  #   select '10', :from => 'grid_f_created_at_to_day'
-  #   select '00', :from => 'grid_f_created_at_to_hour'
-  #   select '00', :from => 'grid_f_created_at_to_minute'
-
-  #   find(:css, '#grid_submit_grid_icon').click
-
-  #   within '.pagination_status' do
-  #     page.should have_content('1-16 / 16')
-  #   end
-
-  #   within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
-  #     page.should have_content('13 Aug 22:11')
-  #   end
-
-  #   within 'div.wice-grid-container table.wice-grid thead' do
-  #     click_on 'ID'
-  #   end
-
-  #   within '.pagination_status' do
-  #     page.should have_content('1-16 / 16')
-  #   end
+# !!!
+shared_examples 'Due Date standard filtering' do
+  it "should filter by Due Date (standard filter)" do
+    select '2011', :from => 'grid_f_created_at_fr_year'
+    select 'February', :from => 'grid_f_created_at_fr_month'
+    select '8', :from => 'grid_f_created_at_fr_day'
+    select '00', :from => 'grid_f_created_at_fr_hour'
+    select '00', :from => 'grid_f_created_at_fr_minute'
 
 
+    select '2011', :from => 'grid_f_created_at_to_year'
+    select 'September', :from => 'grid_f_created_at_to_month'
+    select '10', :from => 'grid_f_created_at_to_day'
+    select '00', :from => 'grid_f_created_at_to_hour'
+    select '00', :from => 'grid_f_created_at_to_minute'
 
-  #   find(:css, '#grid_reset_grid_icon').click
-  #   within '.pagination_status' do
-  #     page.should have_content('1-20 / 50')
-  #   end
+    find(:css, '#grid_submit_grid_icon').click
 
-  # end
+    within '.pagination_status' do
+      page.should have_content('1-16 / 16')
+    end
+
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+      page.should have_content('13 Aug 22:11')
+    end
+
+    within 'div.wice-grid-container table.wice-grid thead' do
+      click_on 'ID'
+    end
+
+    within '.pagination_status' do
+      page.should have_content('1-16 / 16')
+    end
+
+    find(:css, '#grid_reset_grid_icon').click
+    within '.pagination_status' do
+      page.should have_content('1-20 / 50')
+    end
+
+  end
+end
 
 
+shared_examples 'Created At standard filtering' do
+  it "should filter by created_at" do
+    select '2011', :from => 'grid_f_updated_at_fr_year'
+    select 'January', :from => 'grid_f_updated_at_fr_month'
+    select '8', :from => 'grid_f_updated_at_fr_day'
+    select '00', :from => 'grid_f_updated_at_fr_hour'
+    select '00', :from => 'grid_f_updated_at_fr_minute'
+
+
+    select '2011', :from => 'grid_f_updated_at_to_year'
+    select 'December', :from => 'grid_f_updated_at_to_month'
+    select '10', :from => 'grid_f_updated_at_to_day'
+    select '00', :from => 'grid_f_updated_at_to_hour'
+    select '00', :from => 'grid_f_updated_at_to_minute'
+
+    find(:css, '#grid_submit_grid_icon').click
+
+    within '.pagination_status' do
+      page.should have_content('1-14 / 14')
+    end
+
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active_filter' do
+      page.should have_content('2011-11-26 22:11:12')
+    end
+
+    within 'div.wice-grid-container table.wice-grid thead' do
+      click_on 'ID'
+    end
+
+    within '.pagination_status' do
+      page.should have_content('1-14 / 14')
+    end
+
+
+
+    find(:css, '#grid_reset_grid_icon').click
+    within '.pagination_status' do
+      page.should have_content('1-20 / 50')
+    end
+
+  end
+end
+
+shared_examples 'Description filtering' do
   it "should filter by Description" do
     fill_in('grid_f_description', :with => 've')
 
@@ -690,7 +747,9 @@ shared_examples 'basic filtering extended' do
     end
 
   end
+end
 
+shared_examples 'ID filtering' do
   it "should filter by ID, one limit" do
     fill_in('grid_f_id_fr', :with => 550)
 
@@ -759,8 +818,9 @@ shared_examples 'basic filtering extended' do
     end
 
   end
+end
 
-
+shared_examples 'ID two limits filtering' do
   it "should filter by ID, two limits" do
     fill_in('grid_f_id_fr', :with => 507)
     fill_in('grid_f_id_to', :with => 509)
@@ -827,8 +887,9 @@ shared_examples 'basic filtering extended' do
       page.should have_content('1-20 / 50')
     end
   end
+end
 
-
+shared_examples 'Description and Title filtering' do
   it "should filter by multiple columns" do
     fill_in('grid_f_description', :with => 'v')
     fill_in('grid_f_title', :with => 's')
@@ -861,13 +922,10 @@ shared_examples 'basic filtering extended' do
 
 
   end
-
 end
 
-shared_examples 'basic filtering' do
 
-
-
+shared_examples 'Archived filtering' do
   it "should filter by Archived" do
     select 'yes', :from => 'grid_f_archived'
     find(:css, '#grid_submit_grid_icon').click
@@ -909,11 +967,10 @@ shared_examples 'basic filtering' do
       page.should have_content('1-20 / 50')
     end
 
-
-
   end
+end
 
-
+shared_examples 'Title filtering' do
   it "should filter by Ttile" do
     fill_in('grid_f_title', :with => 'ed')
 
@@ -962,6 +1019,5 @@ shared_examples 'basic filtering' do
     end
 
   end
-
 end
 

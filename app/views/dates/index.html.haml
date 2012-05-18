@@ -1,9 +1,16 @@
 .well
   %h2= current_page_title
   %p
-    blah
-    %code blah
-    blah
+    For both
+    %code DATE
+    and
+    %code DATETIME
+    fields the filter uses
+    %a{:href=>'http://jqueryui.com/demos/datepicker/'}jQuery Datepicker
+    by default. It is also possible to use standard Rails Date/Datetime form helpers by specifying
+    %code :helper_style => :standard
+    in the column definition.
+    This might be useful for DATETIME fields as jQuery Datepicker does not support time.
 
 .row-fluid
   .span12

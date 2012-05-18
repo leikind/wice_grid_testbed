@@ -13,11 +13,12 @@ class ApplicationController < ActionController::Base
           [:basics2, 'Named columns'],
           [:upper_pagination_panel, 'Two pagination panels'],
           [:basics3, 'Associating columns with database fields'],
-          [:dates, 'Date/Datetime helpers'],
+
           [:blockless_column_definition, 'Dropping the block in #column'],
 
           [:basics4, 'Disabling filters'],
           [:disable_all_filters, 'Disabling all filters'],
+          [:dates, 'Date/Datetime helpers'],
           [:when_filtered, 'Hidden filter panel'],
           [:basics5, 'Disabling ordering'],
           [:basics6, 'Initial conditions and ordering'],

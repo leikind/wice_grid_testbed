@@ -6,14 +6,6 @@ describe "when_filtered WiceGrid", :type => :request, :js => true do
     visit '/when_filtered'
   end
 
-  if ALL_TESTS
-    include_examples "basic task table specs"
-    include_examples "show all and back"
-    include_examples "names of columns"
-    include_examples "sorting columns"
-    include_examples "sorting columns in all records mode"
-  end
-
 
   it "the filter panel is hidden by default" do
     lambda{

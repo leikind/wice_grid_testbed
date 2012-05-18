@@ -6,14 +6,6 @@ describe "basisc4 WiceGrid", :type => :request, :js => true do
     visit '/basics4'
   end
 
-  if ALL_TESTS
-    include_examples "basic task table specs"
-    include_examples "show all and back"
-    include_examples "names of columns"
-    include_examples "sorting columns"
-    include_examples "sorting columns in all records mode"
-    include_examples 'basic filtering'
-  end
 
   it "should not have disabled filters" do
     page.should have_no_selector('#grid_f_id_fr')

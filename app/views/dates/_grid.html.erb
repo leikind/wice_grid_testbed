@@ -10,16 +10,16 @@
   end
 
   g.column :name => 'Due Date', :attribute => 'due_date' do |task|
-    task.due_date.to_s(:short) if task.due_date
+    task.due_date if task.due_date
   end
 
 
   g.column :name => 'Added', :attribute => 'created_at' do |task|
-    task.created_at.to_s(:short)
+    task.created_at.to_s(:db)
   end
 
   g.column :name => 'Updated', :attribute => 'updated_at', :helper_style => :standard do |task|
-    task.created_at.to_s(:short)
+    task.updated_at.to_s(:db)
   end
 
 
