@@ -561,10 +561,33 @@ shared_examples 'Due Date datepicker filtering' do
     end
 
 
-    find(:css, '#grid_reset_grid_icon').click
+    set_datepicker(self, 'grid_f_due_date_fr_date_placeholder', 2012, 6, 28)
+
+    set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2012, 6, 31)
+
+    find(:css, '#grid_submit_grid_icon').click
+
+
+    within '.pagination_status' do
+      page.should have_content('1-1 / 1')
+    end
+
+    find(:css, '#grid_f_due_date_fr_date_view').click
+
+    find(:css, '#grid_submit_grid_icon').click
+
+    within '.pagination_status' do
+      page.should have_content('1-10 / 10')
+    end
+
+    find(:css, '#grid_f_due_date_to_date_view').click
+
+    find(:css, '#grid_submit_grid_icon').click
+
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
+
 
   end
 end
