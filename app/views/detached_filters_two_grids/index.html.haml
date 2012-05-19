@@ -1,0 +1,84 @@
+.well
+  %h2= current_page_title
+  %p
+    An example of two grids with detached filters functioning independantly of each other.
+
+= render :partial => 'grid', :locals => {:tasks_grid => @grid1}
+= render :partial => 'grid', :locals => {:tasks_grid => @grid2}
+
+
+.row-fluid
+  .span2
+    ID:
+  .span4
+    = grid_filter @grid1, :id_filter
+  .span2
+    ID:
+  .span4
+    = grid_filter @grid2, :id_filter
+
+
+
+.row-fluid
+  .span2
+    Title:
+  .span4
+    = grid_filter @grid1, :title_filter
+  .span2
+    Title:
+  .span4
+    = grid_filter @grid2, :title_filter
+
+
+
+.row-fluid
+  .span2
+    Description:
+  .span4
+    = grid_filter @grid1, :description_filter
+  .span2
+    Description:
+  .span4
+    = grid_filter @grid2, :description_filter
+
+
+.row-fluid
+  .span2
+    Archived:
+  .span4
+    = grid_filter @grid1, :archived_filter
+  .span2
+    Archived:
+  .span4
+    = grid_filter @grid2, :archived_filter
+
+
+.row-fluid
+  .span2
+    Due date:
+  .span4
+    = grid_filter @grid1, :due_date
+  .span2
+    Due date:
+  .span4
+    = grid_filter @grid2, :due_date
+
+
+.row-fluid
+  .span6
+    .external-buttons-grid1
+      %button.btn.btn-primary.wg-external-submit-button{'data-grid-name' => 'grid'} Submit
+      %button.btn.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
+
+  .span6
+    .external-buttons-grid2
+      %button.btn.btn-primary.wg-external-submit-button{'data-grid-name' => 'grid2'} Submit
+      %button.btn.wg-external-reset-button{'data-grid-name' => 'grid2'} Reset
+
+
+.row-fluid
+  .span6
+    = grid(@grid1)
+
+  .span6
+    = grid(@grid2)

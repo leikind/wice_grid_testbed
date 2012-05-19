@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
           [:basics3, 'Associating columns with database fields'],
 
           [:blockless_column_definition, 'Dropping the block in #column'],
-
+          [:many_grids_on_page, 'More than 1 grid on a page'],
           [:basics4, 'Disabling filters'],
           [:disable_all_filters, 'Disabling all filters'],
           [:dates, 'Date/Datetime helpers'],
@@ -24,8 +24,9 @@ class ApplicationController < ActionController::Base
           [:basics6, 'Initial conditions and ordering'],
           [:buttons, 'External submit/reset buttons'],
           [:detached_filters, 'External filters'],
-          [:no_records, 'A grid without records'],
-          [:many_grids_on_page, 'More than 1 grid on a page']
+          [:detached_filters_two_grids, 'External filters (example with 2 grids)'],
+          [:no_records, 'A grid without records']
+
         ]
       ],
 

@@ -15,6 +15,7 @@ Examples::Application.routes.draw do
     :integration_with_application,
     :integration_with_application_view,
     :detached_filters,
+    :detached_filters_two_grids,
     :csv_export,
     :all_records,
     :dates,
