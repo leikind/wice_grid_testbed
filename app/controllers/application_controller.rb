@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
           [:custom_filters1, 'Custom filters (one table)'],
           [:custom_filters2, 'Custom filters (joined tables)'],
           [:custom_filters3, 'Custom filters (method chains)'],
-          [:custom_filters4, 'Custom filters: disallowing multiple selection'],
+          [:custom_filters4, 'Custom filters: turning off multiple selection'],
           [:null_values, 'Custom filters (null values)']
         ]
       ],

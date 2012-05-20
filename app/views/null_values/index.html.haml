@@ -1,0 +1,20 @@
+.well
+  %h2= current_page_title
+  %p
+    Strings
+    %code null
+    and
+    %code not null
+    in
+    %code custom_filter
+    values
+    are treated speacially and result in
+    %code IS NULL
+    and
+    %code IS NOT NULL
+    WHERE-clauses.
+
+
+.row-fluid
+  .span12
+    = render :partial => 'grid'

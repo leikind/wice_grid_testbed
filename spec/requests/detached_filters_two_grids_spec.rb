@@ -6,6 +6,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
     visit '/detached_filters_two_grids'
   end
 
+
   it "should be independant of each other" do
     select 'yes', :from => 'grid_f_archived'
 

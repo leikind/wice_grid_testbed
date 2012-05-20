@@ -1,11 +1,10 @@
-<%= grid(@tasks_grid, :show_filters => :always) do |g|
+<%= grid(@tasks_grid) do |g|
 
   g.column :name => 'ID', :attribute => 'id', :filter => false
 
   g.column :name => 'Title', :attribute => 'title'
 
-  #                                                                                        returns an array of 2-element arrays
-  g.column :name => 'Priority', :attribute => 'priority_id', :custom_filter => Priority.to_dropdown do |task|
+  g.column :name => 'Priority', :attribute => 'name', :model => 'Priority', :custom_filter => %w(Anecdotic High Low Normal Urgent) do |task|
     task.priority.name if task.priority
   end
 
