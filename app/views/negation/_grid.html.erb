@@ -2,7 +2,7 @@
 
   g.column :name => 'ID', :attribute => 'id', :filter => false
 
-  g.column :name => 'Title', :attribute => 'title', :negation_in_filter => true
+  g.column :name => 'Title', :attribute => 'title', :negation => true
 
   g.column :name => 'Priority', :attribute => 'priority_id', :custom_filter => Priority.to_dropdown do |task|
     task.priority.name if task.priority
