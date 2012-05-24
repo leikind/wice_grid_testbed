@@ -54,13 +54,15 @@ class ApplicationController < ActionController::Base
         [
           [:styling, 'Styling the grid'],
           [:negation, 'Text filters with negation'],
-          [:auto_reloads, 'Auto reloading filters'],
-          [:action_column, 'Action column'],
+
+
           [:adding_rows, 'Adding custom rows'],
           [:integration_with_forms, 'Integration with other forms'],
-
           [:all_records, 'Removing link "All Records"'],
-          [:csv_export, 'CSV Export']
+
+          [:csv_export, 'CSV Export'],
+          [:action_column, 'Action column'],
+          [:auto_reloads, 'Auto reloading filters'],
         ]
       ],
 

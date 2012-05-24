@@ -1,0 +1,15 @@
+.well
+  %h2= current_page_title
+  %p
+    %code :negation_in_filter => true
+    adds a checkox to a text filter. The checked checkbox is the logical
+    %i NOT
+    \- it changes the semantics of a text filter to
+    %b not
+    showing all records with a matching substring.
+
+
+
+.row-fluid
+  .span12
+    = render :partial => 'grid'
