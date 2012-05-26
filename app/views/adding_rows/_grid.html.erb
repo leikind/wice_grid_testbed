@@ -1,49 +1,23 @@
-<style>
+<%= grid(@tasks_grid) do |g|
 
-.wice-grid tr.even, .wice-grid tr.odd {
-  background-color: #fff;
-}
-
-.wice-grid tr.extra_row,
-.wice-grid tr.urgent{
-  background-color: rgb(255, 255, 204);
-}
-
-.wice-grid tr.extra_row td{
-  padding-top: 20px;
-}
-
-.wice-grid td {
-    border-bottom: none;
-}
-
-.wice-grid tr.last_row{
-  background-color: #lightgrey;
-}
-</style>
-
-<%= grid(@tasks_grid, :show_filters => :always) do |g|
-
-  g.before_row do |task| # this would add a row before every urgent task row
+  g.after_row do |task, number_of_columns|
     if task.priority == Priority.urgent
-
       content_tag(:tr,
         content_tag(:td,
-          button_to_function('Do not panic', '') + button_to_function('Panic', ''),
-        :colspan => 9),
-       :class => 'extra_row')
-                                                                                    #
+          content_tag(:button, "Panic! \"#{task.title}\" is urgent!", :class=>"btn btn-danger"),
+        :colspan => number_of_columns),
+       :class => 'extra-row')
     else
       nil
     end
   end
 
-  g.last_row do
+  g.last_row do |number_of_columns|
     content_tag(:tr,
       content_tag(:td,
-        'Last row',
-      :colspan => 9),
-     :class => 'last_row')
+        content_tag(:button, "Don't panic", :class=>"btn btn-info"),
+        :colspan => 9),
+     :class => 'last-row')
   end
 
   g.row_attributes do |task|
@@ -80,4 +54,5 @@
   g.column   do |task|
     link_to('Edit', edit_task_path(task))
   end
-end -%>
+end
+-%>

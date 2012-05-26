@@ -1,6 +1,6 @@
 require 'acceptance_helper'
 
-describe "custom_ordering WiceGrid", :type => :request, :js => true do
+describe "negation WiceGrid", :type => :request, :js => true do
 
   before :each do
     visit '/negation'
