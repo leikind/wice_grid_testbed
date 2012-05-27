@@ -57,7 +57,7 @@ class ApplicationController < ActionController::Base
 
 
           [:adding_rows, 'Adding custom rows'],
-          [:integration_with_forms, 'Integration with other forms'],
+
           [:all_records, 'Removing link "All Records"'],
 
           [:csv_export, 'CSV Export'],
@@ -68,6 +68,7 @@ class ApplicationController < ActionController::Base
 
       ['Integration with the application',
         [
+          [:integration_with_forms, 'Integration with other forms'],
           [:integration_with_application_view, 'View helpers to access records on the current page and all pages'],
           [:resultset_processings, 'Callback to process records of the current page'],
           [:integration_with_application, 'Callback to process records throughout all pages on demand'],

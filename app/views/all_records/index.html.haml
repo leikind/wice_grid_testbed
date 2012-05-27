@@ -1,0 +1,10 @@
+.well
+  %h2= current_page_title
+  %p
+    Use
+    %code :allow_showing_all_records => false
+    to remove "show all" link from the grid.
+
+.row-fluid
+  .span12
+    = render :partial => 'grid'
