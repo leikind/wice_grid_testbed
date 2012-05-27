@@ -20,6 +20,7 @@ Examples::Application.routes.draw do
     :all_records,
     :dates,
     :auto_reloads,
+    :auto_reloads2,
     :integration_with_forms,
     :erb_mode,
     :no_records,

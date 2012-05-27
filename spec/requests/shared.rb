@@ -1040,7 +1040,9 @@ shared_examples 'Title filtering' do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
+
+
+
 end
 

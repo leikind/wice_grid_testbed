@@ -1,0 +1,66 @@
+.well
+  %h2= current_page_title
+  %p
+    Use
+    %code :allow_showing_all_records => false
+    to remove "show all" link from the grid.
+
+
+= render :partial => 'grid'
+
+
+.row-fluid
+  .span2
+    ID:
+  .span10
+    = grid_filter @tasks_grid, :id
+
+.row-fluid
+  .span2
+    Title:
+  .span10
+    = grid_filter @tasks_grid, :title
+
+.row-fluid
+  .span2
+    Archived:
+  .span10
+    = grid_filter @tasks_grid, :archived
+
+
+.row-fluid
+  .span2
+    Status:
+  .span10
+    = grid_filter @tasks_grid, :status_id
+
+.row-fluid
+  .span2
+    Project:
+  .span10
+    = grid_filter @tasks_grid, :project_id
+
+
+.row-fluid
+  .span2
+    Due date:
+  .span10
+    = grid_filter @tasks_grid, :due_date
+
+
+.row-fluid
+  .span2
+    Added:
+  .span10
+    = grid_filter @tasks_grid, :created_at
+
+
+.row-fluid
+  .span12
+    .external-buttons
+      %button.btn.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
+
+.row-fluid
+  .span12
+
+    = grid(@tasks_grid)

@@ -1,4 +1,4 @@
-class AutoReloadsController < ApplicationController
+class AutoReloads2Controller < ApplicationController
   def index
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],

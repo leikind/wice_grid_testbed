@@ -1,11 +1,12 @@
-
-<%= grid(@tasks_grid, :show_filters => :always, :hide_submit_button => true) do |g|
+<%= grid(@tasks_grid,  :hide_submit_button => true) do |g|
 
   g.column :name => 'ID', :attribute => 'id', :auto_reload => true
 
   g.column :name => 'Title', :attribute => 'title', :auto_reload => true, :negation => true
 
-  g.column :name => 'Archived', :attribute => 'archived', :auto_reload => true
+  g.column :name => 'Archived', :attribute => 'archived', :auto_reload => true do |rec|
+    rec.archived? ? 'Yes' : 'No'
+  end
 
 
   g.column :name => 'Status', :attribute => 'status_id', :custom_filter => Status.to_dropdown, :auto_reload => true  do |task|
@@ -16,13 +17,13 @@
     task.project.name if task.project
   end
 
-  g.column :name => 'Due', :attribute => 'due_date', :auto_reload => true, :helper_style => :calendar do |task|
-    task.created_at.to_s(:short)
+  g.column :name => 'Due Date', :attribute => 'due_date', :auto_reload => true do |task|
+    task.due_date if task.due_date
   end
 
 
-  g.column :name => 'Added', :attribute => 'created_at', :auto_reload => true, :helper_style => :calendar do |task|
-    task.created_at.to_s(:short)
+  g.column :name => 'Added', :attribute => 'created_at', :auto_reload => true do |task|
+    task.created_at.to_s(:db)
   end
 
   g.column   do |task|

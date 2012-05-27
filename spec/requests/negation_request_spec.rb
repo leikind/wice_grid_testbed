@@ -7,7 +7,7 @@ describe "negation WiceGrid", :type => :request, :js => true do
   end
 
 
-  it "should filter by custom filters" do
+  it "should negate the semantics of the text  filter" do
 
     fill_in('grid_f_title_v', :with => 'sed')
     select 'no', :from => 'grid_f_archived'
