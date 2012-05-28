@@ -1,5 +1,25 @@
-%button.btn.btn-primary.wg-external-submit-button{'data-grid-name' => 'grid'} Submit
-%button.btn.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
 
-=render :partial => 'projects_grid'
-=render :partial => 'tasks_grid'
+.well
+  %h2= current_page_title
+  %p
+    To enable CSV export for a grid please do the following:
+    %ol
+      %li Make sure that the grid helper is in its own partial and there are no other elements in that partial including whitespaces
+      %li TO DO: add global setting for CSV separator
+    %code grid
+    helper with column blocks inside  for each column.
+    The value of each column block is the contents of a cell.
+  /%p
+  /  %a.btn.btn-primary.btn-large Learn more &raquo;
+
+%p
+  %button.btn.btn-primary.wg-external-csv-export-button{'data-grid-name' => 'g1'} Export To CSV
+
+
+.row-fluid
+  .span12
+    =render :partial => 'projects_grid'
+
+.row-fluid
+  .span12
+    =render :partial => 'tasks_grid'
