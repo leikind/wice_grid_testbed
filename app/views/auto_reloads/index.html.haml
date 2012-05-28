@@ -1,9 +1,13 @@
 .well
   %h2= current_page_title
   %p
-    Use
-    %code :allow_showing_all_records => false
-    to remove "show all" link from the grid.
+    It is possible to reload the grid on each filter action like changing the selected option in a dropdown filter or typing in a text filter.
+    One way to do it is to use
+    %code :auto_reload => true
+    for each column. Another way is changing
+    %code Wice::Defaults::AUTO_RELOAD
+    in the WiceGrid config file.
+
 
 .row-fluid
   .span12

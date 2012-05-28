@@ -63,7 +63,8 @@ class ApplicationController < ActionController::Base
           [:csv_export, 'CSV Export'],
           [:action_column, 'Action column'],
           [:auto_reloads, 'Auto reloading filters'],
-          [:auto_reloads2, 'Auto reloading filters (detached filters)']
+          [:auto_reloads2, 'Auto reloading filters (detached filters)'],
+          [:auto_reloads3, 'Auto reloading filters (two grids on page)']
         ]
       ],
 

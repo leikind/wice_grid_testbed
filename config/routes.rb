@@ -21,6 +21,7 @@ Examples::Application.routes.draw do
     :dates,
     :auto_reloads,
     :auto_reloads2,
+    :auto_reloads3,
     :integration_with_forms,
     :erb_mode,
     :no_records,
