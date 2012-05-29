@@ -10,6 +10,7 @@ class CsvExportController < ApplicationController
       },
       :name => 'g1',
       :enable_export_to_csv => true,
+      :csv_field_separator => ';',
       :csv_file_name => 'tasks'
     )
 

@@ -1,4 +1,4 @@
-<%= grid(@tasks_grid, :show_filters => :always, :upper_pagination_panel => true) do |g|
+<%= grid(@tasks_grid, :upper_pagination_panel => true) do |g|
 
   g.column :name => 'ID', :attribute => 'id', :filter => false
 
@@ -20,7 +20,7 @@
   end
 
   # html version
-  g.column :name => 'Project Name', :attribute => 'project_id', :custom_filter => Project.to_dropdown, :in_csv => false do |task|
+  g.column :name => 'Project Name', :attribute => 'project_id', :custom_filter => Project.to_dropdown,  :in_csv => false do |task|
     link_to_if(task.project, task.project.name, project_path(task.project) )
   end
   # plain text version
