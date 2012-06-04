@@ -57,7 +57,6 @@ class ApplicationController < ActionController::Base
           [:adding_rows, 'Adding custom rows'],
           [:all_records, 'Removing link "All Records"'],
           [:csv_export, 'CSV Export'],
-          [:action_column, 'Action column'],
           [:auto_reloads, 'Auto reloading filters'],
           [:auto_reloads2, 'Auto reloading filters (detached filters)'],
           [:auto_reloads3, 'Auto reloading filters (two grids on page)']
@@ -66,6 +65,7 @@ class ApplicationController < ActionController::Base
 
       ['Integration with the application',
         [
+          [:action_column, 'Action column'],
           [:integration_with_forms, 'Integration with other forms'],
           [:integration_with_application_view, 'View helpers to access records on the current page and all pages'],
           [:resultset_processings, 'Callback to process records of the current page'],

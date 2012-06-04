@@ -2,18 +2,11 @@ class ActionColumnController < ApplicationController
   def index
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],
-      :order => 'statuses.name',
-      :custom_order => {  'tasks.priority_id' => 'priorities.name'  }
+      :name => 'g'
     )
-  end
 
-  def process_issues
-
-    if params[:grid] && params[:grid][:selected]
-      # processing tasks
-      flash[:notice] = 'Selected tasks: ' + params[:grid][:selected].join(', ')
+    if params[:g] && params[:g][:selected]
+      @selected = params[:g][:selected]
     end
-
-    redirect_to action_column_index_path
   end
 end
