@@ -4,13 +4,8 @@ class IntegrationWithFormsController < ApplicationController
 
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],
-      :order => 'statuses.name',
-      :conditions => ['tasks.archived = ?', @archived],
-      :custom_order => {
-        'tasks.priority_id' => 'priorities.name',
-        'tasks.status_id' => 'statuses.position',
-        'tasks.project_id' => 'projects.name'
-      }
+      :conditions => {:archived => @archived},
+      :name => 'g'
     )
 
   end
