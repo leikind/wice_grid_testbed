@@ -1,18 +1,30 @@
 class ResultsetProcessingsController < ApplicationController
   def index
     @tasks_grid = initialize_grid(Task,
-      :include => :project,
-      :conditions => {:archived => false},
-      :order => 'id',
-      :per_page => 10
+      :include => [:priority, :status, :project, :assigned_users],
+      :order => 'statuses.name',
+      :name => 'g',
+      :per_page => 10,
+      # :with_paginated_resultset => :process_records,
+      :custom_order => {
+        'tasks.priority_id' => 'priorities.name',
+        'tasks.status_id' => 'statuses.position',
+        'tasks.project_id' => 'projects.name'
+      }
+
     )
 
-    @project_data = {} # {project_id => data}
+    @one_page_records = []
 
     @tasks_grid.with_paginated_resultset do |records|
-      project_ids = records.map(&:project_id).uniq
-      @project_data.merge! time_consuming_operation_better_done_in_one_shot(project_ids)
+      records.each{|rec| @one_page_records << rec}
     end
-
   end
+
+  protected
+
+  # def process_records(records)
+  #   records.each{|rec| @one_page_records << rec}
+  # end
+
 end
