@@ -52,6 +52,7 @@ Examples::Application.routes.draw do
     :saved_queries,
     :blockless_column_definition,
     :disable_all_filters,
+    :tasks,
     :when_filtered
 
   # The priority is based upon order of creation:
