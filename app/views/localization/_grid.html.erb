@@ -1,12 +1,9 @@
-<%= language_switcher %>
-
 <%= grid(@tasks_grid, :show_filters => :always) do |g|
 
   g.column :name => 'ID', :attribute => 'id', :filter => false
 
   g.column :name => 'Title', :attribute => 'title'
 
-  #                                                                                        returns an array of 2-element arrays
   g.column :name => 'Priority', :attribute => 'priority_id', :custom_filter => Priority.to_dropdown do |task|
     task.priority.name if task.priority
   end
@@ -35,3 +32,5 @@
   g.column   do |task|
     link_to('Edit', edit_task_path(task))
   end
+end
+%>
