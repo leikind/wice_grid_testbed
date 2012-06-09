@@ -69,7 +69,7 @@ class ApplicationController < ActionController::Base
           [:integration_with_forms, 'Integration with other forms'],
           [:integration_with_application_view, 'View helpers to access records on the current page and all pages'],
           [:resultset_processings, 'Callback to process records of the current page'],
-          [:integration_with_application, 'Callback to process records throughout all pages on demand'],
+          [:resultset_processings2, 'Callback to process records throughout all pages on demand'],
           [:localization, 'Localization'],
           [:custom_filter_params, 'Generating custom filter parameters'],
           [:saved_queries, 'Saved queries: simple example']

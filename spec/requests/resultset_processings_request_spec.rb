@@ -1,6 +1,6 @@
 require 'acceptance_helper'
 
-describe "with_paginated_resultset WiceGrid", :type => :request, :js => true do
+describe "with_resultset WiceGrid", :type => :request, :js => true do
 
   before :each do
     visit '/resultset_processings'

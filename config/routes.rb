@@ -12,7 +12,6 @@ Examples::Application.routes.draw do
   end
 
   resources :localization,
-    :integration_with_application,
     :integration_with_application_view,
     :detached_filters,
     :detached_filters_two_grids,
@@ -48,6 +47,7 @@ Examples::Application.routes.draw do
     :basics1,
     :negation,
     :resultset_processings,
+    :resultset_processings2,
     :custom_filter_params,
     :saved_queries,
     :blockless_column_definition,
