@@ -24,5 +24,7 @@ describe "localization WiceGrid", :type => :request, :js => true do
 
     click_on('is')
     page.should have_content('Sýna all')
+
+    click_on('en')
   end
 end

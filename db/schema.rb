@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120224195521) do
+ActiveRecord::Schema.define(:version => 20120610091944) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -124,5 +124,16 @@ ActiveRecord::Schema.define(:version => 20120224195521) do
   add_index "versions", ["name"], :name => "index_versions_on_name"
   add_index "versions", ["project_id"], :name => "index_versions_on_project_id"
   add_index "versions", ["status"], :name => "index_versions_on_status"
+
+  create_table "wice_grid_serialized_queries", :force => true do |t|
+    t.string   "name"
+    t.string   "grid_name"
+    t.text     "query"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "wice_grid_serialized_queries", ["grid_name", "id"], :name => "index_wice_grid_serialized_queries_on_grid_name_and_id"
+  add_index "wice_grid_serialized_queries", ["grid_name"], :name => "index_wice_grid_serialized_queries_on_grid_name"
 
 end

@@ -55,6 +55,8 @@ Examples::Application.routes.draw do
     :tasks,
     :when_filtered
 
+  Wice::define_routes(self, 'queries')
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
