@@ -148,7 +148,7 @@ CREATE TABLE `schema_migrations` (
 
 LOCK TABLES `schema_migrations` WRITE;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('20120224193505'),('20120224193517'),('20120224193522'),('20120224193529'),('20120224193537'),('20120224193543'),('20120224193550'),('20120224193610'),('20120224195351'),('20120224195521');
+INSERT INTO `schema_migrations` VALUES ('20120224193505'),('20120224193517'),('20120224193522'),('20120224193529'),('20120224193537'),('20120224193543'),('20120224193550'),('20120224193610'),('20120224195351'),('20120224195521'),('20120610091944');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -337,6 +337,36 @@ LOCK TABLES `versions` WRITE;
 INSERT INTO `versions` VALUES (12,'1.0',4,'development','2012-02-26 22:11:12','2012-02-26 22:11:12'),(13,'1.1',4,'development','2012-02-26 22:11:12','2012-02-26 22:11:12'),(14,'1.2',4,'production','2012-02-26 22:11:12','2012-02-26 22:11:12'),(15,'2.0',4,'testing','2012-02-26 22:11:12','2012-02-26 22:11:12'),(16,'3.0',4,'production','2012-02-26 22:11:12','2012-02-26 22:11:12'),(17,'1.0',5,'development','2012-02-26 22:11:12','2012-02-26 22:11:12'),(18,'88.1',5,'production','2012-02-26 22:11:12','2012-02-26 22:11:12'),(19,'99.0',5,'production','2012-02-26 22:11:12','2012-02-26 22:11:12'),(20,'6.0',6,'testing','2012-02-26 22:11:12','2012-02-26 22:11:12'),(21,'7.1',6,'production','2012-02-26 22:11:12','2012-02-26 22:11:12'),(22,'8.0',6,'testing','2012-02-26 22:11:12','2012-02-26 22:11:12');
 /*!40000 ALTER TABLE `versions` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `wice_grid_serialized_queries`
+--
+
+DROP TABLE IF EXISTS `wice_grid_serialized_queries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wice_grid_serialized_queries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `grid_name` varchar(255) DEFAULT NULL,
+  `query` text,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_wice_grid_serialized_queries_on_grid_name` (`grid_name`),
+  KEY `index_wice_grid_serialized_queries_on_grid_name_and_id` (`grid_name`,`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wice_grid_serialized_queries`
+--
+
+LOCK TABLES `wice_grid_serialized_queries` WRITE;
+/*!40000 ALTER TABLE `wice_grid_serialized_queries` DISABLE KEYS */;
+INSERT INTO `wice_grid_serialized_queries` VALUES (50,'1','grid','--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\norder: statuses.name\norder_direction: asc\n','2012-06-19 22:24:03','2012-06-19 22:24:03'),(59,'dffg','grid','--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\norder: statuses.name\norder_direction: asc\n','2012-06-19 22:25:28','2012-06-19 22:25:28');
+/*!40000 ALTER TABLE `wice_grid_serialized_queries` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -347,4 +377,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-03-04 23:53:16
+-- Dump completed on 2012-07-09 23:38:46
