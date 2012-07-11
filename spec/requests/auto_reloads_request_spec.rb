@@ -38,6 +38,9 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     # find(:css, '#grid_submit_grid_icon').click
 
+    # TO DO: find out why this randomly fails without sleep 1
+    sleep 1
+
     within '.pagination_status' do
       page.should have_content('1-20 / 29')
     end
