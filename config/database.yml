@@ -1,7 +1,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: examples_development
+  database: wice_grid_testbed_development
   pool: 5
   username: root
   password:
@@ -10,7 +10,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: examples_test
+  database: wice_grid_testbed_test
   pool: 5
   username: root
   password:
@@ -19,7 +19,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: examples_development
+  database: wice_grid_testbed_development
   pool: 5
   username: root
   password:
