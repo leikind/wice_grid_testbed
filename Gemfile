@@ -7,6 +7,8 @@ gem "faker"
 
 gem 'haml'
 
+gem 'thin'
+
 gem 'will_paginate', '3.0.3'
 gem "wice_grid",  :path => 'vendor/wice_grid'
 
@@ -33,7 +35,6 @@ end
 
 group :development do
   gem 'mysql2'
-  gem 'thin'
 end
 
 group :test, :development do
