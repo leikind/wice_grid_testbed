@@ -2,16 +2,18 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+gem "faker"
 
-gem 'mysql2'
 gem 'haml'
 
 gem 'will_paginate', '3.0.3'
 gem "wice_grid",  :path => 'vendor/wice_grid'
 
 gem 'jquery-ui-themes'
+
+gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 2.0.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,9 +32,8 @@ group :production do
 end
 
 group :development do
+  gem 'mysql2'
   gem 'thin'
-  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
-  gem "faker"
 end
 
 group :test, :development do
@@ -44,8 +45,6 @@ group :test do
   gem 'shoulda-matchers'
 end
 
-gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 2.0.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
