@@ -1,4 +1,4 @@
-class CreateWiceGridSerializedQueries < ActiveRecord::Migration
+class CreateWiceGridSerializedQueries < ::ActiveRecord::Migration
   def change
     create_table :wice_grid_serialized_queries do |t|
       t.column :name,      :string
@@ -11,4 +11,3 @@ class CreateWiceGridSerializedQueries < ActiveRecord::Migration
     add_index :wice_grid_serialized_queries, [:grid_name, :id]
   end
 end
-
