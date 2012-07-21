@@ -1,11 +1,15 @@
 .well
   %h2= current_page_title
   %p
-    You can use
-    %code submit_grid_javascript(grid)
-    and
-    %code reset_grid_javascript(grid)
-    to replace the default submit/replace icons of the grid.
+
+    To replace the default Submit icons of the grid, add class
+    %code wg-external-submit-button
+    to any clickable element on page and set its attribute
+    %code data-grid-name
+    to the name of the grid.
+    Do the same for the Reset button with class
+    %code wg-external-reset-button.
+
   %p
     %code grid
     parameters
