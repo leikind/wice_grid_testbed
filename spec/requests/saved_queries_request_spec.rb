@@ -11,7 +11,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     while delete_link = context.find(:css, '.wice-grid-delete-query')
       delete_link.click
     end
-  rescue Capybara::ElementNotFound
+  rescue Capybara::ElementNotFound, Selenium::WebDriver::Error::StaleElementReferenceError
     true
   end
 
