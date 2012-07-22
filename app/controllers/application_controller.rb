@@ -2,8 +2,25 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :init_example_map
+  before_filter :init_current_example_map
+
 
   protected
+
+
+  def init_current_example_map
+
+    @controller_file_to_show = 'app/controllers/' + controller_name + '_controller.rb'
+    @controller_file = File.join(Rails.root, @controller_file_to_show)
+
+    @view_files_dir = Hash.new
+    view_files_dir = File.join(Rails.root, 'app/views/' + controller_name)
+    Dir.glob("#{view_files_dir}/*").each do |fullpath|
+      fullpath =~ /^.+(app\/views\/.+)$/
+      @view_files_dir[$1] = fullpath
+    end
+  end
+
 
   def init_example_map
     @example_map = [

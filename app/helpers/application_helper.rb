@@ -1,5 +1,48 @@
 module ApplicationHelper
 
+  @@code = Hash.new
+
+  def show_code
+    n = 0
+    content_tag(:div,
+      code_chunks.map do |filename_for_view, code|
+        n += 1
+        content_tag(:div,
+          content_tag(:div,
+            link_to(filename_for_view, "#collapse#{n}", 'data-toggle'=>"collapse", 'data-parent'=>"#code-accordion", :class => 'accordion-toggle'),
+            :class => 'accordion-heading'
+          ) +
+          content_tag(:div,
+            content_tag(:div, code, :class => 'accordion-inner'),
+            :class => 'accordion-body collapse',
+            :style=>"height: 0px;",
+            :id => "collapse#{n}"
+          ),
+          :class => 'accordion-group'
+        )
+      end.join.html_safe,
+      :id=>"code-accordion",
+      :class=>"accordion"
+    )
+  end
+
+  def code_chunks
+    Array.new.tap do |res|
+      res << code_for(@controller_file, @controller_file_to_show, :ruby)
+
+      @view_files_dir.each do|filename_for_view, filename|
+        filetype = filename_for_view =~ /\.erb/ ? :rhtml : :haml
+        res << code_for(filename, filename_for_view, filetype)
+      end
+    end
+  end
+
+  def code_for(filename, filename_for_view, filetype = :ruby)
+    code = File.read(filename)
+    @@code[filetype] = CodeRay.scan(code, filetype).div() unless @@code[filetype]
+    return filename_for_view, @@code[filetype].html_safe_if_necessary
+  end
+
   def each_example
     @example_map.each do |section|
       section[1].each do |controller, name|

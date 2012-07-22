@@ -2,7 +2,7 @@ jQuery ->
   $(".alert-message").alert()
   $(".tabs").button()
   $(".carousel").carousel()
-  $(".collapse").collapse()
+  # $(".collapse").collapse() # without this collapsing works, but all elements are hidden on load
   $(".dropdown-toggle").dropdown()
   $(".modal").modal()
   $("a[rel=popover]").popover()

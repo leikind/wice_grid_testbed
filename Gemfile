@@ -4,7 +4,7 @@ gem 'rails', '3.2.6'
 
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 gem "faker"
-
+gem "coderay"
 gem 'haml'
 
 gem 'thin'
