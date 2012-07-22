@@ -24,7 +24,7 @@ header h1{font-size: 48px;}
 input.range-start, input.range-end{width: 100px;}
 
 header h1 {float: left;}
-header .example-navigator {float: right;}
+header .example-navigator {float: right; margin-right: 120px}
 li.next {margin-left: 10px;}
 .clear {clear:both;}
 
@@ -42,3 +42,4 @@ li.next {margin-left: 10px;}
   background-color: #f9f9e9;
 }
 
+footer .sources {float: right;}
