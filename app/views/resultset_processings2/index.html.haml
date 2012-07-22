@@ -37,13 +37,13 @@
   = hidden_field :process_selected_tasks, 1
   %button#process.btn.btn-primary{:type => 'submit'} Show IDs of records throughout all pages
 
+.example
+  = render :partial => 'grid'
 
-= render :partial => 'grid'
-
--unless controller.selected_tasks.blank?
-  .row-fluid
-    .span12
-      .well
-        = controller.selected_tasks.size
-        records on all pages:
-        = controller.selected_tasks.map(&:id).to_sentence
+  -unless controller.selected_tasks.blank?
+    .row-fluid
+      .span12
+        .well
+          = controller.selected_tasks.size
+          records on all pages:
+          = controller.selected_tasks.map(&:id).to_sentence
