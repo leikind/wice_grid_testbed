@@ -6,6 +6,13 @@ GIT
       rake
 
 PATH
+  remote: vendor/kaminari
+  specs:
+    kaminari (0.13.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+
+PATH
   remote: vendor/wice_grid
   specs:
     wice_grid (3.2.0.pre1)
@@ -181,6 +188,7 @@ DEPENDENCIES
   haml
   jquery-rails
   jquery-ui-themes
+  kaminari!
   mysql2
   pg
   rails (= 3.2.6)

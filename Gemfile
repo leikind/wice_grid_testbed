@@ -12,6 +12,8 @@ gem 'thin'
 gem 'will_paginate', '3.0.3'
 gem "wice_grid",  :path => 'vendor/wice_grid'
 
+gem "kaminari",  :path => 'vendor/kaminari'
+
 gem 'jquery-ui-themes'
 
 gem 'jquery-rails'
