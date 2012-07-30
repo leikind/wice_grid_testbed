@@ -1,4 +1,4 @@
-<%= grid(grid,  :hide_submit_button => true) do |g|
+<%= define_grid(grid,  :hide_submit_button => true) do |g|
 
 
   g.column :name => 'Title', :attribute => 'title', :auto_reload => true, :negation => true, :detach_with_id => :title

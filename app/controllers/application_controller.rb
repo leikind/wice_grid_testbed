@@ -75,7 +75,7 @@ class ApplicationController < ActionController::Base
           [:all_records, 'Removing link "All Records"'],
           [:csv_export, 'CSV Export'],
           [:auto_reloads, 'Auto reloading filters'],
-          [:auto_reloads2, 'Auto reloading filters (detached filters)'],
+          [:auto_reloads2, 'Auto reloading filters (external filters)'],
           [:auto_reloads3, 'Auto reloading filters (two grids on page)']
         ]
       ],
