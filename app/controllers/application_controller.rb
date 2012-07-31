@@ -73,7 +73,8 @@ class ApplicationController < ActionController::Base
           [:negation, 'Text filters with negation'],
           [:adding_rows, 'Adding custom rows'],
           [:all_records, 'Removing link "All Records"'],
-          [:csv_export, 'CSV Export'],
+          [:csv_export, 'CSV export'],
+          [:csv_and_detached_filters, 'CSV export and external filters'],
           [:auto_reloads, 'Auto reloading filters'],
           [:auto_reloads2, 'Auto reloading filters (external filters)'],
           [:auto_reloads3, 'Auto reloading filters (two grids on page)']

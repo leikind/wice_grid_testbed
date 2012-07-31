@@ -14,6 +14,7 @@ Examples::Application.routes.draw do
   resources :localization,
     :integration_with_application_view,
     :detached_filters,
+    :csv_and_detached_filters,
     :detached_filters_two_grids,
     :csv_export,
     :csv_export2K,
