@@ -34,3 +34,4 @@ RSpec.configure do |config|
 end
 
 require 'requests/shared.rb'
+require 'requests/shared_detached_filters.rb'
