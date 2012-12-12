@@ -1,6 +1,6 @@
 <%= define_grid(@tasks_grid,  hide_submit_button: true) do |g|
 
-  g.column name:  'ID', attribute: 'id', auto_reload:  true, detach_with_id: :id
+  g.column name:  'ID', attribute: 'id', auto_reload:  true, detach_with_id: :id, filter_type: :range
 
   g.column name:  'Title', attribute: 'title', auto_reload:  true, negation: true, detach_with_id: :title
 

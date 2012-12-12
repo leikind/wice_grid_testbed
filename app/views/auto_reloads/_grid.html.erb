@@ -1,6 +1,6 @@
 <%= grid(@tasks_grid,  hide_submit_button: true) do |g|
 
-  g.column name:  'ID', attribute: 'id', auto_reload:  true
+  g.column name:  'ID', attribute: 'id', auto_reload:  true , filter_type: :range
 
   g.column name:  'Title', attribute: 'title', auto_reload:  true, negation: true
 
