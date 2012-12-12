@@ -5,8 +5,8 @@
 
 = show_code
 
-= render :partial => 'grid', :locals =>{:grid => @tasks_grid}
-= render :partial => 'grid', :locals =>{:grid => @tasks_grid2}
+= render partial:  'grid', locals:{grid: @tasks_grid}
+= render partial:  'grid', locals:{grid: @tasks_grid2}
 
 
 .row-fluid

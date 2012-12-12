@@ -3,7 +3,7 @@
   %p
     It is possible to reload the grid on each filter action like changing the selected option in a dropdown filter or typing in a text filter.
     One way to do it is to use
-    %code :auto_reload => true
+    %code auto_reload:  true
     for each column. Another way is changing
     %code Wice::Defaults::AUTO_RELOAD
     in the WiceGrid config file.
@@ -12,4 +12,4 @@
 
 .row-fluid
   .span12
-    = render :partial => 'grid'
+    = render partial:  'grid'

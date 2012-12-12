@@ -12,9 +12,9 @@
   - current = session[:lang].to_s
   - ['en', 'nl', 'fr', 'is'].each do |lang|
     - klass = current == lang ? 'active' : nil
-    %li{:class => klass}
-      %a{:href=>url_for(:lang => lang)}= lang
+    %li{class: klass}
+      %a{href:url_for(lang: lang)}= lang
 
-= render :partial => 'grid'
+= render partial:  'grid'
 
 

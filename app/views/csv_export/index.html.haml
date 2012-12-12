@@ -9,7 +9,7 @@
       %li Make sure that the grid helper is in its own partial and there are no other elements in that partial including whitespaces
       %li
         Enable CSV export by adding
-        %code :enable_export_to_csv => true
+        %code enable_export_to_csv:  true
         to
         %code initialize_grid
       %li
@@ -19,7 +19,7 @@
         %code initialize_grid
       %li
         Change the CSV field separator by adding
-        %code :csv_field_separator => 'your-separator'
+        %code csv_field_separator:  'your-separator'
         to
         %code initialize_grid
         \.
@@ -53,9 +53,9 @@
 
       %li
         If a column definition contains markup, first disable its export to CSV adding
-        %code :in_csv => false
+        %code in_csv: false
         to the column definition, and then duplicate the column definition without the markup in the block while adding
-        %code :in_html => false
+        %code in_html: false
         to the column definition. Any filter related parameters like
         %code :attribute
         ,
@@ -70,7 +70,7 @@
         and set its attribute
         %code data-grid-name
         to the name of the grid. If you need to disable the default export icon in the grid, add
-        %code :hide_csv_button => true
+        %code hide_csv_button: true
         to the
         %code grid
         helper.
@@ -83,8 +83,8 @@
 
 .row-fluid
   .span12
-    =render :partial => 'projects_grid'
+    =render partial:  'projects_grid'
 
 .row-fluid
   .span12
-    =render :partial => 'tasks_grid'
+    =render partial:  'tasks_grid'

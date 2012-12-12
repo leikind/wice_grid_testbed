@@ -7,7 +7,7 @@
     %code :custom_filter
     can take arguments in the form of a hash, an array of two element arrays, or just an array.
   %p
-    %code :custom_filter => :auto
+    %code custom_filter: :auto
     will instruct WiceGrid to figure out the list of possible values by running a
     %code SELECT DISTINCT `column` FROM `table`
     query on the table.
@@ -16,15 +16,15 @@
 
 .row-fluid
   .span6
-    = render :partial => 'g1'
+    = render partial:  'g1'
 
   .span6
-    = render :partial => 'g2'
+    = render partial:  'g2'
 
 
 .row-fluid
   .span6
-    = render :partial => 'g3'
+    = render partial:  'g3'
 
   .span6
-    = render :partial => 'g4'
+    = render partial:  'g4'

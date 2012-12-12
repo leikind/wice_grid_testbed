@@ -2,7 +2,7 @@
 %html
   %head
     %title WiceGrid Examples
-    = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
@@ -17,10 +17,10 @@
             - previous_example_controller, next_example_controller = previous_next_example_urls
             - if previous_example_controller
               %li.previous
-                =link_to "← Previous", :controller => previous_example_controller, :action => :index
+                =link_to "← Previous", controller: previous_example_controller, action: :index
             -if next_example_controller
               %li.next
-                =link_to "Next →", :controller => next_example_controller, :action => :index
+                =link_to "Next →", controller: next_example_controller, action: :index
         .clear
 
 
@@ -41,8 +41,8 @@
                     - @example_name = name
                   - else
                     - active_klass = nil
-                  %li{:class => active_klass}
-                    = link_to name, :controller => example_controller, :action => :index
+                  %li{class: active_klass}
+                    = link_to name, controller: example_controller, action: :index
         .span9
           =yield
 
@@ -53,10 +53,10 @@
       %footer
         &copy; Yury Leikind 2012
         %span.sources
-          %a{:href=>"https://github.com/leikind/wice_grid"} Sources
+          %a{href: "https://github.com/leikind/wice_grid"} Sources
 
-%a{:href=>"https://github.com/leikind/wice_grid"}
-  %img{:style=>"position: absolute; top: 0; right: 0; border: 0;;", :src=>"https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png", :alt=>"Fork me on GitHub"}
+%a{href: "https://github.com/leikind/wice_grid"}
+  %img{ style: "position: absolute; top: 0; right: 0; border: 0;;", src: "https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png", alt: "Fork me on GitHub"}
 
 
 

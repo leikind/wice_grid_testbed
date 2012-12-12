@@ -1,7 +1,7 @@
 .well
   %h2= current_page_title
   %p
-    %code :negation => true
+    %code negation: true
     adds a checkox to a text filter. The checked checkbox is the logical
     %i NOT
     \- it changes the semantics of a text filter to
@@ -12,4 +12,4 @@
 
 .row-fluid
   .span12
-    = render :partial => 'grid'
+    = render partial:  'grid'

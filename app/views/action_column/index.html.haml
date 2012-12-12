@@ -13,21 +13,21 @@
     , but you can change
     %code selected
     to something else with parameter
-    %code :param_name => 'my-parameter-name'
+    %code param_name:  'my-parameter-name'
   %p
     The value of the checkox is the id by default, but you can change it with parameter
-    %code :object_property => 'some_object_property'
+    %code object_property:  'some_object_property'
     \.
   %p
-    %code :select_all_buttons => false
+    %code select_all_buttons:  false
     hides the "(de)select all" icons, and
-    %code :html => {:class => 'my_class'}
+    %code html: {class: 'my_class'}
     changes the css class of the checkboxes.
 
 = show_code
 
 = dump_filter_parameters_as_hidden_fields(@tasks_grid)
-= form_for '#', :method => :get do
+= form_for '#', method:  :get do
 
   - if @selected
     .well
@@ -39,7 +39,7 @@
       %p
         %button.btn{'type' => 'submit'} Process tasks
 
-      = render :partial => 'grid'
+      = render partial:  'grid'
 
       %p
         %button.btn{'type' => 'submit'} Process tasks

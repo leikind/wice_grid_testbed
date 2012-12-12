@@ -11,7 +11,7 @@
       %code grid
       \. Everything should be done the same way as with
       %code grid, but every column which will have an external filter, add
-      %code :detach_with_id => :some_filter_name
+      %code detach_with_id: :some_filter_name
       in the
       %code column
       definition.
@@ -29,7 +29,7 @@
 
 = show_code
 
-= render :partial => 'grid'
+= render partial:  'grid'
 
 
 .row-fluid

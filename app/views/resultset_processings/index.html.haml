@@ -2,10 +2,10 @@
   %h2= current_page_title
   %p
     In addition to
-    %a{:href => integration_with_application_view_index_path}
+    %a{href:  integration_with_application_view_index_path}
       %code current_page_records
     and
-    %a{:href=> integration_with_application_view_index_path}
+    %a{href: integration_with_application_view_index_path}
       %code current_page_records
     helpers
     a callback can be setup in the controller which is executed when a grid page is rendered.
@@ -34,13 +34,13 @@
     :plain
       <pre>
       @grid = initialize_grid(Task,
-        :with_paginated_resultset => :process_records
+        with_paginated_resultset: :process_records
       )
       </pre>
 
 = show_code
 
-= render :partial => 'grid'
+= render partial:  'grid'
 
 .row-fluid
   .span12

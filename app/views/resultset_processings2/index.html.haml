@@ -2,7 +2,7 @@
   %h2= current_page_title
   %p
     In addition to the
-    %a{:href => resultset_processings_path}
+    %a{href:  resultset_processings_path}
       %code with_paginated_resultset
       callback
     there is callback
@@ -32,13 +32,13 @@
 
 = show_code
 
-= form_tag(resultset_processings2_index_path, :method => :get) do
+= form_tag(resultset_processings2_index_path, method:  :get) do
   = dump_filter_parameters_as_hidden_fields(@tasks_grid)
   = hidden_field :process_selected_tasks, 1
-  %button#process.btn.btn-primary{:type => 'submit'} Show IDs of records throughout all pages
+  %button#process.btn.btn-primary{type:  'submit'} Show IDs of records throughout all pages
 
 .example
-  = render :partial => 'grid'
+  = render partial:  'grid'
 
   -unless controller.selected_tasks.blank?
     .row-fluid

@@ -13,9 +13,9 @@
   %p
     %code grid
     parameters
-    %code hide_submit_button => true
+    %code hide_submit_button: true
     and
-    %code :hide_reset_button => true
+    %code hide_reset_button: true
     hide the default icons.
 
 = show_code
@@ -27,4 +27,4 @@
       %button.btn.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
 
 
-    = render :partial => 'grid'
+    = render partial:  'grid'
