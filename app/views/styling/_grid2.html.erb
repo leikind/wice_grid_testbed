@@ -14,8 +14,14 @@
     end
   end
 
-  g.column name:  'Project', attribute: 'name', model: 'Project' do |version|
-    version.project.name if version.project
+  g.column name:  'Project', attribute: 'name', model: 'Project', class: 'special-column' do |version|
+    if version.project
+      if version.project.name == 'Divine Firmware'
+        [version.project.name , {style: 'background-color: rgb(255, 105, 104);', class: 'some-special-class'}]
+      else
+        version.project.name
+      end
+    end
   end
 
   g.column name:  'Version name', attribute: 'name'
