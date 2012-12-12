@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.9'
 
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 gem "faker"
@@ -11,8 +11,8 @@ gem 'thin'
 
 gem "heroku"
 
-# gem "wice_grid",  :path => 'vendor/wice_grid'
-gem "wice_grid",  '3.2.0'
+gem "wice_grid",  :path => 'vendor/wice_grid'
+# gem "wice_grid",  '3.2.0'
 
 gem 'jquery-ui-themes'
 
