@@ -24,7 +24,6 @@ describe "blockless_column_definition WiceGrid", :type => :request, :js => true 
   include_examples 'Due Date datepicker filtering'
   include_examples 'Description filtering'
   include_examples 'ID filtering'
-  include_examples 'ID two limits filtering'
   include_examples 'Description and Title filtering'
 
 end

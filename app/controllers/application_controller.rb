@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
           [:basics3, 'Associating columns with database fields'],
 
           [:blockless_column_definition, 'Dropping the block in #column'],
+          [:numeric_filters, 'Numeric filters'],
           [:many_grids_on_page, 'More than 1 grid on a page'],
           [:basics4, 'Disabling filters'],
           [:disable_all_filters, 'Disabling all filters'],

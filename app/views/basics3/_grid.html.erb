@@ -1,7 +1,7 @@
 <%# show_filters: :when_filtered %>
 <%= grid(@tasks_grid) do |g|
 
-  g.column name:  'ID', attribute: 'id', filter_type: :range do |task|
+  g.column name:  'ID', attribute: 'id' do |task|
     task.id
   end
 

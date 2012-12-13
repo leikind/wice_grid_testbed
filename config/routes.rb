@@ -20,6 +20,7 @@ Examples::Application.routes.draw do
     :csv_export2K,
     :all_records,
     :dates,
+    :numeric_filters,
     :auto_reloads,
     :auto_reloads2,
     :auto_reloads3,

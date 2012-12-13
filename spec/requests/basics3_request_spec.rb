@@ -28,7 +28,6 @@ describe "basisc3 WiceGrid", :type => :request, :js => true do
 
   include_examples 'Description filtering'
   include_examples 'ID filtering'
-  include_examples 'ID two limits filtering'
   include_examples 'Description and Title filtering'
 
 end

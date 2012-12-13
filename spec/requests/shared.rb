@@ -772,7 +772,27 @@ shared_examples 'Description filtering' do
   end
 end
 
+
 shared_examples 'ID filtering' do
+  it "should filter by ID, one limit" do
+    fill_in('grid_f_id_eq', :with => 550)
+
+
+    find(:css, '#grid_submit_grid_icon').click
+
+    within '.pagination_status' do
+      page.should have_content('1-1 / 1')
+    end
+
+    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
+      page.should have_content('550')
+    end
+  end
+end
+
+
+
+shared_examples 'ID filtering, range' do
   it "should filter by ID, one limit" do
     fill_in('grid_f_id_fr', :with => 550)
 
