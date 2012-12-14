@@ -11,6 +11,13 @@ Examples::Application.routes.draw do
     end
   end
 
+  resources :hiding_checkboxes_in_action_column do
+    collection do
+      post :process_issues
+    end
+  end
+
+
   resources :localization,
     :integration_with_application_view,
     :detached_filters,

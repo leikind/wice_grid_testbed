@@ -85,6 +85,7 @@ class ApplicationController < ActionController::Base
       ['Integration with the application',
         [
           [:action_column, 'Action column'],
+          [:hiding_checkboxes_in_action_column, 'Hiding certain checkboxes in the action column'],
           [:integration_with_forms, 'Integration with other forms'],
           [:integration_with_application_view, 'View helpers to access records on the current page and all pages'],
           [:resultset_processings, 'Callback to process records of the current page'],
