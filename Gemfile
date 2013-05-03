@@ -11,8 +11,8 @@ gem 'thin'
 
 gem "heroku"
 
-# gem "wice_grid",  :path => 'vendor/wice_grid'
-gem "wice_grid",  '3.2.1.pre3'
+gem "wice_grid",  :path => 'vendor/wice_grid'
+# gem "wice_grid",  '3.2.1.pre3'
 
 gem 'jquery-ui-themes'
 
