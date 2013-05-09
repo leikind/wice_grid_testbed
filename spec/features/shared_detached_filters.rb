@@ -1,14 +1,5 @@
-require 'acceptance_helper'
 
-describe "buttons WiceGrid", :type => :request, :js => true do
-
-  before :each do
-    visit '/buttons'
-  end
-
-
-
-
+shared_examples "detached_filters" do
   it "should filter by Archived" do
     select 'yes', :from => 'grid_f_archived'
     click_button('Submit')
@@ -17,7 +8,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('1-4 / 4')
     end
 
-    within 'td.active-filter' do
+    within first(:css, 'td.active-filter') do
       page.should have_content('Yes')
     end
 
@@ -28,7 +19,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('1-20 / 46')
     end
 
-    within 'td.active-filter' do
+    within first(:css, 'td.active-filter') do
       page.should have_content('No')
     end
 
@@ -41,7 +32,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('21-40 / 46')
     end
 
-    within 'td.active-filter' do
+    within first(:css, 'td.active-filter') do
       page.should have_content('No')
     end
 
@@ -188,7 +179,5 @@ describe "buttons WiceGrid", :type => :request, :js => true do
 
 
   end
-
-
 
 end

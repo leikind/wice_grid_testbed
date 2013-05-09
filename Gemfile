@@ -40,8 +40,10 @@ group :development do
 end
 
 group :test, :development do
-  gem "rspec-rails"#, "2.11.0"
-  gem 'capybara', '1.1.2'
+  gem "rspec-rails", "~> 2.13.0"
+  # gem 'capybara' , '1.1.2'
+  gem 'capybara' , '~> 2.1.0'
+  gem 'selenium-webdriver'
 end
 
 group :test do

@@ -977,7 +977,7 @@ shared_examples 'Archived filtering' do
       page.should have_content('1-4 / 4')
     end
 
-    within 'td.active-filter' do
+    within first(:css, 'td.active-filter') do
       page.should have_content('Yes')
     end
 
@@ -988,7 +988,7 @@ shared_examples 'Archived filtering' do
       page.should have_content('1-20 / 46')
     end
 
-    within 'td.active-filter' do
+    within first(:css, 'td.active-filter') do
       page.should have_content('No')
     end
 
@@ -1001,7 +1001,7 @@ shared_examples 'Archived filtering' do
       page.should have_content('21-40 / 46')
     end
 
-    within 'td.active-filter' do
+    within(first(:css, 'td.active-filter')) do
       page.should have_content('No')
     end
 

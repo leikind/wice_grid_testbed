@@ -128,7 +128,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('sed impedit iste')
     end
 
-    within 'div#grid2.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
+    within first(:css, 'div#grid2.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter') do
       page.should have_content('sequi')
     end
 

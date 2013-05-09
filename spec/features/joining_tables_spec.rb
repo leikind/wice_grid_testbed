@@ -25,11 +25,11 @@ describe "joining_tables WiceGrid", :type => :request, :js => true do
       page.should have_content('1-1 / 1')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
+    within first(:css, 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter') do
       page.should have_content('Normal')
     end
 
-    within 'div.wice-grid-container table.wice-grid tbody tr:first-child td' do
+    within first(:css, 'div.wice-grid-container table.wice-grid tbody tr:first-child td') do
       page.should have_content('508')
     end
 

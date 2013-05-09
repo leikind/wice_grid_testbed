@@ -82,7 +82,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
         page.should have_content('1-2 / 2')
       end
 
-      within 'td.active-filter' do
+      within first(:css, 'td.active-filter') do
         page.should have_content('Ultimate Website')
       end
     }

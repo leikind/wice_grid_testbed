@@ -1,6 +1,6 @@
 require 'acceptance_helper'
 
-describe "basisc1 WiceGrid", :type => :request, :js => true do
+describe "basisc1 WiceGrid",  :js => true do
 
   before :each do
     visit '/basics1'

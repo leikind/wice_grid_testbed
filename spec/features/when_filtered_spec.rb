@@ -1,6 +1,6 @@
 require 'acceptance_helper'
 
-describe "when_filtered WiceGrid", :type => :request, :js => true do
+describe "when_filtered WiceGrid",  :js => true do
 
   before :each do
     visit '/when_filtered'
@@ -10,7 +10,7 @@ describe "when_filtered WiceGrid", :type => :request, :js => true do
   it "the filter panel is hidden by default" do
     lambda{
       fill_in('grid_f_description', :with => 've')
-    }.should raise_error(Selenium::WebDriver::Error::ElementNotDisplayedError)
+    }.should raise_error(Capybara::ElementNotFound)
   end
 
   it "should filter by Description" do
@@ -116,7 +116,7 @@ describe "when_filtered WiceGrid", :type => :request, :js => true do
       page.should have_content('1-4 / 4')
     end
 
-    within 'td.active-filter' do
+    within first(:css, 'td.active-filter') do
       page.should have_content('Yes')
     end
 
@@ -127,7 +127,7 @@ describe "when_filtered WiceGrid", :type => :request, :js => true do
       page.should have_content('1-20 / 46')
     end
 
-    within 'td.active-filter' do
+    within first(:css, 'td.active-filter') do
       page.should have_content('No')
     end
 
@@ -140,7 +140,7 @@ describe "when_filtered WiceGrid", :type => :request, :js => true do
       page.should have_content('21-40 / 46')
     end
 
-    within 'td.active-filter' do
+    within first(:css, 'td.active-filter') do
       page.should have_content('No')
     end
 
