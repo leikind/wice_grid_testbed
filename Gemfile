@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.13'
 
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 gem "faker"
@@ -40,8 +40,8 @@ group :development do
 end
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.6"
-  gem 'capybara'
+  gem "rspec-rails", "2.11.0"
+  gem 'capybara', '1.1.2'
 end
 
 group :test do
