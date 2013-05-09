@@ -40,7 +40,7 @@ group :development do
 end
 
 group :test, :development do
-  gem "rspec-rails", "2.11.0"
+  gem "rspec-rails"#, "2.11.0"
   gem 'capybara', '1.1.2'
 end
 
