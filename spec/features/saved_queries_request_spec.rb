@@ -47,6 +47,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     fill_in('grid_saved_query_name', :with => 'test query 1')
     click_on 'Save the state of filters'
 
+    sleep 1
     page.should have_content('Query saved.')
     page.should have_content('test query 1')
 
