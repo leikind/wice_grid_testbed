@@ -21,9 +21,9 @@ class ResultsetProcessings2Controller < ApplicationController
 
   protected
 
-  def process_records(wrapper_lambda)
+  def process_records(active_relation)
     if params[:process_selected_tasks]
-      @selected_tasks = wrapper_lambda.call
+      @selected_tasks = active_relation.find(:all)
     end
   end
 

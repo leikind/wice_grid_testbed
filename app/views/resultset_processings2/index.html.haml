@@ -16,8 +16,7 @@
 
   %p
     The difference is that the value submitted to the method or the callback is not a list of
-    all records but a Proc object which needs to be called to obtain all records.
-    This is done in order to avoid an additional SQL query each time the grid is rendered.
+    all records but an ActiveRelation object which can be used to obtain all records.
 
     In the example on this page the list of all records is only obtained when button
     %code Show IDs of records throughout all pages
