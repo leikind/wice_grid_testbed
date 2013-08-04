@@ -11,12 +11,13 @@ gem 'thin'
 
 gem "heroku"
 
-gem "wice_grid",  :path => 'vendor/wice_grid'
-# gem "wice_grid",  '3.2.1.pre3'
+# gem "wice_grid",  :path => 'vendor/wice_grid'
+gem "wice_grid",  '3.3.0'
 
 gem 'jquery-ui-themes'
 
-gem 'jquery-rails'
+gem 'jquery-rails' , '3.0.4'
+gem 'jquery-ui-rails'
 gem 'bootstrap-sass', '~> 2.0.0'
 
 # Gems used only for assets and not required
