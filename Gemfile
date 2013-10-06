@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 gem "faker"
@@ -11,26 +11,24 @@ gem 'thin'
 
 gem "heroku"
 
-# gem "wice_grid",  :path => 'vendor/wice_grid'
-gem "wice_grid",  '3.3.1'
+gem "wice_grid",  :path => 'vendor/wice_grid'
+# gem "wice_grid",  '3.3.1'
 
 gem 'jquery-ui-themes'
 
-gem 'jquery-rails' , '3.0.4'
+gem 'protected_attributes'
+
+gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'bootstrap-sass', '~> 2.0.0'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+gem 'sass-rails'
+gem 'coffee-rails'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer'
 
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'uglifier', '>= 1.0.3'
 
 group :production do
   gem 'pg'
@@ -38,6 +36,7 @@ end
 
 group :development do
   gem 'mysql2'
+  gem 'quiet_assets'
 end
 
 group :test, :development do
