@@ -6,7 +6,7 @@ gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 gem "faker"
 gem "coderay"
 gem 'haml'
-
+gem 'turbolinks'
 gem 'thin'
 
 gem "heroku"
