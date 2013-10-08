@@ -512,14 +512,12 @@ def set_datepicker(context, picker, year, month, day)
   context.find(:css, "##{picker} .ui-datepicker-trigger").click
 
   year_select = context.find(:css, '.ui-datepicker-year')
-  year_select.click
   opt = context.find(:css, ".ui-datepicker-year option[value=\"#{year}\"]")
-  opt.click
+  opt.select_option
 
   year_select = context.find(:css, '.ui-datepicker-month')
-  year_select.click
   opt = context.find(:css, ".ui-datepicker-month option[value=\"#{month}\"]")
-  opt.click
+  opt.select_option
 
   context.within '.ui-datepicker-calendar' do
     context.click_on(day.to_s)

@@ -33,9 +33,6 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     page.should_not have_content('Selected tasks: 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, and 526')
   end
 
-  # it "should keep the state of filter inside a form" do
-
-  # end
 
   it "should filter by ID inside a form, two limits" do
     fill_in('g_f_id_fr', :with => 507)
@@ -147,6 +144,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within '.pagination_status' do
       page.should have_content('1-20 / 29')
     end
+
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('2011-09-13 22:11:12')
