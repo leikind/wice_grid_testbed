@@ -12,6 +12,9 @@ describe "with_resultset WiceGrid", :type => :request, :js => true do
 
     fill_in('g_f_title', :with => 'ed')
 
+    sleep 1
+    wait_for_ajax(page)
+
     page.should have_content('2 records on the current page: 507 and 534')
 
     find(:css, '#g_reset_grid_icon').click

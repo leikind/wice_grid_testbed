@@ -1,5 +1,6 @@
 require 'acceptance_helper'
 
+
 describe "current_page_records & all_pages_records WiceGrid", :type => :request, :js => true do
 
   before :each do
@@ -13,6 +14,9 @@ describe "current_page_records & all_pages_records WiceGrid", :type => :request,
 
     fill_in('g_f_title', :with => 'ed')
 
+    sleep 1
+    wait_for_ajax(page)
+
     page.should have_content('2 records throughout all pages: 507 and 534')
     page.should have_content('2 records on the current page: 507 and 534')
 
@@ -25,7 +29,6 @@ describe "current_page_records & all_pages_records WiceGrid", :type => :request,
 
     find(:css, '#g_reset_grid_icon').click
     select 'no',  :from => 'g_f_archived'
-
 
     page.should have_content('10 records on the current page: 540, 519, 507, 537, 551, 515, 511, 542, 523, and 527')
     page.should have_content('46 records throughout all pages: 540, 519, 507, 537, 531, 551, 515, 511, 542, 523, 527, 518, 535, 539, 520, 532, 512, 514, 522, 546, 516, 521, 544, 543, 552, 510, 541, 553, 529, 508, 528, 556, 548, 547, 525, 534, 555, 549, 536, 545, 509, 517, 538, 526, 554, and 530')

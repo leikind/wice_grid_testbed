@@ -48,6 +48,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     click_on 'Save the state of filters'
 
     sleep 1
+
     page.should have_content('Query saved.')
     page.should have_content('test query 1')
 
@@ -70,8 +71,6 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     delete_all_saved_queries self
     page.should have_content('Saved query deleted.')
-
-
 
   end
 
@@ -100,6 +99,8 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     fill_in('grid_saved_query_name', :with => 'test query 2')
     click_on 'Save the state of filters'
+
+    sleep 1
 
     page.should have_content('Query saved.')
     page.should have_content('test query 2')
