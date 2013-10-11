@@ -20,7 +20,8 @@ gem 'protected_attributes'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'bootstrap-sass', '~> 2.0.0'
+# gem 'bootstrap-sass', '~> 2.0.0'
+gem 'bootstrap-sass', '~> 2.3.2.2'
 
 gem 'sass-rails'
 gem 'coffee-rails'
