@@ -9,7 +9,7 @@ GIT
 PATH
   remote: vendor/wice_grid
   specs:
-    wice_grid (3.3.1)
+    wice_grid (3.4.0)
       kaminari (>= 0.13.0)
 
 GEM
