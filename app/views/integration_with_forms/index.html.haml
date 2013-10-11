@@ -14,4 +14,4 @@
   = select_tag 'archived', options_for_select([['View active tasks', 0], ['View archived tasks', 1]], @archived ? 1 : 0), class: 'reload-on-change'
 
 
-= render partial:  'grid'
+= render   'grid'

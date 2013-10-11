@@ -5,8 +5,8 @@
 
 = show_code
 
-= render partial:  'grid', locals: {tasks_grid: @grid1}
-= render partial:  'grid', locals: {tasks_grid: @grid2}
+= render   'grid', tasks_grid: @grid1
+= render   'grid', tasks_grid: @grid2
 
 .row-fluid
   .span2
