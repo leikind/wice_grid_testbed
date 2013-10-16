@@ -120,7 +120,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     end
 
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -160,7 +160,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
       page.should have_content('1-20 / 29')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -197,7 +197,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
       page.should have_content('1-20 / 35')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 

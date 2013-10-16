@@ -12,7 +12,7 @@ shared_examples "basic task table specs" do
 
   it "should change pages" do
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -24,7 +24,7 @@ shared_examples "basic task table specs" do
       page.should have_content('21-40 / 50')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '3'
     end
 
@@ -120,7 +120,7 @@ shared_examples 'sorting ID' do
       page.should have_content('556')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -168,7 +168,7 @@ shared_examples 'sorting Title' do
       page.should have_content('voluptatum non')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -215,7 +215,7 @@ shared_examples 'sorting Description' do
       page.should have_content('Voluptate occaecati quisquam in et qui nostrum eos minus.')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -261,7 +261,7 @@ shared_examples 'sorting Archived' do
       page.should have_content('Yes')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -307,7 +307,7 @@ shared_examples 'sorting Due Date' do
       page.should have_content('2013-03-30')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -552,7 +552,7 @@ shared_examples 'Due Date datepicker filtering' do
       page.should have_content('1-20 / 35')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -617,7 +617,7 @@ shared_examples 'Added datepicker filtering' do
       page.should have_content('1-20 / 29')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -993,7 +993,7 @@ shared_examples 'Archived filtering' do
     end
 
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
