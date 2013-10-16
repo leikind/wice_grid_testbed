@@ -4,10 +4,11 @@ module ApplicationHelper
 
   def show_code
     n = 0
-    content_tag(:div,
+    content_tag(:ul,
       code_chunks.map do |filename_for_view, code|
         n += 1
-        content_tag(:div,
+
+        content_tag(:li,
           content_tag(:div,
             link_to(filename_for_view, "#collapse#{n}", 'data-toggle'=>"collapse", 'data-parent'=>"#code-accordion", :class => 'accordion-toggle'),
             :class => 'accordion-heading'
@@ -18,11 +19,11 @@ module ApplicationHelper
             :style=>"height: 0px;",
             :id => "collapse#{n}"
           ),
-          :class => 'accordion-group'
+          :class => 'list-group-item'
         )
       end.join.html_safe,
       :id=>"code-accordion",
-      :class=>"accordion"
+      :class=>"list-group"
     )
   end
 

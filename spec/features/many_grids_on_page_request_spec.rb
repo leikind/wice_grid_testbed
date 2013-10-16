@@ -44,21 +44,21 @@ describe "many_grids_on_page WiceGrid", :type => :request, :js => true do
 
   it 'should paginate independantly' do
 
-    within '#g1 .pagination' do
+    within '#g1 ul.pagination' do
       click_link '2'
     end
 
-    within '#g2 .pagination' do
+    within '#g2 ul.pagination' do
       click_link '3'
     end
 
 
-    within '#g1 .pagination li.active' do
+    within '#g1 ul.pagination li.active' do
       page.should have_content('2')
     end
 
 
-    within '#g2 .pagination li.active' do
+    within '#g2 ul.pagination li.active' do
       page.should have_content('3')
     end
 

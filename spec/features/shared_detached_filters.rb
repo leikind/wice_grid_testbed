@@ -24,7 +24,7 @@ shared_examples "detached_filters" do
     end
 
 
-    within '.pagination' do
+    within 'ul.pagination' do
       click_link '2'
     end
 

@@ -11,8 +11,8 @@ gem 'thin'
 
 gem "heroku"
 
-# gem "wice_grid",  :path => 'vendor/wice_grid'
-gem "wice_grid",  '3.4.0'
+gem "wice_grid",  :path => 'vendor/wice_grid'
+# gem "wice_grid",  '3.4.0'
 
 gem 'jquery-ui-themes'
 
@@ -20,8 +20,8 @@ gem 'protected_attributes'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-# gem 'bootstrap-sass', '~> 2.0.0'
-gem 'bootstrap-sass', '~> 2.3.2.2'
+
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 
 gem 'sass-rails'
 gem 'coffee-rails'

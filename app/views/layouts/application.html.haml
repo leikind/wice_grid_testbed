@@ -11,7 +11,7 @@
     .container-fluid
 
       %header
-        %h1 WiceGrid 3.4.0 examples
+        %h1 WiceGrid 3.4.1 examples
         .example-navigator
           %ul.pager
             - previous_example_controller, next_example_controller = previous_next_example_urls
@@ -24,11 +24,10 @@
         .clear
 
 
-
       .row-fluid
-        .span3
-          .well.sidebar-nav
-            %ul.nav.nav-list
+        .col-md-3
+          .well
+            %ul.nav.nav-pills.nav-stacked
 
               - @example_map.each do |title, examples|
 
@@ -43,7 +42,7 @@
                     - active_klass = nil
                   %li{class: active_klass}
                     = link_to name, controller: example_controller, action: :index
-        .span9
+        .col-md-9
           =yield
 
 
