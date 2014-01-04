@@ -11,8 +11,8 @@ gem 'thin'
 
 gem "heroku"
 
-# gem "wice_grid",  :path => 'vendor/wice_grid'
-gem "wice_grid",  '3.3.1'
+gem "wice_grid",  :path => 'vendor/wice_grid'
+# gem "wice_grid",  '3.3.1'
 
 gem 'jquery-ui-themes'
 
@@ -44,7 +44,7 @@ group :test, :development do
   gem "rspec-rails", "~> 2.13.0"
   # gem 'capybara' , '1.1.2'
   gem 'capybara' , '~> 2.1.0'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', "~> 2.34.0"
 end
 
 group :test do

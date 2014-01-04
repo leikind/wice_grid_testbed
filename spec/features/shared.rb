@@ -12,7 +12,7 @@ shared_examples "basic task table specs" do
 
   it "should change pages" do
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -24,7 +24,7 @@ shared_examples "basic task table specs" do
       page.should have_content('21-40 / 50')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '3'
     end
 
@@ -120,7 +120,7 @@ shared_examples 'sorting ID' do
       page.should have_content('556')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -168,7 +168,7 @@ shared_examples 'sorting Title' do
       page.should have_content('voluptatum non')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -215,7 +215,7 @@ shared_examples 'sorting Description' do
       page.should have_content('Voluptate occaecati quisquam in et qui nostrum eos minus.')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -261,7 +261,7 @@ shared_examples 'sorting Archived' do
       page.should have_content('Yes')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -307,7 +307,7 @@ shared_examples 'sorting Due Date' do
       page.should have_content('2013-03-30')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -508,23 +508,33 @@ shared_examples 'sorting Due Date in all records mode' do
 end
 
 
+MONTH_NAMES = [ 'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'May',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Nov',
+                'Dec']
+
+
 def set_datepicker(context, picker, year, month, day)
   context.find(:css, "##{picker} .ui-datepicker-trigger").click
 
   year_select = context.find(:css, '.ui-datepicker-year')
-  year_select.click
-  opt = context.find(:css, ".ui-datepicker-year option[value=\"#{year}\"]")
-  opt.click
 
-  year_select = context.find(:css, '.ui-datepicker-month')
-  year_select.click
-  opt = context.find(:css, ".ui-datepicker-month option[value=\"#{month}\"]")
-  opt.click
+  year_select.select(year.to_s)
+
+  month_select = context.find(:css, '.ui-datepicker-month')
+  month_select.select(MONTH_NAMES[month])
 
   context.within '.ui-datepicker-calendar' do
     context.click_on(day.to_s)
   end
-
 end
 
 shared_examples 'Due Date datepicker filtering' do
@@ -536,6 +546,8 @@ shared_examples 'Due Date datepicker filtering' do
 
     find(:css, '#grid_submit_grid_icon').click
 
+
+    sleep 10
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
     end
@@ -552,7 +564,7 @@ shared_examples 'Due Date datepicker filtering' do
       page.should have_content('1-20 / 35')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -617,7 +629,7 @@ shared_examples 'Added datepicker filtering' do
       page.should have_content('1-20 / 29')
     end
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
@@ -993,7 +1005,7 @@ shared_examples 'Archived filtering' do
     end
 
 
-    within '.pagination' do
+    within 'div.pagination' do
       click_link '2'
     end
 
