@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 gem "faker"
@@ -21,9 +21,9 @@ gem 'protected_attributes'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
+gem 'bootstrap-sass'
 
-gem 'sass-rails'
+gem 'sass-rails',  '>= 3.2'
 gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -44,7 +44,7 @@ group :test, :development do
   gem "rspec-rails", "~> 2.13.0"
   # gem 'capybara' , '1.1.2'
   gem 'capybara' , '~> 2.1.0'
-  gem 'selenium-webdriver', "~> 2.34.0"
+  gem 'selenium-webdriver'
 end
 
 group :test do
