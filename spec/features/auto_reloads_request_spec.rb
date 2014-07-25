@@ -266,6 +266,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2013, 0, 1)
 
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
@@ -279,6 +280,8 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
       click_on 'ID'
     end
 
+    sleep 1
+
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
     end
@@ -287,8 +290,10 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
       click_link '2'
     end
 
+    sleep 1
+
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
-      page.should have_content('2012-07-15')
+      page.should have_content('2012-07-02')
     end
 
 
@@ -296,19 +301,21 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2012, 6, 31)
 
-
-
     within '.pagination_status' do
       page.should have_content('1-1 / 1')
     end
 
     find(:css, '#grid_f_due_date_fr_date_view').click
 
+    sleep 1
+
     within '.pagination_status' do
       page.should have_content('1-10 / 10')
     end
 
     find(:css, '#grid_f_due_date_to_date_view').click
+
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
