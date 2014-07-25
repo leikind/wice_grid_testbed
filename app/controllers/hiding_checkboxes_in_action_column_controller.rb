@@ -2,7 +2,8 @@ class HidingCheckboxesInActionColumnController < ApplicationController
   def index
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],
-      :name => 'g'
+      :name => 'g',
+      :order => 'id'
     )
 
     if params[:g] && params[:g][:selected]

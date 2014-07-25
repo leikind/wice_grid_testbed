@@ -55,6 +55,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
@@ -62,7 +63,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
 
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active-filter' do
-      page.should have_content('507')
+      page.should have_content('509')
     end
 
     page.should have_content('508')
@@ -72,6 +73,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
@@ -79,7 +81,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
 
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('509')
+      page.should have_content('507')
     end
 
     within 'div.wice-grid-container table.wice-grid thead' do
@@ -145,7 +147,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
       page.should have_content('1-20 / 29')
     end
 
-
+    # sleep 200
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('2011-09-13 22:11:12')
     end
@@ -153,6 +155,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 29')
@@ -161,12 +164,12 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within 'ul.pagination' do
       click_link '2'
     end
+    sleep 1
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
-      page.should have_content('2011-08-14 22:11:12')
+      # page.should have_content('2011-08-14 22:11:12')
+      page.should have_content('2011-09-22 22:11:12')
     end
-
-
   end
 
 
@@ -190,6 +193,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
@@ -198,9 +202,10 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within 'ul.pagination' do
       click_link '2'
     end
+    sleep 1 # !!!!
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
-      page.should have_content('2012-07-15')
+      page.should have_content('2012-07-02')
     end
 
 

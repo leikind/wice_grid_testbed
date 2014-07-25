@@ -23,7 +23,7 @@ class ResultsetProcessings2Controller < ApplicationController
 
   def process_records(active_relation)
     if params[:process_selected_tasks]
-      @selected_tasks = active_relation.find(:all)
+      @selected_tasks = active_relation.to_a
     end
   end
 

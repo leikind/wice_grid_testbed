@@ -36,8 +36,10 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     set_datepicker(self, 'grid_f_created_at_to_date_placeholder', 2011, 9, 1)
 
-    # find(:css, '#grid_submit_grid_icon').click
+    sleep 1
 
+    # find(:css, '#grid_submit_grid_icon').click
+    # sleep 200
     within '.pagination_status' do
       page.should have_content('1-20 / 29')
     end
@@ -49,6 +51,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 29')
@@ -57,9 +60,11 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     within 'ul.pagination' do
       click_link '2'
     end
+    sleep 1
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
-      page.should have_content('2011-08-14 22:11:12')
+      page.should have_content('2011-09-22 22:11:12')
+      # page.should have_content('2011-08-14 22:11:12')
     end
 
     find(:css, '.wg-external-reset-button').click
@@ -120,6 +125,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     # find(:css, '#grid_submit_grid_icon').click
 
+    sleep 1
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
     end
@@ -140,14 +146,13 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
       page.should have_content('1-3 / 3')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active-filter' do
-      page.should have_content('507')
+      page.should have_content('509')
     end
 
+    page.should have_content('507')
     page.should have_content('508')
     page.should have_content('509')
-
 
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
@@ -157,15 +162,13 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
       page.should have_content('1-3 / 3')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('509')
+      page.should have_content('507')
     end
 
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
-
 
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
@@ -203,6 +206,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-7 / 7')
@@ -210,7 +214,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active-filter' do
-      page.should have_content('550')
+      page.should have_content('556')
     end
 
     551.upto(556) do |i|
@@ -228,7 +232,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('556')
+      page.should have_content('550')
     end
 
     within 'div.wice-grid-container table.wice-grid thead' do
@@ -260,6 +264,8 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     # find(:css, '#grid_submit_grid_icon').click
 
+    sleep 1
+
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
     end
@@ -271,6 +277,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
@@ -279,9 +286,11 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     within 'ul.pagination' do
       click_link '2'
     end
+    sleep 1
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
-      page.should have_content('2012-07-15')
+      page.should have_content('2012-07-02')
+      # page.should have_content('2012-07-15')
     end
 
 

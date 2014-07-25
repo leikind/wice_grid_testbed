@@ -61,6 +61,8 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
       click_link '2'
     end
 
+    # WTF
+    sleep 1
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('2011-08-14 22:11:12')
     end
@@ -121,11 +123,11 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     fill_in('grid_f_id_fr', :with => 507)
     fill_in('grid_f_id_to', :with => 509)
 
-    # find(:css, '#grid_submit_grid_icon').click
 
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
     end
+
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('507')
@@ -135,6 +137,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     page.should have_content('509')
 
 
+    # ID !!!!
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
@@ -145,13 +148,14 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active-filter' do
-      page.should have_content('507')
+      page.should have_content('509')
     end
 
     page.should have_content('508')
     page.should have_content('509')
 
 
+    # ID !!!!
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
@@ -161,8 +165,9 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     end
 
 
+    # sleep 10
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('509')
+      page.should have_content('507')
     end
 
     within 'div.wice-grid-container table.wice-grid thead' do
@@ -189,8 +194,6 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     fill_in('grid_f_id_fr', :with => 550)
 
 
-    # find(:css, '#grid_submit_grid_icon').click
-
     within '.pagination_status' do
       page.should have_content('1-7 / 7')
     end
@@ -213,7 +216,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active-filter' do
-      page.should have_content('550')
+      page.should have_content('556')
     end
 
     551.upto(556) do |i|
@@ -231,7 +234,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('556')
+      page.should have_content('550')
     end
 
     within 'div.wice-grid-container table.wice-grid thead' do
@@ -261,7 +264,6 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2013, 0, 1)
 
-    # find(:css, '#grid_submit_grid_icon').click
 
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
@@ -292,7 +294,6 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2012, 6, 31)
 
-    # find(:css, '#grid_submit_grid_icon').click
 
 
     within '.pagination_status' do
@@ -301,15 +302,11 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     find(:css, '#grid_f_due_date_fr_date_view').click
 
-    # find(:css, '#grid_submit_grid_icon').click
-
     within '.pagination_status' do
       page.should have_content('1-10 / 10')
     end
 
     find(:css, '#grid_f_due_date_to_date_view').click
-
-    # find(:css, '#grid_submit_grid_icon').click
 
     within '.pagination_status' do
       page.should have_content('1-20 / 50')

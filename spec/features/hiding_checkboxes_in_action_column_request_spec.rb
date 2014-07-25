@@ -77,9 +77,8 @@ describe "action_column WiceGrid", :type => :request, :js => true do
       page.should have_content('1-3 / 3')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active-filter' do
-      page.should have_content('507')
+      page.should have_content('509')
     end
 
     page.should have_content('508')

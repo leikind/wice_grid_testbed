@@ -1,0 +1,13 @@
+#!/bin/sh
+
+bundle exec rspec spec/features/auto_reloads_request_spec.rb
+bundle exec rspec spec/features/auto_reloads2_request_spec.rb
+bundle exec rspec spec/features/action_column_request_spec.rb
+
+
+bundle exec rspec spec/features/auto_reloads_request_spec.rb
+bundle exec rspec spec/features/auto_reloads2_request_spec.rb
+bundle exec rspec spec/features/action_column_request_spec.rb
+
+bundle exec rspec spec/features/action_column_request_spec.rb spec/features/auto_reloads2_request_spec.rb spec/features/action_column_request_spec.rb
+bundle exec rspec spec/features/action_column_request_spec.rb spec/features/auto_reloads2_request_spec.rb spec/features/action_column_request_spec.rb

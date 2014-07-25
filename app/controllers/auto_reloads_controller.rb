@@ -6,7 +6,9 @@ class AutoReloadsController < ApplicationController
         'tasks.priority_id' => 'priorities.name',
         'tasks.status_id' => 'statuses.position',
         'tasks.project_id' => 'projects.name'
-      }
+      },
+      :order => 'id',
+      :order_direction => 'asc'
     )
   end
 end

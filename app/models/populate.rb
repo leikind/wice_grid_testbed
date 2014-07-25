@@ -20,7 +20,7 @@ module Populate
       Company.create!(:name => company_name)
     end
 
-    companies = Company.find(:all).index_by(&:name)
+    companies = Company.all.index_by(&:name)
     version_statuses = ['development', 'testing', 'production']
 
     {'Ultimate Website' => {:customer => 'MNU', :supplier => 'Coders Unlimited', :versions => ['1.0', '1.1', '1.2', '2.0', '3.0']},
@@ -34,7 +34,7 @@ module Populate
     end
 
     projects = Project.find(:all, :include => :users)
-    project_roles = ProjectRole.find(:all)
+    project_roles = ProjectRole.all
 
     ['Wikus van de Merwe', 'Grey Bradnam', 'Christopher Johnson', 'Piet Smit', 'Fundiswa Mhlanga', 'Tania van de Merwe',
      'Obesandjo', 'Dirk Michaels', 'Ross Pienaar', 'Koobus Venter', 'Dirk Michaels', 'Sarah Livingstone'].each do |user|
@@ -51,8 +51,8 @@ module Populate
 
 
     projects = Project.find(:all, :include => [:users, :versions])
-    statuses = Status.find(:all)
-    priorities = Priority.find(:all)
+    statuses = Status.all
+    priorities = Priority.all
 
 
     500.times do

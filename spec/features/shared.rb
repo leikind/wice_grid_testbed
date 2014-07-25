@@ -532,6 +532,7 @@ MONTH_NAMES = [ 'Jan',
 
 
 def set_datepicker(context, picker, year, month, day)
+
   context.find(:css, "##{picker} .ui-datepicker-trigger").click
 
   year_select = context.find(:css, '.ui-datepicker-year')
@@ -646,8 +647,9 @@ shared_examples 'Added datepicker filtering' do
       page.should have_content('2011-08-14 22:11:12')
     end
 
-
     find(:css, '#grid_reset_grid_icon').click
+    sleep 1
+
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
@@ -715,6 +717,7 @@ shared_examples 'Created At standard filtering' do
     select '00', :from => 'grid_f_updated_at_to_minute'
 
     find(:css, '#grid_submit_grid_icon').click
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-14 / 14')
@@ -727,14 +730,15 @@ shared_examples 'Created At standard filtering' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-14 / 14')
     end
 
-
-
     find(:css, '#grid_reset_grid_icon').click
+    sleep 1
+
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
