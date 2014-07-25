@@ -98,6 +98,7 @@ shared_examples 'sorting ID' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('ID')
@@ -110,7 +111,7 @@ shared_examples 'sorting ID' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
-
+    sleep 1
 
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('ID')
@@ -123,6 +124,7 @@ shared_examples 'sorting ID' do
     within 'ul.pagination' do
       click_link '2'
     end
+    sleep 1
 
     within '.wice-grid li.active' do
       page.should have_content('2')

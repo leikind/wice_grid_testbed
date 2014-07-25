@@ -56,6 +56,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     fill_in('g_f_id_to', :with => 509)
 
     first(:css, 'button.btn', :text => 'Process tasks').click
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
@@ -72,6 +73,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
@@ -88,6 +90,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
@@ -95,12 +98,13 @@ describe "action_column WiceGrid", :type => :request, :js => true do
 
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('509')
+      page.should have_content('507')
     end
 
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
+    sleep 1
 
 
     within '.pagination_status' do

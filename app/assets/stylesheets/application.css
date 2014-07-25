@@ -13,6 +13,9 @@
  *= require jquery-ui/humanity
 */
 
+
+@import "bootstrap";
+
 body {padding-top: 20px;}
 header{padding-bottom: 20px;}
 header h1{font-size: 48px;}
