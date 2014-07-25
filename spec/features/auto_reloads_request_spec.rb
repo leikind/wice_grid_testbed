@@ -52,6 +52,7 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 29')
@@ -60,14 +61,15 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
     within 'ul.pagination' do
       click_link '2'
     end
+    sleep 1
 
     # WTF
-    sleep 1
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
-      page.should have_content('2011-08-14 22:11:12')
+      page.should have_content('2011-09-22 22:11:12')
     end
 
     find(:css, '#grid_reset_grid_icon').click
+    sleep 1
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end

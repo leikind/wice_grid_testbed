@@ -622,6 +622,7 @@ shared_examples 'Added datepicker filtering' do
     set_datepicker(self, 'grid_f_created_at_to_date_placeholder', 2011, 9, 1)
 
     find(:css, '#grid_submit_grid_icon').click
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 29')
@@ -634,6 +635,7 @@ shared_examples 'Added datepicker filtering' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 29')
@@ -642,9 +644,11 @@ shared_examples 'Added datepicker filtering' do
     within 'ul.pagination' do
       click_link '2'
     end
+    sleep 2
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
-      page.should have_content('2011-08-14 22:11:12')
+      page.should have_content('2011-09-22 22:11:12')
+      # page.should have_content('2011-08-14 22:11:12')
     end
 
     find(:css, '#grid_reset_grid_icon').click
