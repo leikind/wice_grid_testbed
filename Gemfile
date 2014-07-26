@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.8'
 
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 gem "faker"
@@ -21,9 +21,10 @@ gem 'protected_attributes'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '3.1.1.1'
+gem 'sass-rails', '>= 3.2'
+gem 'sprockets', '2.11.0' # http://stackoverflow.com/questions/22392862/undefined-method-environment-for-nilnilclass-when-importing-bootstrap
 
-gem 'sass-rails',  '>= 3.2'
 gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

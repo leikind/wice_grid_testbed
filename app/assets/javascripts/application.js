@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery.ui.datepicker.locales
+//= require bootstrap
 //= require wice_grid
 //= require turbolinks
-//= require bootstrap
 //= require_tree .

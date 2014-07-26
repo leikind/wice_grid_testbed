@@ -100,12 +100,12 @@ shared_examples 'sorting ID' do
     end
     sleep 1
 
-    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('ID')
     end
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('507')
+      page.should have_content('556')
     end
 
     within 'div.wice-grid-container table.wice-grid thead' do
@@ -113,12 +113,12 @@ shared_examples 'sorting ID' do
     end
     sleep 1
 
-    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('ID')
     end
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('556')
+      page.should have_content('507')
     end
 
     within 'ul.pagination' do
@@ -131,12 +131,12 @@ shared_examples 'sorting ID' do
     end
 
 
-    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('ID')
     end
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('536')
+      page.should have_content('527')
     end
   end
 
@@ -341,12 +341,12 @@ shared_examples 'sorting ID in all records mode' do
       click_on 'ID'
     end
 
-    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('ID')
     end
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('507')
+      page.should have_content('556')
     end
 
     within 'div.wice-grid-container table.wice-grid thead' do
@@ -354,12 +354,12 @@ shared_examples 'sorting ID in all records mode' do
     end
 
 
-    within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
+    within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('ID')
     end
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
-      page.should have_content('556')
+      page.should have_content('507')
     end
 
   end
@@ -557,9 +557,8 @@ shared_examples 'Due Date datepicker filtering' do
     set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2013, 0, 1)
 
     find(:css, '#grid_submit_grid_icon').click
+    sleep 1
 
-
-    sleep 10
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
     end
@@ -571,6 +570,7 @@ shared_examples 'Due Date datepicker filtering' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
+        sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
@@ -579,9 +579,10 @@ shared_examples 'Due Date datepicker filtering' do
     within 'ul.pagination' do
       click_link '2'
     end
+    sleep 1
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
-      page.should have_content('2012-07-15')
+      page.should have_content('2012-07-02')
     end
 
 
@@ -590,23 +591,27 @@ shared_examples 'Due Date datepicker filtering' do
     set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2012, 6, 31)
 
     find(:css, '#grid_submit_grid_icon').click
-
+        sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-1 / 1')
     end
 
     find(:css, '#grid_f_due_date_fr_date_view').click
+    sleep 1
 
     find(:css, '#grid_submit_grid_icon').click
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-10 / 10')
     end
 
     find(:css, '#grid_f_due_date_to_date_view').click
+    sleep 1
 
     find(:css, '#grid_submit_grid_icon').click
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
