@@ -24,7 +24,6 @@ describe "dump_filter_parameters_as_hidden_fields WiceGrid", :type => :request, 
       page.should have_content('1-20 / 46')
     end
 
-
   end
 
   it "should keep the state of an integer filter while reloading another form" do

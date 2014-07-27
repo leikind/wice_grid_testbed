@@ -33,13 +33,12 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
   it "should filter by Added" do
 
     set_datepicker(self, 'grid_f_created_at_fr_date_placeholder', 2011, 5, 1)
+    sleep 1
 
     set_datepicker(self, 'grid_f_created_at_to_date_placeholder', 2011, 9, 1)
+    sleep 1
 
     # find(:css, '#grid_submit_grid_icon').click
-
-    # TO DO: find out why this randomly fails without sleep 1
-    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 29')
@@ -264,6 +263,8 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
     set_datepicker(self, 'grid_f_due_date_fr_date_placeholder', 2012, 0, 1)
 
+    sleep 1
+
     set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2013, 0, 1)
 
     sleep 1
@@ -298,8 +299,10 @@ describe "auto reloads WiceGrid", :type => :request, :js => true do
 
 
     set_datepicker(self, 'grid_f_due_date_fr_date_placeholder', 2012, 6, 28)
+    sleep 1
 
     set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2012, 6, 31)
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-1 / 1')
