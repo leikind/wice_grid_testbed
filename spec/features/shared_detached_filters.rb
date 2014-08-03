@@ -28,6 +28,8 @@ shared_examples "detached_filters" do
       click_link '2'
     end
 
+    sleep 1
+
     within '.pagination_status' do
       page.should have_content('21-40 / 46')
     end

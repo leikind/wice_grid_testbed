@@ -174,6 +174,8 @@ shared_examples 'sorting Title' do
       click_link '2'
     end
 
+    sleep 1
+
     within '.wice-grid li.active' do
       page.should have_content('2')
     end
@@ -404,6 +406,8 @@ end
 shared_examples 'sorting Description in all records mode' do
   it 'should sort column Description' do
     click_on 'show all'
+
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-50 / 50')
