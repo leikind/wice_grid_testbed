@@ -187,7 +187,7 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     websocket (1.0.7)
-    wice_grid (3.4.9)
+    wice_grid (3.4.10)
       coffee-rails
       kaminari (>= 0.13.0)
     xpath (2.0.0)
@@ -221,4 +221,4 @@ DEPENDENCIES
   thin
   turbolinks
   uglifier (>= 1.0.3)
-  wice_grid (= 3.4.9)
+  wice_grid (= 3.4.10)
