@@ -17,12 +17,12 @@
     task.project.name if task.project
   end
 
-  g.column name:  'Due Date', attribute: 'due_date', auto_reload:  true, detach_with_id: :due_date do |task|
+  g.column name:  'Due Date', attribute: 'due_date', auto_reload:  true, detach_with_id: :due_date, helper_style: :bootstrap do |task|
     task.due_date if task.due_date
   end
 
 
-  g.column name:  'Added', attribute: 'created_at', auto_reload:  true, detach_with_id: :created_at do |task|
+  g.column name:  'Added', attribute: 'created_at', auto_reload:  true, detach_with_id: :created_at, helper_style: :bootstrap do |task|
     task.created_at.to_s(:db)
   end
 

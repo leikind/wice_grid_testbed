@@ -106,6 +106,9 @@ if defined?(Wice::Defaults)
   Wice::Defaults::DATE_FORMAT_JQUERY     =  "yy-mm-dd"
 
 
+  DATE_FORMAT_BOOTSTRAP =  "yyyy-mm-dd"
+
+
   # With Calendar helpers enabled the parameter sent is the string displayed. This lambda will be given a date string in the
   # format defined by +DATETIME_FORMAT+ and must generate a DateTime object.
   # In many cases <tt>Time.zone.parse</tt> is enough, for instance,  <tt>%Y-%m-%d</tt>. If you change the format, make sure to check this code
@@ -134,7 +137,11 @@ if defined?(Wice::Defaults)
     if date_string.blank?
       nil
     else
-      Date.parse(date_string)
+      begin
+        Date.parse(date_string)
+      rescue ArgumentError
+        nil
+      end
     end
   }
 

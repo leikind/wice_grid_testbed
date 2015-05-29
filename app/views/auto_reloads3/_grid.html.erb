@@ -13,7 +13,7 @@
   end
 
 
-  g.column name:  'Due Date', attribute: 'due_date', auto_reload:  true, detach_with_id: :due_date do |task|
+  g.column name:  'Due Date', attribute: 'due_date', auto_reload:  true, detach_with_id: :due_date, helper_style: :bootstrap do |task|
     task.due_date if task.due_date
   end
 

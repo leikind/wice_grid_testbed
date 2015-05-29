@@ -6,6 +6,13 @@ GIT
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
 
+PATH
+  remote: vendor/wice_grid
+  specs:
+    wice_grid (3.4.14)
+      coffee-rails
+      kaminari (>= 0.13.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,6 +44,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    bootstrap-datepicker-rails (1.4.0)
+      railties (>= 3.0)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
@@ -89,7 +98,7 @@ GEM
     jquery-ui-themes (0.0.11)
       httparty
     json (1.8.1)
-    kaminari (0.16.1)
+    kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     launchy (2.4.2)
@@ -187,9 +196,6 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     websocket (1.2.1)
-    wice_grid (3.4.11)
-      coffee-rails
-      kaminari (>= 0.13.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -198,6 +204,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate!
+  bootstrap-datepicker-rails
   bootstrap-sass (= 3.1.1.1)
   capybara (~> 2.1.0)
   coderay
@@ -221,4 +228,4 @@ DEPENDENCIES
   thin
   turbolinks
   uglifier (>= 1.0.3)
-  wice_grid (= 3.4.11)
+  wice_grid!
