@@ -1,6 +1,6 @@
 <%= grid(@tasks_grid) do |g|
 
-  g.action_column
+  g.action_column html_check_box: false
   # The default param_name is 'selected', the complete HTTP parameter will be "#{grid_name}[#{param_name}][]"
 
   # Or:

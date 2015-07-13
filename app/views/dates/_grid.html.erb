@@ -13,7 +13,6 @@
     task.due_date if task.due_date
   end
 
-
   g.column name:  'Added', attribute: 'created_at' do |task|
     task.created_at.to_s(:db)
   end

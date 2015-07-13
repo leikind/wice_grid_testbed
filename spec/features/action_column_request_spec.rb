@@ -10,7 +10,6 @@ describe "action_column WiceGrid", :type => :request, :js => true do
 
     510.upto(520).each do |i|
       find(:css, %`input[type="checkbox"][value="#{i}"]`).click
-
     end
 
     first(:css, 'button.btn', :text => 'Process tasks').click
@@ -18,15 +17,15 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     page.should have_content('Selected tasks: 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, and 520')
   end
 
-  it "should select rows with the select all button and deselect them woth the deselect button" do
+  it "should select rows with the select all button and deselect them with the deselect button" do
 
-    find(:css, %`.clickable.select-all`).click
+    find(:css, ".clickable.select-all").click
 
     first(:css, 'button.btn', :text => 'Process tasks').click
 
     page.should have_content('Selected tasks: 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, and 526')
 
-    find(:css, %`.clickable.deselect-all`).click
+    find(:css, ".clickable.deselect-all").click
 
     first(:css, 'button.btn', :text => 'Process tasks').click
 

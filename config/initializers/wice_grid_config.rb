@@ -68,13 +68,22 @@ if defined?(Wice::Defaults)
 
 
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-  #                              Showing All Queries                          #
+  #                              Showing All Records                          #
 
-  # Enable or disable showing all queries (non-paginated table)
-  Wice::Defaults::ALLOW_SHOWING_ALL_QUERIES = true
+  # Enable or disable showing all records (non-paginated table)
+  Wice::Defaults::ALLOW_SHOWING_ALL_RECORDS = true
 
   # If number of all queries is more than this value, the user will be given a warning message
   Wice::Defaults::START_SHOWING_WARNING_FROM = 100
+
+  # Hide the "show all" link if the number of all records is more than...
+  # Force-resets back to pagination starting from this value.
+  # Set to nil to always show it
+  Wice::Defaults::SHOW_ALL_ALLOWED_UP_TO = nil
+
+  #
+  # set to nil to skip the check
+  Wice::Defaults::SWITCH_BACK_TO_PAGINATION_FROM = nil
 
 
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -90,8 +99,11 @@ if defined?(Wice::Defaults)
 
   # The default style of the date and datetime helper
   # * <tt>:calendar</tt> - JS calendar
+  # * <tt>:html5</tt> - HTML5 date input field
   # * <tt>:standard</tt> - standard Rails date and datetime helpers
+  # * <tt>:bootstrap</tt> - Bootstrap datepicker helper
   Wice::Defaults::HELPER_STYLE = :calendar
+
 
   # Format of the datetime displayed.
   # If you change the format, make sure to check if +DATETIME_PARSER+ can still parse this string.

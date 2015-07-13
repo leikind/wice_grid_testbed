@@ -32,7 +32,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     page.should have_content('Selected tasks: 510, 511, 512, 513, 514, 515, 516, 517, 518, and 520')
   end
 
-  it "should select rows with the select all button and deselect them woth the deselect button" do
+  it "should select rows with the select all button and deselect them with the deselect button" do
 
     find(:css, %`.clickable.select-all`).click
 
