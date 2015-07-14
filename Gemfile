@@ -2,16 +2,18 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
 
-gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+gem 'annotate', git: 'git://github.com/ctran/annotate_models.git'
 gem "faker"
 gem "coderay"
 gem 'haml'
 gem 'turbolinks'
 gem 'thin'
 
+gem 'font-awesome-sass', '~> 4.3.0'
+
 gem "heroku"
 
-gem "wice_grid",  :path => 'vendor/wice_grid'
+gem "wice_grid",  path: 'vendor/wice_grid'
 # gem "wice_grid",  :path => 'vendor/_wice_grid'
 # gem "wice_grid",  '3.4.11'
 
