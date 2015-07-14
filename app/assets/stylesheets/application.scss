@@ -14,7 +14,7 @@
 */
 
 @import "bootstrap";
-
+@import "wice_grid";
 
 body {padding-top: 20px;}
 header{padding-bottom: 20px;}
@@ -31,16 +31,10 @@ header .example-navigator {float: right; margin-right: 120px}
 li.next {margin-left: 10px;}
 .clear {clear:both;}
 
-
-
 .wice-grid.table-striped tbody tr:nth-child(odd) td.active-filter {
   background-color: #f9f9e9;
 }
 
-/*.wice-grid.table-striped tbody tr td.active-filter:hover {
-  background-color: #f5f5f5;
-}
-*/
 .wice-grid.table-striped tbody tr td.active-filter {
   background-color: #f9f9e9;
 }
