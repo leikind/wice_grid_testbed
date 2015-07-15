@@ -1,7 +1,6 @@
 
-1)  Write examples for
-    g.action_column html_check_box: false
-    and
-    g.action_column html_check_box: true
+1)  Write examples for html_check_box: true
 
-2)  Examples for Datepicker
+2)  Script to switch between 2 datepickers (??)
+
+3)  Examples for Datepicker
