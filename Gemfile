@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.12'
+gem 'rails', '4.2.3'
 
 gem 'annotate', git: 'git://github.com/ctran/annotate_models.git'
 gem "faker"
