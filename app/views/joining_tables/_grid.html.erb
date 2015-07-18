@@ -4,19 +4,19 @@
 
   g.column name:  'Title', attribute: 'title'
 
-  g.column name:  'Priority', attribute: 'name',  model: 'Priority' do |task|
+  g.column name:  'Priority', attribute: 'name',  assoc: :priority, assoc: :priority do |task|
     task.priority.name if task.priority
   end
 
-  g.column name:  'Status', attribute: 'name', model: 'Status' do |task|
+  g.column name:  'Status', attribute: 'name', assoc: :status, assoc: :status do |task|
     task.status.name if task.status
   end
 
-  g.column name:  'Project Name', attribute: 'name', model: 'Project' do |task|
+  g.column name:  'Project Name', attribute: 'name', assoc: :company, assoc: :project do |task|
     task.project.name if task.project
   end
 
-  g.column name:  'Assigned To', attribute: 'name', model: 'User' do |task|
+  g.column name:  'Assigned To', attribute: 'name', assoc: :user, assoc: :assigned_users do |task|
     task.assigned_users.collect{|user| user.name}.to_sentence
   end
 
