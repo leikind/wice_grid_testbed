@@ -15,7 +15,6 @@ class CsvExportController < ApplicationController
     )
 
     @projects_grid = initialize_grid(Project,
-      :include => [:customer, :supplier],
       :name => 'g2',
       :enable_export_to_csv => true,
       :csv_file_name => 'projects'

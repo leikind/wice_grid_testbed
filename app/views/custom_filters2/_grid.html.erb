@@ -8,7 +8,7 @@
     task.priority.name if task.priority
   end
 
-  g.column name:  'Status', attribute: 'status_id', custom_filter: Status.to_dropdown  do |task|
+  g.column name:  'Status', attribute: 'status_id',  custom_filter: Status.to_dropdown  do |task|
     task.status.name if task.status
   end
 

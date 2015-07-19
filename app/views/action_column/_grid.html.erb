@@ -25,9 +25,7 @@
     task.project.name if task.project
   end
 
-  g.column name:  'Due Date', attribute: 'due_date' do |task|
-    task.due_date if task.due_date
-  end
+  g.column name:  'Due Date', attribute: 'due_date'
 
 
   g.column name:  'Added', attribute: 'created_at' do |task|

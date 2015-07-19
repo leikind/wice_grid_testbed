@@ -1,8 +1,6 @@
 <%= grid(@versions_grid3) do |g|
 
-  g.column name:  'Project', attribute: 'name', assoc: :project, filter: false do |version|
-    version.project.name if version.project
-  end
+  g.column name:  'Project', attribute: 'name', assoc: :project, filter: false
 
   g.column name:  'Version name', attribute: 'name', filter: false
 

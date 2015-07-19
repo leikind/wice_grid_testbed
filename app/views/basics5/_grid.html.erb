@@ -1,16 +1,16 @@
 <%= grid(@tasks_grid) do |g|
 
-  g.column name:  'ID', attribute: 'id', filter: false
+  g.column name:  'ID',    attribute: 'id', filter: false
 
   g.column name:  'Title', attribute: 'title'
 
-  g.column  name:  'Description', attribute: 'description', ordering:  false
+  g.column name:  'Description', attribute: 'description', ordering:  false
 
-  g.column  name:  'Archived', attribute: 'archived', ordering:  false do |task|
+  g.column name:  'Archived',    attribute: 'archived',    ordering:  false do |task|
     task.archived? ? 'Yes' : 'No'
   end
 
-  g.column name:  'Due Date', attribute: 'due_date', filter: false
+  g.column name:  'Due Date',     attribute: 'due_date', filter: false
 
 
   g.column   do |task|
