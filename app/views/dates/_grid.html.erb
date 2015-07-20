@@ -9,15 +9,15 @@
     task.archived? ? 'Yes' : 'No'
   end
 
-  g.column name:  'Due Date', attribute: 'due_date' do |task|
+  g.column name:  'Due Date', attribute: 'due_date', filter_type: :jquery_datepicker do |task|
     task.due_date if task.due_date
   end
 
-  g.column name:  'Added', attribute: 'created_at' do |task|
+  g.column name:  'Added', attribute: 'created_at', filter_type: :jquery_datepicker do |task|
     task.created_at.to_s(:db)
   end
 
-  g.column name:  'Updated', attribute: 'updated_at', helper_style: :standard do |task|
+  g.column name:  'Updated', attribute: 'updated_at', filter_type: :rails_datetime_helper do |task|
     task.updated_at.to_s(:db)
   end
 
