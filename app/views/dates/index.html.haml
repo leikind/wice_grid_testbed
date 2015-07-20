@@ -1,16 +1,28 @@
 .well
   %h2= current_page_title
   %p
-    For both
+    For
     %code DATE
     and
     %code DATETIME
-    fields the filter uses
-    %a{href:'http://jqueryui.com/demos/datepicker/'}jQuery Datepicker
-    by default. It is also possible to use standard Rails Date/Datetime form helpers by specifying
-    %code helper_style: :standard
-    in the column definition.
-    This might be useful for DATETIME fields as jQuery Datepicker does not support time.
+    fields WiceGrid supports
+    %ul
+      %li
+        %a{href:'http://jqueryui.com/demos/datepicker/'}jQuery Datepicker.
+        Set
+        %code helper_style: :calendar
+      %li
+        %a{href:'https://github.com/Nerian/bootstrap-datepicker-rails'}Bootstrap Datepicker.
+        Set
+        %code helper_style: :bootstrap
+      %li
+        standard Rails helper. Set
+        %code  helper_style: :standard
+
+
+
+
+
 
 = show_code
 
