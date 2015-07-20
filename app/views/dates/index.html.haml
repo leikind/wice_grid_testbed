@@ -1,23 +1,44 @@
 .well
   %h2= current_page_title
   %p
-    For
-    %code DATE
-    and
-    %code DATETIME
-    fields WiceGrid supports
+    WiceGrid provides four filters for selecting dates and time:
+
     %ul
       %li
-        %a{href:'http://jqueryui.com/demos/datepicker/'}jQuery Datepicker.
-        Set
-        %code helper_style: :calendar
+        %code
+          \:jquery_datepicker
+        \- Jquery datepicker (works for datetime, too)
+
       %li
-        %a{href:'https://github.com/Nerian/bootstrap-datepicker-rails'}Bootstrap Datepicker.
-        Set
-        %code helper_style: :bootstrap
+        %code
+          \:bootstrap_datepicker
+        \- Bootstrap datepicker (works for datetime, too)
+
       %li
-        standard Rails helper. Set
-        %code  helper_style: :standard
+        %code
+          \:rails_date_helper
+        \- standard Rails date helper
+
+      %li
+        %code
+          \:rails_datetime_helper
+        \- standard Rails datetime helper
+
+    Specify a date/datetime filter just like you specify any other filter:
+
+
+  %p
+    Default filters are defined in configuration constants
+    %code
+      Wice::Defaults::DEFAULT_FILTER_FOR_DATE
+    and
+    %code
+      Wice::Defaults::DEFAULT_FILTER_FOR_DATETIME.
+    By default
+    %code
+      \:jquery_datepicker
+    is used for both dates and time.
+
 
 
 
