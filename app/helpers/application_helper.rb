@@ -40,7 +40,7 @@ module ApplicationHelper
 
   def code_for(filename, filename_for_view, filetype = :ruby)
     code = File.read(filename)
-    @@code[filetype] = CodeRay.scan(code, filetype).div() unless @@code[filename]
+    @@code[filetype] = CodeRay.scan("\n#{code}", filetype).div() unless @@code[filename]
     return filename_for_view, @@code[filetype].html_safe
   end
 

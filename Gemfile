@@ -14,7 +14,7 @@ gem 'font-awesome-sass', '~> 4.3.0'
 gem "heroku"
 
 gem "wice_grid",  path: 'vendor/wice_grid'
-# gem "wice_grid",  :path => 'vendor/_wice_grid'
+# gem "wice_grid",  path: 'vendor/_wice_grid'
 # gem "wice_grid",  '3.4.11'
 
 gem 'jquery-ui-themes'
