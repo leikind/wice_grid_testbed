@@ -1,19 +1,20 @@
+# encoding: utf-8
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
 
 gem 'annotate', git: 'git://github.com/ctran/annotate_models.git'
-gem "faker"
-gem "coderay"
+gem 'faker'
+gem 'coderay'
 gem 'haml'
 gem 'turbolinks'
 gem 'thin'
 
 gem 'font-awesome-sass', '~> 4.3.0'
 
-gem "heroku"
+gem 'heroku'
 
-gem "wice_grid",  path: 'vendor/wice_grid'
+gem 'wice_grid',  path: 'vendor/wice_grid'
 # gem "wice_grid",  path: 'vendor/_wice_grid'
 # gem "wice_grid",  '3.4.11'
 
@@ -45,9 +46,9 @@ group :development do
 end
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.13.0"
+  gem 'rspec-rails', '~> 2.13.0'
   # gem 'capybara' , '1.1.2'
-  gem 'capybara' , '~> 2.1.0'
+  gem 'capybara', '~> 2.1.0'
   gem 'selenium-webdriver'
 end
 
@@ -55,13 +56,11 @@ group :test do
   gem 'shoulda-matchers'
 end
 
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
-
 
 # Deploy with Capistrano
 # gem 'capistrano'

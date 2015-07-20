@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CreateTasks < ActiveRecord::Migration
   def change
     create_table :tasks do |t|
@@ -22,6 +23,5 @@ class CreateTasks < ActiveRecord::Migration
     add_index :tasks, :status_id
     add_index :tasks, :relevant_version_id
     add_index :tasks, :expected_version_id
-
   end
 end

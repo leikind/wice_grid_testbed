@@ -1,4 +1,5 @@
-  class CustomFilters1Controller < ApplicationController
+# encoding: utf-8
+class CustomFilters1Controller < ApplicationController
   def index
     @versions_grid1 = initialize_grid(Version, name: 'g1', per_page: 5)
     @versions_grid2 = initialize_grid(Version, name: 'g2', per_page: 5)

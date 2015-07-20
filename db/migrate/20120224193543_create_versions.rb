@@ -1,9 +1,10 @@
+# encoding: utf-8
 class CreateVersions < ActiveRecord::Migration
   def change
     create_table :versions do |t|
       t.string :name
       t.references :project
-      t.string  :status
+      t.string :status
       t.timestamps
     end
 

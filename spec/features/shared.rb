@@ -1,17 +1,16 @@
-shared_examples "basic task table specs" do
-  it "is present on the page" do
+# encoding: utf-8
+shared_examples 'basic task table specs' do
+  it 'is present on the page' do
     page.should have_selector('div.wice-grid-container table.wice-grid')
   end
 
-
-  it "should have a show all link" do
+  it 'should have a show all link' do
     within 'div.wice-grid-container table.wice-grid' do
       page.should have_selector('a.wg-show-all-link')
     end
   end
 
-  it "should change pages" do
-
+  it 'should change pages' do
     within 'ul.pagination' do
       click_link '2'
     end
@@ -35,10 +34,9 @@ shared_examples "basic task table specs" do
     within '.pagination_status' do
       page.should have_content('41-50 / 50')
     end
-
   end
 
-  it "should have a pagination status with page 1 as the current page" do
+  it 'should have a pagination status with page 1 as the current page' do
     within 'div.wice-grid-container table.wice-grid' do
       page.should have_selector('div.pagination')
 
@@ -56,9 +54,8 @@ shared_examples "basic task table specs" do
   end
 end
 
-shared_examples "show all and back" do
-
-  it "should show all records when asked" do
+shared_examples 'show all and back' do
+  it 'should show all records when asked' do
     click_on 'show all'
 
     within 'div.wice-grid-container table.wice-grid' do
@@ -74,13 +71,10 @@ shared_examples "show all and back" do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
-
 end
 
-shared_examples "names of columns" do
-
+shared_examples 'names of columns' do
   it 'should have names of columns' do
     within 'div.wice-grid-container table.wice-grid thead' do
       page.should have_content('ID')
@@ -93,7 +87,6 @@ shared_examples "names of columns" do
 end
 
 shared_examples 'sorting ID' do
-
   it 'should sort column ID' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
@@ -130,7 +123,6 @@ shared_examples 'sorting ID' do
       page.should have_content('2')
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('ID')
     end
@@ -139,11 +131,9 @@ shared_examples 'sorting ID' do
       page.should have_content('527')
     end
   end
-
 end
 
 shared_examples 'sorting Title' do
-
   it 'should sort column Title' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
@@ -160,7 +150,6 @@ shared_examples 'sorting Title' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
-
 
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Title')
@@ -180,7 +169,6 @@ shared_examples 'sorting Title' do
       page.should have_content('2')
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Title')
     end
@@ -189,7 +177,6 @@ shared_examples 'sorting Title' do
       page.should have_content('quia dignissimos maiores')
     end
   end
-
 end
 
 shared_examples 'sorting Description' do
@@ -210,7 +197,6 @@ shared_examples 'sorting Description' do
       click_on 'Description'
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Description')
     end
@@ -226,7 +212,6 @@ shared_examples 'sorting Description' do
     within '.wice-grid li.active' do
       page.should have_content('2')
     end
-
 
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Description')
@@ -256,7 +241,6 @@ shared_examples 'sorting Archived' do
       click_on 'Archived'
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Archived')
     end
@@ -272,7 +256,6 @@ shared_examples 'sorting Archived' do
     within '.wice-grid li.active' do
       page.should have_content('2')
     end
-
 
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Archived')
@@ -302,7 +285,6 @@ shared_examples 'sorting Due Date' do
       click_on 'Due Date'
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Due Date')
     end
@@ -319,7 +301,6 @@ shared_examples 'sorting Due Date' do
       page.should have_content('2')
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Due Date')
     end
@@ -329,7 +310,6 @@ shared_examples 'sorting Due Date' do
     end
   end
 end
-
 
 shared_examples 'sorting ID in all records mode' do
   it 'should sort column ID' do
@@ -355,7 +335,6 @@ shared_examples 'sorting ID in all records mode' do
       click_on 'ID'
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.asc' do
       page.should have_content('ID')
     end
@@ -363,7 +342,6 @@ shared_examples 'sorting ID in all records mode' do
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('507')
     end
-
   end
 end
 
@@ -391,7 +369,6 @@ shared_examples 'sorting Title in all records mode' do
       click_on 'Title'
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Title')
     end
@@ -399,7 +376,6 @@ shared_examples 'sorting Title in all records mode' do
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('voluptatum non')
     end
-
   end
 end
 
@@ -429,7 +405,6 @@ shared_examples 'sorting Description in all records mode' do
       click_on 'Description'
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Description')
     end
@@ -437,7 +412,6 @@ shared_examples 'sorting Description in all records mode' do
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('Voluptate occaecati quisquam in et qui nostrum eos minus.')
     end
-
   end
 end
 
@@ -465,7 +439,6 @@ shared_examples 'sorting Archived in all records mode' do
       click_on 'Archived'
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Archived')
     end
@@ -473,7 +446,6 @@ shared_examples 'sorting Archived in all records mode' do
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('Yes')
     end
-
   end
 end
 
@@ -501,7 +473,6 @@ shared_examples 'sorting Due Date in all records mode' do
       click_on 'Due Date'
     end
 
-
     within 'div.wice-grid-container table.wice-grid thead th.sorted a.desc' do
       page.should have_content('Due Date')
     end
@@ -509,36 +480,21 @@ shared_examples 'sorting Due Date in all records mode' do
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('2013-03-30')
     end
-
   end
 end
 
 def wait_for_ajax(page)
   counter = 0
-  while page.execute_script("return $.active").to_i > 0
+  while page.execute_script('return $.active').to_i > 0
     counter += 1
     sleep(0.1)
-    raise "AJAX request took longer than 5 seconds." if counter >= 50
+    fail 'AJAX request took longer than 5 seconds.' if counter >= 50
   end
 end
 
-
-MONTH_NAMES = [ 'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec']
-
+MONTH_NAMES = %w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
 
 def set_datepicker(context, picker, year, month, day)
-
   context.find(:css, "##{picker} .ui-datepicker-trigger").click
 
   year_select = context.find(:css, '.ui-datepicker-year')
@@ -554,8 +510,7 @@ def set_datepicker(context, picker, year, month, day)
 end
 
 shared_examples 'Due Date datepicker filtering' do
-  it "should filter by Due Date" do
-
+  it 'should filter by Due Date' do
     set_datepicker(self, 'grid_f_due_date_fr_date_placeholder', 2012, 0, 1)
 
     set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2013, 0, 1)
@@ -574,7 +529,7 @@ shared_examples 'Due Date datepicker filtering' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
-        sleep 1
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
@@ -589,13 +544,12 @@ shared_examples 'Due Date datepicker filtering' do
       page.should have_content('2012-07-02')
     end
 
-
     set_datepicker(self, 'grid_f_due_date_fr_date_placeholder', 2012, 6, 28)
 
     set_datepicker(self, 'grid_f_due_date_to_date_placeholder', 2012, 6, 31)
 
     find(:css, '#grid_submit_grid_icon').click
-        sleep 1
+    sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-1 / 1')
@@ -620,14 +574,11 @@ shared_examples 'Due Date datepicker filtering' do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
-
   end
 end
 
 shared_examples 'Added datepicker filtering' do
-  it "should filter by Added" do
-
+  it 'should filter by Added' do
     set_datepicker(self, 'grid_f_created_at_fr_date_placeholder', 2011, 5, 1)
 
     set_datepicker(self, 'grid_f_created_at_to_date_placeholder', 2011, 9, 1)
@@ -668,26 +619,23 @@ shared_examples 'Added datepicker filtering' do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
 end
 
-
 # !!!
 shared_examples 'Due Date standard filtering' do
-  it "should filter by Due Date (standard filter)" do
-    select '2011', :from => 'grid_f_created_at_fr_year'
-    select 'February', :from => 'grid_f_created_at_fr_month'
-    select '8', :from => 'grid_f_created_at_fr_day'
-    select '00', :from => 'grid_f_created_at_fr_hour'
-    select '00', :from => 'grid_f_created_at_fr_minute'
+  it 'should filter by Due Date (standard filter)' do
+    select '2011', from: 'grid_f_created_at_fr_year'
+    select 'February', from: 'grid_f_created_at_fr_month'
+    select '8', from: 'grid_f_created_at_fr_day'
+    select '00', from: 'grid_f_created_at_fr_hour'
+    select '00', from: 'grid_f_created_at_fr_minute'
 
-
-    select '2011', :from => 'grid_f_created_at_to_year'
-    select 'September', :from => 'grid_f_created_at_to_month'
-    select '10', :from => 'grid_f_created_at_to_day'
-    select '00', :from => 'grid_f_created_at_to_hour'
-    select '00', :from => 'grid_f_created_at_to_minute'
+    select '2011', from: 'grid_f_created_at_to_year'
+    select 'September', from: 'grid_f_created_at_to_month'
+    select '10', from: 'grid_f_created_at_to_day'
+    select '00', from: 'grid_f_created_at_to_hour'
+    select '00', from: 'grid_f_created_at_to_minute'
 
     find(:css, '#grid_submit_grid_icon').click
 
@@ -711,25 +659,22 @@ shared_examples 'Due Date standard filtering' do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
 end
 
-
 shared_examples 'Created At standard filtering' do
-  it "should filter by created_at" do
-    select '2011', :from => 'grid_f_updated_at_fr_year'
-    select 'January', :from => 'grid_f_updated_at_fr_month'
-    select '8', :from => 'grid_f_updated_at_fr_day'
-    select '00', :from => 'grid_f_updated_at_fr_hour'
-    select '00', :from => 'grid_f_updated_at_fr_minute'
+  it 'should filter by created_at' do
+    select '2011', from: 'grid_f_updated_at_fr_year'
+    select 'January', from: 'grid_f_updated_at_fr_month'
+    select '8', from: 'grid_f_updated_at_fr_day'
+    select '00', from: 'grid_f_updated_at_fr_hour'
+    select '00', from: 'grid_f_updated_at_fr_minute'
 
-
-    select '2011', :from => 'grid_f_updated_at_to_year'
-    select 'December', :from => 'grid_f_updated_at_to_month'
-    select '10', :from => 'grid_f_updated_at_to_day'
-    select '00', :from => 'grid_f_updated_at_to_hour'
-    select '00', :from => 'grid_f_updated_at_to_minute'
+    select '2011', from: 'grid_f_updated_at_to_year'
+    select 'December', from: 'grid_f_updated_at_to_month'
+    select '10', from: 'grid_f_updated_at_to_day'
+    select '00', from: 'grid_f_updated_at_to_hour'
+    select '00', from: 'grid_f_updated_at_to_minute'
 
     find(:css, '#grid_submit_grid_icon').click
     sleep 1
@@ -757,13 +702,12 @@ shared_examples 'Created At standard filtering' do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
 end
 
 shared_examples 'Description filtering' do
-  it "should filter by Description" do
-    fill_in('grid_f_description', :with => 've')
+  it 'should filter by Description' do
+    fill_in('grid_f_description', with: 've')
 
     find(:css, '#grid_submit_grid_icon').click
 
@@ -785,7 +729,6 @@ shared_examples 'Description filtering' do
       page.should have_content('1-12 / 12')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('Ad sunt vel maxime labore temporibus incidunt quidem.')
     end
@@ -800,7 +743,6 @@ shared_examples 'Description filtering' do
       page.should have_content('1-12 / 12')
     end
 
-
     page.should have_content('Adipisci voluptate sed esse velit.')
     page.should have_content('Ad sunt vel maxime labore temporibus incidunt quidem.')
 
@@ -808,15 +750,12 @@ shared_examples 'Description filtering' do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
 end
 
-
 shared_examples 'ID filtering' do
-  it "should filter by ID, one limit" do
-    fill_in('grid_f_id_eq', :with => 550)
-
+  it 'should filter by ID, one limit' do
+    fill_in('grid_f_id_eq', with: 550)
 
     find(:css, '#grid_submit_grid_icon').click
 
@@ -830,12 +769,9 @@ shared_examples 'ID filtering' do
   end
 end
 
-
-
 shared_examples 'ID filtering, range' do
-  it "should filter by ID, one limit" do
-    fill_in('grid_f_id_fr', :with => 550)
-
+  it 'should filter by ID, one limit' do
+    fill_in('grid_f_id_fr', with: 550)
 
     find(:css, '#grid_submit_grid_icon').click
 
@@ -859,7 +795,6 @@ shared_examples 'ID filtering, range' do
       page.should have_content('1-7 / 7')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active-filter' do
       page.should have_content('550')
     end
@@ -867,7 +802,6 @@ shared_examples 'ID filtering, range' do
     551.upto(556) do |i|
       page.should have_content(i)
     end
-
 
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
@@ -877,7 +811,6 @@ shared_examples 'ID filtering, range' do
       page.should have_content('1-7 / 7')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('556')
     end
@@ -885,7 +818,6 @@ shared_examples 'ID filtering, range' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
-
 
     within '.pagination_status' do
       page.should have_content('1-7 / 7')
@@ -899,14 +831,13 @@ shared_examples 'ID filtering, range' do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
 end
 
 shared_examples 'ID two limits filtering' do
-  it "should filter by ID, two limits" do
-    fill_in('grid_f_id_fr', :with => 507)
-    fill_in('grid_f_id_to', :with => 509)
+  it 'should filter by ID, two limits' do
+    fill_in('grid_f_id_fr', with: 507)
+    fill_in('grid_f_id_to', with: 509)
 
     find(:css, '#grid_submit_grid_icon').click
 
@@ -921,7 +852,6 @@ shared_examples 'ID two limits filtering' do
     page.should have_content('508')
     page.should have_content('509')
 
-
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
@@ -929,7 +859,6 @@ shared_examples 'ID two limits filtering' do
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
     end
-
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted.active-filter' do
       page.should have_content('507')
@@ -938,7 +867,6 @@ shared_examples 'ID two limits filtering' do
     page.should have_content('508')
     page.should have_content('509')
 
-
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
@@ -947,7 +875,6 @@ shared_examples 'ID two limits filtering' do
       page.should have_content('1-3 / 3')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('509')
     end
@@ -955,7 +882,6 @@ shared_examples 'ID two limits filtering' do
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'Title'
     end
-
 
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
@@ -973,10 +899,10 @@ shared_examples 'ID two limits filtering' do
 end
 
 shared_examples 'Description and Title filtering' do
-  it "should filter by multiple columns" do
-    fill_in('grid_f_description', :with => 'v')
-    fill_in('grid_f_title', :with => 's')
-    select 'no', :from => 'grid_f_archived'
+  it 'should filter by multiple columns' do
+    fill_in('grid_f_description', with: 'v')
+    fill_in('grid_f_title', with: 's')
+    select 'no', from: 'grid_f_archived'
 
     find(:css, '#grid_submit_grid_icon').click
 
@@ -1002,15 +928,12 @@ shared_examples 'Description and Title filtering' do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
-
   end
 end
 
-
 shared_examples 'Archived filtering' do
-  it "should filter by Archived" do
-    select 'yes', :from => 'grid_f_archived'
+  it 'should filter by Archived' do
+    select 'yes', from: 'grid_f_archived'
     find(:css, '#grid_submit_grid_icon').click
 
     within '.pagination_status' do
@@ -1021,7 +944,7 @@ shared_examples 'Archived filtering' do
       page.should have_content('Yes')
     end
 
-    select 'no', :from => 'grid_f_archived'
+    select 'no', from: 'grid_f_archived'
     find(:css, '#grid_submit_grid_icon').click
 
     within '.pagination_status' do
@@ -1031,7 +954,6 @@ shared_examples 'Archived filtering' do
     within first(:css, 'td.active-filter') do
       page.should have_content('No')
     end
-
 
     within 'ul.pagination' do
       click_link '2'
@@ -1049,13 +971,12 @@ shared_examples 'Archived filtering' do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
 end
 
 shared_examples 'Title filtering' do
-  it "should filter by Ttile" do
-    fill_in('grid_f_title', :with => 'ed')
+  it 'should filter by Ttile' do
+    fill_in('grid_f_title', with: 'ed')
 
     find(:css, '#grid_submit_grid_icon').click
 
@@ -1077,7 +998,6 @@ shared_examples 'Title filtering' do
       page.should have_content('1-2 / 2')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('corporis expedita vel')
     end
@@ -1092,7 +1012,6 @@ shared_examples 'Title filtering' do
       page.should have_content('1-2 / 2')
     end
 
-
     page.should have_content('corporis expedita vel')
     page.should have_content('sed impedit iste')
 
@@ -1101,8 +1020,4 @@ shared_examples 'Title filtering' do
       page.should have_content('1-20 / 50')
     end
   end
-
-
-
 end
-

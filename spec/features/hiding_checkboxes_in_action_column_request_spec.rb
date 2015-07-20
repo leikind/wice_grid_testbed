@@ -1,61 +1,56 @@
+# encoding: utf-8
 require 'acceptance_helper'
 
-describe "action_column WiceGrid", :type => :request, :js => true do
-
+describe 'action_column WiceGrid', type: :request, js: true do
   before :each do
     visit '/hiding_checkboxes_in_action_column'
   end
 
-  it "there must be no checkboxes for tasks with the Assigned status" do
-    select 'Assigned', :from => 'g_f_status_id'
-    find(:css, "#g_submit_grid_icon").click
+  it 'there must be no checkboxes for tasks with the Assigned status' do
+    select 'Assigned', from: 'g_f_status_id'
+    find(:css, '#g_submit_grid_icon').click
 
-    find(:css, %`.clickable.select-all`).click
+    find(:css, %(.clickable.select-all)).click
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
 
-    lambda{
-      find(:css, %`.sel input[type=checkbox]`)
-    }.should raise_error(Capybara::ElementNotFound)
-
+    lambda do
+      find(:css, %(.sel input[type=checkbox]))
+    end.should raise_error(Capybara::ElementNotFound)
   end
 
-  it "should select rows" do
-
+  it 'should select rows' do
     510.upto(520).each do |i|
-      find(:css, %`input[type="checkbox"][value="#{i}"]`).click unless i == 519
-
+      find(:css, %(input[type="checkbox"][value="#{i}"])).click unless i == 519
     end
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
 
     page.should have_content('Selected tasks: 510, 511, 512, 513, 514, 515, 516, 517, 518, and 520')
   end
 
-  it "should select rows with the select all button and deselect them with the deselect button" do
+  it 'should select rows with the select all button and deselect them with the deselect button' do
+    find(:css, %(.clickable.select-all)).click
 
-    find(:css, %`.clickable.select-all`).click
-
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
 
     page.should have_content('Selected tasks: 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 520, 521, 522, 523, 524, 525, and 526')
 
-    find(:css, %`.clickable.deselect-all`).click
+    find(:css, %(.clickable.deselect-all)).click
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
 
     page.should_not have_content('Selected tasks: 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 520, 521, 522, 523, 524, 525, and 526')
   end
 
-  it "should keep the state of filter inside a form" do
-
+  it 'should keep the state of filter inside a form' do
   end
 
-  it "should filter by ID inside a form, two limits" do
-    fill_in('g_f_id_fr', :with => 507)
-    fill_in('g_f_id_to', :with => 509)
+  it 'should filter by ID inside a form, two limits' do
+    fill_in('g_f_id_fr', with: 507)
+    fill_in('g_f_id_to', with: 509)
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
     sleep 1
 
     within '.pagination_status' do
@@ -68,7 +63,6 @@ describe "action_column WiceGrid", :type => :request, :js => true do
 
     page.should have_content('508')
     page.should have_content('509')
-
 
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
@@ -86,7 +80,6 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     page.should have_content('508')
     page.should have_content('509')
 
-
     within 'div.wice-grid-container table.wice-grid thead' do
       click_on 'ID'
     end
@@ -95,7 +88,6 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
     end
-
 
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.sorted' do
       page.should have_content('507')
@@ -106,16 +98,14 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     end
     sleep 1
 
-
     within '.pagination_status' do
       page.should have_content('1-3 / 3')
     end
-
   end
 
-  it "should filter by Archived inside a form" do
-    select 'yes', :from => 'g_f_archived'
-    first(:css, 'button.btn', :text => 'Process tasks').click
+  it 'should filter by Archived inside a form' do
+    select 'yes', from: 'g_f_archived'
+    first(:css, 'button.btn', text: 'Process tasks').click
 
     within '.pagination_status' do
       page.should have_content('1-4 / 4')
@@ -125,8 +115,8 @@ describe "action_column WiceGrid", :type => :request, :js => true do
       page.should have_content('Yes')
     end
 
-    select 'no', :from => 'g_f_archived'
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    select 'no', from: 'g_f_archived'
+    first(:css, 'button.btn', text: 'Process tasks').click
 
     within '.pagination_status' do
       page.should have_content('1-20 / 46')
@@ -135,7 +125,6 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within first(:css, 'td.active-filter') do
       page.should have_content('No')
     end
-
 
     within 'ul.pagination' do
       click_link '2'
@@ -148,18 +137,14 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     within first(:css, 'td.active-filter') do
       page.should have_content('No')
     end
-
-
   end
 
-
-  it "should filter by Added inside a form" do
-
+  it 'should filter by Added inside a form' do
     set_datepicker(self, 'g_f_created_at_fr_date_placeholder', 2011, 5, 1)
 
     set_datepicker(self, 'g_f_created_at_to_date_placeholder', 2011, 9, 1)
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
     sleep 1
 
     within '.pagination_status' do
@@ -188,19 +173,14 @@ describe "action_column WiceGrid", :type => :request, :js => true do
       page.should have_content('2011-09-22 22:11:12')
       # page.should have_content('2011-08-14 22:11:12')
     end
-
-
   end
 
-
-
-  it "should filter by Due Date" do
-
+  it 'should filter by Due Date' do
     set_datepicker(self, 'g_f_due_date_fr_date_placeholder', 2012, 0, 1)
 
     set_datepicker(self, 'g_f_due_date_to_date_placeholder', 2013, 0, 1)
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
     sleep 1
 
     within '.pagination_status' do
@@ -229,12 +209,11 @@ describe "action_column WiceGrid", :type => :request, :js => true do
       page.should have_content('2012-07-02')
     end
 
-
     set_datepicker(self, 'g_f_due_date_fr_date_placeholder', 2012, 6, 28)
 
     set_datepicker(self, 'g_f_due_date_to_date_placeholder', 2012, 6, 31)
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
     sleep 1
 
     within '.pagination_status' do
@@ -244,7 +223,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     find(:css, '#g_f_due_date_fr_date_view').click
     sleep 1
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
     sleep 1
 
     within '.pagination_status' do
@@ -254,36 +233,33 @@ describe "action_column WiceGrid", :type => :request, :js => true do
     find(:css, '#g_f_due_date_to_date_view').click
     sleep 1
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
     sleep 1
 
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
 
-  it "should negate the semantics of the text  filter inside a form" do
+  it 'should negate the semantics of the text  filter inside a form' do
+    fill_in('g_f_title_v', with: 'sed')
+    select 'no', from: 'g_f_archived'
 
-    fill_in('g_f_title_v', :with => 'sed')
-    select 'no', :from => 'g_f_archived'
-
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
 
     page.should have_content('sed impedit iste')
 
     find(:css, '#g_f_title_n').click
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
 
     page.should_not have_content('sed impedit iste')
-
   end
 
-  it "should reload the title filter" do
-    fill_in('g_f_title_v', :with => 'ed')
+  it 'should reload the title filter' do
+    fill_in('g_f_title_v', with: 'ed')
 
-    first(:css, 'button.btn', :text => 'Process tasks').click
+    first(:css, 'button.btn', text: 'Process tasks').click
 
     within '.pagination_status' do
       page.should have_content('1-2 / 2')
@@ -303,7 +279,6 @@ describe "action_column WiceGrid", :type => :request, :js => true do
       page.should have_content('1-2 / 2')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('corporis expedita vel')
     end
@@ -318,10 +293,7 @@ describe "action_column WiceGrid", :type => :request, :js => true do
       page.should have_content('1-2 / 2')
     end
 
-
     page.should have_content('corporis expedita vel')
     page.should have_content('sed impedit iste')
-
   end
-
 end

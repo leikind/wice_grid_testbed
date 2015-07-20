@@ -1,5 +1,5 @@
+# encoding: utf-8
 module ToDropdownMixin
-
   def self.included(base)
     base.extend(ClassMethods)
   end
@@ -13,5 +13,4 @@ module ToDropdownMixin
   def to_option
     [name, id]
   end
-
 end

@@ -1,16 +1,13 @@
+# encoding: utf-8
 require 'acceptance_helper'
 
-describe "buttons WiceGrid", :type => :request, :js => true do
-
+describe 'buttons WiceGrid', type: :request, js: true do
   before :each do
     visit '/buttons'
   end
 
-
-
-
-  it "should filter by Archived" do
-    select 'yes', :from => 'grid_f_archived'
+  it 'should filter by Archived' do
+    select 'yes', from: 'grid_f_archived'
     click_button('Submit')
 
     within '.pagination_status' do
@@ -21,7 +18,7 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('Yes')
     end
 
-    select 'no', :from => 'grid_f_archived'
+    select 'no', from: 'grid_f_archived'
     click_button('Submit')
 
     within '.pagination_status' do
@@ -31,7 +28,6 @@ describe "buttons WiceGrid", :type => :request, :js => true do
     within first(:css, 'td.active-filter') do
       page.should have_content('No')
     end
-
 
     within 'ul.pagination' do
       click_link '2'
@@ -49,13 +45,10 @@ describe "buttons WiceGrid", :type => :request, :js => true do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
-
   end
 
-
-  it "should filter by Ttile" do
-    fill_in('grid_f_title', :with => 'ed')
+  it 'should filter by Ttile' do
+    fill_in('grid_f_title', with: 'ed')
 
     click_button('Submit')
 
@@ -77,7 +70,6 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('1-2 / 2')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('corporis expedita vel')
     end
@@ -92,7 +84,6 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('1-2 / 2')
     end
 
-
     page.should have_content('corporis expedita vel')
     page.should have_content('sed impedit iste')
 
@@ -100,14 +91,10 @@ describe "buttons WiceGrid", :type => :request, :js => true do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
-
   end
 
-
-
-  it "should filter by Description" do
-    fill_in('grid_f_description', :with => 've')
+  it 'should filter by Description' do
+    fill_in('grid_f_description', with: 've')
 
     click_button('Submit')
 
@@ -129,7 +116,6 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('1-12 / 12')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('Ad sunt vel maxime labore temporibus incidunt quidem.')
     end
@@ -144,7 +130,6 @@ describe "buttons WiceGrid", :type => :request, :js => true do
       page.should have_content('1-12 / 12')
     end
 
-
     page.should have_content('Adipisci voluptate sed esse velit.')
     page.should have_content('Ad sunt vel maxime labore temporibus incidunt quidem.')
 
@@ -152,14 +137,12 @@ describe "buttons WiceGrid", :type => :request, :js => true do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
 
-
-  it "should filter by multiple columns" do
-    fill_in('grid_f_description', :with => 'v')
-    fill_in('grid_f_title', :with => 's')
-    select 'no', :from => 'grid_f_archived'
+  it 'should filter by multiple columns' do
+    fill_in('grid_f_description', with: 'v')
+    fill_in('grid_f_title', with: 's')
+    select 'no', from: 'grid_f_archived'
 
     click_button('Submit')
 
@@ -185,10 +168,5 @@ describe "buttons WiceGrid", :type => :request, :js => true do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
-
   end
-
-
-
 end

@@ -1,4 +1,510 @@
 
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
 shared_examples "detached_filters" do
   it "should filter by Archived" do
     select 'yes', :from => 'grid_f_archived'
@@ -23,7 +529,6 @@ shared_examples "detached_filters" do
       page.should have_content('No')
     end
 
-
     within 'ul.pagination' do
       click_link '2'
     end
@@ -42,10 +547,7 @@ shared_examples "detached_filters" do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
-
   end
-
 
   it "should filter by Ttile" do
     fill_in('grid_f_title', :with => 'ed')
@@ -70,7 +572,6 @@ shared_examples "detached_filters" do
       page.should have_content('1-2 / 2')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('corporis expedita vel')
     end
@@ -85,7 +586,6 @@ shared_examples "detached_filters" do
       page.should have_content('1-2 / 2')
     end
 
-
     page.should have_content('corporis expedita vel')
     page.should have_content('sed impedit iste')
 
@@ -93,11 +593,7 @@ shared_examples "detached_filters" do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
-
   end
-
-
 
   it "should filter by Description" do
     fill_in('grid_f_description', :with => 've')
@@ -122,7 +618,6 @@ shared_examples "detached_filters" do
       page.should have_content('1-12 / 12')
     end
 
-
     within 'div.wice-grid-container table.wice-grid tbody tr:first-child td.active-filter' do
       page.should have_content('Ad sunt vel maxime labore temporibus incidunt quidem.')
     end
@@ -137,7 +632,6 @@ shared_examples "detached_filters" do
       page.should have_content('1-12 / 12')
     end
 
-
     page.should have_content('Adipisci voluptate sed esse velit.')
     page.should have_content('Ad sunt vel maxime labore temporibus incidunt quidem.')
 
@@ -145,9 +639,7 @@ shared_examples "detached_filters" do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
   end
-
 
   it "should filter by multiple columns" do
     fill_in('grid_f_description', :with => 'v')
@@ -178,8 +670,5 @@ shared_examples "detached_filters" do
     within '.pagination_status' do
       page.should have_content('1-20 / 50')
     end
-
-
   end
-
 end

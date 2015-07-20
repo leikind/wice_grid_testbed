@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CreateWiceGridSerializedQueries < ::ActiveRecord::Migration
   def change
     create_table :wice_grid_serialized_queries do |t|
