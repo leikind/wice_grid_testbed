@@ -1,7 +1,7 @@
 # encoding: utf-8
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.4'
 
 gem 'annotate', git: 'git://github.com/ctran/annotate_models.git'
 gem 'faker'
