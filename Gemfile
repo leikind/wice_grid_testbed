@@ -9,6 +9,7 @@ gem 'coderay'
 gem 'haml'
 gem 'turbolinks'
 gem 'thin'
+gem 'test-unit'
 
 gem 'font-awesome-sass', '~> 4.3.0'
 

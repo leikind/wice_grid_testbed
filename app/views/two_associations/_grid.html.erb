@@ -4,9 +4,9 @@
 
   g.column name:  'Project Name', attribute: 'name'
 
-  g.column  name:  'Customer company', assoc: :company, attribute: 'name', assoc: :customer
+  g.column name:  'Customer company', attribute: 'name', assoc: :customer
 
-  g.column  name:  'Supplier company', assoc: :company, attribute: 'name', table_alias: 'suppliers_projects', assoc: :supplier
+  g.column name:  'Supplier company', attribute: 'name', assoc: :supplier, table_alias: 'suppliers_projects'
 
 end -%>
 
