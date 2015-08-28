@@ -15,6 +15,8 @@ gem 'test-unit'
 
 gem 'heroku'
 
+gem 'font-awesome-sass', '~> 4.3.0'
+
 # gem 'wice_grid',  path: 'vendor/wice_grid'
 gem "wice_grid",  '3.6.0.pre2'
 
