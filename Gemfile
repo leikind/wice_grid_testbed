@@ -13,12 +13,10 @@ gem 'turbolinks'
 gem 'thin'
 gem 'test-unit'
 
-gem 'font-awesome-sass', '~> 4.3.0'
-
 gem 'heroku'
 
 # gem 'wice_grid',  path: 'vendor/wice_grid'
-gem "wice_grid",  '3.6.0.pre1'
+gem "wice_grid",  '3.6.0.pre2'
 
 gem 'jquery-ui-themes'
 

@@ -74,8 +74,8 @@ GEM
     faker (1.4.2)
       i18n (~> 0.5)
     ffi (1.9.10)
-    font-awesome-sass (4.3.2.1)
-      sass (~> 3.2)
+    font-awesome-sass (4.4.0)
+      sass (>= 3.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     haml (4.0.5)
@@ -209,7 +209,7 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     websocket (1.2.2)
-    wice_grid (3.6.0.pre1)
+    wice_grid (3.6.0.pre2)
       activerecord (> 3.2)
       coffee-rails (> 3.2)
       font-awesome-sass (~> 4.3)
@@ -227,7 +227,6 @@ DEPENDENCIES
   coderay
   coffee-rails
   faker
-  font-awesome-sass (~> 4.3.0)
   haml
   heroku
   jquery-rails
@@ -247,4 +246,4 @@ DEPENDENCIES
   thin
   turbolinks
   uglifier (>= 1.0.3)
-  wice_grid (= 3.6.0.pre1)
+  wice_grid (= 3.6.0.pre2)
