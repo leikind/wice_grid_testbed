@@ -1,7 +1,7 @@
 # encoding: utf-8
 source 'https://rubygems.org'
 
-ruby "2.2.2"
+ruby "2.2.3"
 
 gem 'rails', '4.2.4'
 
@@ -13,10 +13,10 @@ gem 'turbolinks'
 gem 'thin'
 gem 'test-unit'
 
-gem 'heroku'
-
 gem 'wice_grid', '3.6.0.pre4'
-# gem 'wice_grid',  '~> 4.3'
+# gem 'wice_grid',  path: 'vendor/wice_grid'
+
+
 
 gem 'font-awesome-sass',  '~> 4.3'
 
