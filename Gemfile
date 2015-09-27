@@ -10,13 +10,11 @@ gem 'faker'
 gem 'coderay'
 gem 'haml'
 gem 'turbolinks'
-gem 'thin'
+gem 'puma'
 gem 'test-unit'
 
 gem 'wice_grid', '3.6.0.pre4'
 # gem 'wice_grid',  path: 'vendor/wice_grid'
-
-
 
 gem 'font-awesome-sass',  '~> 4.3'
 
