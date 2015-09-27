@@ -32,7 +32,7 @@ module Populate
       end
     end
 
-    projects = Project.find(:all, include: :users)
+    projects = Project.includes(:users).all
     project_roles = ProjectRole.all
 
     ['Wikus van de Merwe', 'Grey Bradnam', 'Christopher Johnson', 'Piet Smit', 'Fundiswa Mhlanga', 'Tania van de Merwe',
@@ -48,7 +48,7 @@ module Populate
        end
     end
 
-    projects = Project.find(:all, include: [:users, :versions])
+    projects = Project.includes([:users, :versions]).all
     statuses = Status.all
     priorities = Priority.all
 
