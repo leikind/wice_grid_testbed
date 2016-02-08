@@ -2,9 +2,20 @@
   cd wice_grid_testbed
   git submodule init
   git submodule update
-  bundle
-  bundle exec 'rake db:create'
-  bundle exec 'rake db:migrate'
-  bundle exec 'rake db:seed'
-  rails g wice_grid:install
-  rails s
+
+  # To use a MySql database
+  bundle install --without postgres
+  cp config/database.yml.mysql config/database.mysql
+
+  # To use a PostgreSQL database
+  bundle install --without mysql
+  cp config/database.yml.postgresql config/database.yml
+
+  bundle exec rake db:create db:setup
+  bundle exec rails g wice_grid:install
+
+  # In case you want to test it yourself:
+  bundle exec rails s
+
+  # In case you want to run the tests
+  bundle exec rake

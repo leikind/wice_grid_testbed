@@ -32,13 +32,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :production do
+group :production, :postgres do
   gem 'pg'
 end
 
-group :development do
-  gem 'mysql2'
-end
+gem 'mysql2', group: :mysql
 
 group :test, :development do
   gem "rspec-rails", "~> 2.13.0"
