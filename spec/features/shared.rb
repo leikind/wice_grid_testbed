@@ -494,19 +494,6 @@ end
 
 MONTH_NAMES = %w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
 
-MONTH_NAMES = [ 'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec']
-
 
 def set_datepicker(context, picker, year, month, day)
   context.find(:css, "##{picker} .ui-datepicker-trigger").click
@@ -533,7 +520,6 @@ shared_examples 'Due Date datepicker filtering' do
     sleep 1
 
 
-    sleep 10
     within '.pagination_status' do
       page.should have_content('1-20 / 35')
     end
