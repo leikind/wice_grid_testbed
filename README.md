@@ -54,10 +54,24 @@ Then open the URL http://localhost:3000/ in your favorite web browser.
 
 ## Run the tests
 
+### Selenium
+
 Be sure to have Firefox installed first, then run the following command :
+
+```
+$ bundle exec rake BROWSER=true
+```
+
+A Firefox instance will be fired and the tests are going to be executed in it.
+
+### CI or without UI
+
+In order to run the tests on our CI, we're using the headless driver
+[poltergeist](https://github.com/teampoltergeist/poltergeist) with
+[PhantomJS](http://phantomjs.org).
+
+To run the tests without the UI :
 
 ```
 $ bundle exec rake
 ```
-
-A Firefox instance will be fired and the tests are going to be executed in it.
