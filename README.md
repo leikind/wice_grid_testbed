@@ -23,7 +23,7 @@ WARNING: The Rails 2 branch is no more maintained. You can use it but keep in
 mind that the branch is outdated.
 
 ```
-  $ git checkout rails2
+$ git checkout rails2
 ```
 
 ### Rails 4
