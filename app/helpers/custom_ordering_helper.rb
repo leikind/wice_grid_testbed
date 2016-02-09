@@ -1,2 +1,0 @@
-module CustomOrderingHelper
-end

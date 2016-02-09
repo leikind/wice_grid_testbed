@@ -59,7 +59,7 @@
         to the column definition. Any filter related parameters like
         %code :attribute
         ,
-        %code :model
+        %code :assoc
         , or
         %code :custom_filter
         can be skipped in a CSV-only column.
@@ -82,9 +82,9 @@
 
 
 .row-fluid
-  .span12
-    =render partial:  'projects_grid'
+  .col-md-12
+    =render  'projects_grid'
 
 .row-fluid
-  .span12
-    =render partial:  'tasks_grid'
+  .col-md-12
+    =render  'tasks_grid'

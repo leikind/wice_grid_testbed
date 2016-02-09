@@ -2,8 +2,8 @@
 %html
   %head
     %title WiceGrid Examples
-    = stylesheet_link_tag    "application", media: "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
 
@@ -11,7 +11,7 @@
     .container-fluid
 
       %header
-        %h1 WiceGrid 3.4.1 examples
+        %h1 WiceGrid 3.6.0.pre4 examples
         .example-navigator
           %ul.pager
             - previous_example_controller, next_example_controller = previous_next_example_urls
@@ -24,11 +24,10 @@
         .clear
 
 
-
       .row-fluid
-        .span3
-          .well.sidebar-nav
-            %ul.nav.nav-list
+        .col-md-3
+          .well
+            %ul.nav.nav-pills.nav-stacked
 
               - @example_map.each do |title, examples|
 
@@ -43,7 +42,7 @@
                     - active_klass = nil
                   %li{class: active_klass}
                     = link_to name, controller: example_controller, action: :index
-        .span9
+        .col-md-9
           =yield
 
 
@@ -51,7 +50,7 @@
       %hr
 
       %footer
-        &copy; Yury Leikind 2012
+        &copy; Yury Leikind 2012 - 2015
         %span.sources
           %a{href: "https://github.com/leikind/wice_grid"} Sources
 

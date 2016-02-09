@@ -1,15 +1,13 @@
+# encoding: utf-8
 require 'acceptance_helper'
 
-describe "adding rows WiceGrid", :type => :request, :js => true do
-
+describe 'adding rows WiceGrid', type: :request, js: true do
   before :each do
     visit '/adding_rows'
   end
 
-
-  it "should filter by custom filters" do
-
-    select 'Urgent', :from => 'grid_f_priority_id'
+  it 'should filter by custom filters' do
+    select 'Urgent', from: 'grid_f_priority_id'
 
     find(:css, '#grid_submit_grid_icon').click
 
@@ -19,7 +17,5 @@ describe "adding rows WiceGrid", :type => :request, :js => true do
     end
 
     page.should have_content("Don't panic")
-
   end
-
 end

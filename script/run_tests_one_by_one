@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+for e in `ls  spec/features/*.rb`
+do
+  echo "$e"
+  bundle exec rspec "$e"
+done

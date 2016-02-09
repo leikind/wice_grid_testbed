@@ -5,61 +5,61 @@
 
 = show_code
 
-= render partial:  'grid'
+= render   'grid'
 
 
-.row-fluid
-  .span2
+.row
+  .col-md-2
     ID:
-  .span10
+  .col-md-10
     = grid_filter @tasks_grid, :id
 
-.row-fluid
-  .span2
+.row
+  .col-md-2
     Title:
-  .span10
+  .col-md-10
     = grid_filter @tasks_grid, :title
 
-.row-fluid
-  .span2
+.row
+  .col-md-2
     Archived:
-  .span10
+  .col-md-10
     = grid_filter @tasks_grid, :archived
 
 
-.row-fluid
-  .span2
+.row
+  .col-md-2
     Status:
-  .span10
+  .col-md-10
     = grid_filter @tasks_grid, :status_id
 
-.row-fluid
-  .span2
+.row
+  .col-md-2
     Project:
-  .span10
+  .col-md-10
     = grid_filter @tasks_grid, :project_id
 
 
-.row-fluid
-  .span2
+.row
+  .col-md-2
     Due date:
-  .span10
+  .col-md-10
     = grid_filter @tasks_grid, :due_date
 
 
-.row-fluid
-  .span2
+.row
+  .col-md-2
     Added:
-  .span10
+  .col-md-10
     = grid_filter @tasks_grid, :created_at
 
 
-.row-fluid
-  .span12
+.row
+  .col-md-12
     .external-buttons
-      %button.btn.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
+      %button.btn.btn-default.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
 
-.row-fluid
-  .span12
+.row
+  .col-md-12
 
     = render_grid(@tasks_grid)

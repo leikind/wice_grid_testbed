@@ -1,6 +1,6 @@
 <%= grid(@tasks_grid) do |g|
 
-  g.action_column
+  g.action_column html_check_box: false
   # The default param_name is 'selected', the complete HTTP parameter will be "#{grid_name}[#{param_name}][]"
 
   # Or:
@@ -25,9 +25,7 @@
     task.project.name if task.project
   end
 
-  g.column name:  'Due Date', attribute: 'due_date' do |task|
-    task.due_date if task.due_date
-  end
+  g.column name:  'Due Date', attribute: 'due_date'
 
 
   g.column name:  'Added', attribute: 'created_at' do |task|

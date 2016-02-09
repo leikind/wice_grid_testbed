@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CreateUserProjectParticipations < ActiveRecord::Migration
   def change
     create_table :user_project_participations do |t|

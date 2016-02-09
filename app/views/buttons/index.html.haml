@@ -12,7 +12,7 @@
 
   %p
     %code grid
-    parameters
+    helper parameters
     %code hide_submit_button: true
     and
     %code hide_reset_button: true
@@ -21,10 +21,10 @@
 = show_code
 
 .row-fluid
-  .span12
+  .col-md-12
     .external-buttons
       %button.btn.btn-primary.wg-external-submit-button{'data-grid-name' => 'grid'} Submit
-      %button.btn.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
+      %button.btn.btn-default.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
 
 
-    = render partial:  'grid'
+    = render   'grid'

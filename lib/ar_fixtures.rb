@@ -1,12 +1,11 @@
+# encoding: utf-8
 # Extension to make it easy to read and write data to a file.
 class ActiveRecord::Base
-
   class << self
-
     # Writes content of this table to db/table_name.yml, or the specified file.
     #
     # Writes all content by default, but can be limited.
-    def dump_to_file(path=nil, limit=nil)
+    def dump_to_file(path = nil, limit = nil)
       opts = {}
       opts[:limit] = limit if limit
       path ||= "db/#{table_name}.yml"
@@ -14,7 +13,7 @@ class ActiveRecord::Base
     end
 
     # Delete existing data in database and load fresh from file in db/table_name.yml
-    def load_from_file(path=nil)
+    def load_from_file(path = nil)
       path ||= "db/#{table_name}.yml"
 
       self.destroy_all
@@ -23,7 +22,7 @@ class ActiveRecord::Base
        connection.reset_pk_sequence!(table_name)
       end
 
-      records = YAML::load( File.open( File.expand_path(path, Rails.root) ) )
+      records = YAML.load(File.open(File.expand_path(path, Rails.root)))
       records.each do |record|
         record_copy = self.new(record.attributes)
         record_copy.id = record.id
@@ -46,28 +45,28 @@ class ActiveRecord::Base
     # Uses existing data in the database.
     #
     # Will be written to +test/fixtures/table_name.yml+. Can be restricted to some number of rows.
-    def to_fixture(limit=nil)
+    def to_fixture(limit = nil)
       opts = {}
       opts[:limit] = limit if limit
 
       write_file(File.expand_path("test/fixtures/#{table_name}.yml", Rails.root),
-          self.find(:all, opts).inject({}) { |hsh, record|
-              hsh.merge("#{table_name.singularize}_#{'%05i' % record.id}" => record.attributes)
-            }.to_yaml(:SortKeys => true))
+                 self.find(:all, opts).inject({}) do |hsh, record|
+                     hsh.merge("#{table_name.singularize}_#{'%05i' % record.id}" => record.attributes)
+                 end.to_yaml(SortKeys: true))
       habtm_to_fixture
     end
 
     # Write the habtm association table
     def habtm_to_fixture
-      joins = self.reflect_on_all_associations.select { |j|
+      joins = self.reflect_on_all_associations.select do |j|
         j.macro == :has_and_belongs_to_many
-      }
+      end
       joins.each do |join|
         hsh = {}
-        connection.select_all("SELECT * FROM #{join.options[:join_table]}").each_with_index { |record, i|
+        connection.select_all("SELECT * FROM #{join.options[:join_table]}").each_with_index do |record, i|
           hsh["join_#{'%05i' % i}"] = record
-        }
-        write_file(File.expand_path("test/fixtures/#{join.options[:join_table]}.yml", Rails.root), hsh.to_yaml(:SortKeys => true))
+        end
+        write_file(File.expand_path("test/fixtures/#{join.options[:join_table]}.yml", Rails.root), hsh.to_yaml(SortKeys: true))
       end
     end
 
@@ -82,22 +81,20 @@ class ActiveRecord::Base
     #    name:
     #    rating:
     #
-    # TODO Automatically add :id field if there is one.
+    # TODO: Automatically add :id field if there is one.
     def to_skeleton
       record = {
-          "record_1" => self.new.attributes,
-          "record_2" => self.new.attributes
+          'record_1' => self.new.attributes,
+          'record_2' => self.new.attributes
          }
       write_file(File.expand_path("test/fixtures/#{table_name}.yml", Rails.root),
-        record.to_yaml)
+                 record.to_yaml)
     end
 
     def write_file(path, content) # :nodoc:
-      f = File.new(path, "w+")
+      f = File.new(path, 'w+')
       f.puts content
       f.close
     end
-
   end
-
 end

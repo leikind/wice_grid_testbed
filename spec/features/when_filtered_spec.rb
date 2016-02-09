@@ -132,7 +132,7 @@ describe "when_filtered WiceGrid",  :js => true do
     end
 
 
-    within 'div.pagination' do
+    within 'ul.pagination' do
       click_link '2'
     end
 

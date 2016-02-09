@@ -4,11 +4,11 @@
 
   g.column name:  'Title', attribute: 'title'
 
-  g.column name:  'Priority', attribute: 'name', model: 'Priority', custom_filter: %w(Anecdotic High Low Normal Urgent) do |task|
+  g.column name:  'Priority', attribute: 'name', assoc: :priority, custom_filter: %w(Anecdotic High Low Normal Urgent) do |task|
     task.priority.name if task.priority
   end
 
-  g.column name:  'Status', attribute: 'status_id', custom_filter: Status.to_dropdown  do |task|
+  g.column name:  'Status', attribute: 'status_id',  custom_filter: Status.to_dropdown  do |task|
     task.status.name if task.status
   end
 

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CreateProjectRoles < ActiveRecord::Migration
   def change
     create_table :project_roles do |t|

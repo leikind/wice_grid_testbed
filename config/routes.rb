@@ -1,9 +1,8 @@
+# encoding: utf-8
 Examples::Application.routes.draw do
-
   # just in order to have the helpers defined
   resources :tasks
   resources :projects
-
 
   resources :action_column do
     collection do
@@ -17,54 +16,52 @@ Examples::Application.routes.draw do
     end
   end
 
-
   resources :localization,
-    :integration_with_application_view,
-    :detached_filters,
-    :csv_and_detached_filters,
-    :detached_filters_two_grids,
-    :csv_export,
-    :csv_export2K,
-    :all_records,
-    :dates,
-    :numeric_filters,
-    :auto_reloads,
-    :auto_reloads2,
-    :auto_reloads3,
-    :integration_with_forms,
-    :erb_mode,
-    :no_records,
-    :adding_rows,
-    :styling,
-    :buttons,
-    :null_values,
-    :custom_filters4,
-    :custom_filters3,
-    :custom_filters2,
-    :custom_filters1,
-    :custom_ordering2,
-    :custom_ordering,
-    :many_grids_on_page,
-    :two_associations,
-    :joining_tables,
-    :basics6,
-    :basics5,
-    :basics4,
-    :basics3,
-    :upper_pagination_panel,
-    :basics2,
-    :basics1,
-    :negation,
-    :resultset_processings,
-    :resultset_processings2,
-    :custom_filter_params,
-    :saved_queries,
-    :blockless_column_definition,
-    :disable_all_filters,
-    :tasks,
-    :when_filtered
+            :integration_with_application_view,
+            :detached_filters,
+            :csv_and_detached_filters,
+            :detached_filters_two_grids,
+            :csv_export,
+            :all_records,
+            :dates,
+            :numeric_filters,
+            :auto_reloads,
+            :auto_reloads2,
+            :auto_reloads3,
+            :integration_with_forms,
+            :erb_mode,
+            :no_records,
+            :adding_rows,
+            :styling,
+            :buttons,
+            :null_values,
+            :custom_filters4,
+            :custom_filters3,
+            :custom_filters2,
+            :custom_filters1,
+            :custom_ordering2,
+            :custom_ordering,
+            :many_grids_on_page,
+            :two_associations,
+            :joining_tables,
+            :basics6,
+            :basics5,
+            :basics4,
+            :basics3,
+            :upper_pagination_panel,
+            :basics2,
+            :basics1,
+            :negation,
+            :resultset_processings,
+            :resultset_processings2,
+            :custom_filter_params,
+            :saved_queries,
+            :blockless_column_definition,
+            :disable_all_filters,
+            :tasks,
+            :when_filtered
 
-  Wice::define_routes(self, 'queries')
+  Wice.define_routes(self, 'queries')
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -115,7 +112,7 @@ Examples::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'basics1#index'
+  root to: 'basics1#index'
 
   # See how all your routes lay out with "rake routes"
 

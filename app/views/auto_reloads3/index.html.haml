@@ -5,74 +5,74 @@
 
 = show_code
 
-= render partial:  'grid', locals:{grid: @tasks_grid}
-= render partial:  'grid', locals:{grid: @tasks_grid2}
+= render   'grid', grid: @tasks_grid
+= render   'grid', grid: @tasks_grid2
 
 
 .row-fluid
-  .span2
+  .col-md-2
     Title:
-  .span4
+  .col-md-4
     = grid_filter @tasks_grid, :title
 
-  .span2
+  .col-md-2
     Title:
-  .span4
+  .col-md-4
     = grid_filter @tasks_grid2, :title
 
 
 
 .row-fluid
-  .span2
+  .col-md-2
     Archived:
-  .span4
+  .col-md-4
     = grid_filter @tasks_grid, :archived
 
 
-  .span2
+  .col-md-2
     Archived:
-  .span4
+  .col-md-4
     = grid_filter @tasks_grid2, :archived
 
 
 
 .row-fluid
-  .span2
+  .col-md-2
     Status:
-  .span4
+  .col-md-4
     = grid_filter @tasks_grid, :status_id
 
-  .span2
+  .col-md-2
     Status:
-  .span4
+  .col-md-4
     = grid_filter @tasks_grid2, :status_id
 
 
 
 .row-fluid
-  .span2
+  .col-md-2
     Due date:
-  .span4
+  .col-md-4
     = grid_filter @tasks_grid, :due_date
 
-  .span2
+  .col-md-2
     Due date:
-  .span4
+  .col-md-4
     = grid_filter @tasks_grid2, :due_date
 
 
 .row-fluid
-  .span6
+  .col-md-6
     .external-buttons.grid1
-      %button.btn.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
+      %button.btn.btn-default.wg-external-reset-button{'data-grid-name' => 'grid'} Reset
 
-  .span6
+  .col-md-6
     .external-buttons.grid2
-      %button.btn.wg-external-reset-button{'data-grid-name' => 'grid2'} Reset
+      %button.btn.btn-default.wg-external-reset-button{'data-grid-name' => 'grid2'} Reset
 
 
 .row-fluid
-  .span6
+  .col-md-6
     = render_grid(@tasks_grid)
-  .span6
+  .col-md-6
     = render_grid(@tasks_grid2)

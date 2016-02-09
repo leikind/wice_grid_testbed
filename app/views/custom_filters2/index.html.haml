@@ -5,12 +5,12 @@
     a column of a joined table with
     %code :attribute
     and
-    %code :model
+    %code :assoc
     , and submit a list of all possible values of this column to
     %code :custom_filter
     , like it is done in the example below in the Priority column:
   %p
-    %code g.column name:  'Priority', attribute: 'name', model: 'Priority', custom_filter: %w(Anecdotic High Low Normal Urgent) do |task|
+    %code g.column name:  'Priority', attribute: 'name', assoc: :priority, custom_filter: %w(Anecdotic High Low Normal Urgent) do |task|
 
   %p
     This works but such a filter produces a query with a
@@ -37,5 +37,5 @@
 = show_code
 
 .row-fluid
-  .span12
-    = render partial:  'grid'
+  .col-md-12
+    = render   'grid'
