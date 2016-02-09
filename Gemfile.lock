@@ -54,7 +54,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    childprocess (0.5.6)
+    childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
     coffee-rails (4.1.0)
@@ -159,7 +159,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
-    selenium-webdriver (2.47.1)
+    selenium-webdriver (2.51.0)
       childprocess (~> 0.5)
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
@@ -227,4 +227,4 @@ DEPENDENCIES
   wice_grid (= 3.6.0.pre4)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
