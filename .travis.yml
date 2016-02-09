@@ -5,6 +5,10 @@ rvm:
  - "ruby-2.3.0"
  - "ruby-head"
 
+env:
+  - DB=mysql
+  - DB=postgres
+
 bundler_args: --without production mysql
 
 addons:
@@ -14,6 +18,6 @@ services:
   - postgresql
 
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - cp config/database.yml.travis config/database.yml
+  - sh -c "if [ '$DB' = 'pgsql' ]; then psql -c 'create database travis_ci_test;' -U postgres;cp config/database.yml.travis.postgres config/database.yml; fi"
+  - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'create database IF NOT EXISTS travis_ci_test;';cp config/database.yml.travis.mysql config/database.yml; fi"
   - RAILS_ENV=test bundle exec rake db:migrate db:seed
