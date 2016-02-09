@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+ - "ruby-2.2.4"
+ - "ruby-2.3.0"
+ - "ruby-head"
+
+bundler_args: --without production mysql
+
+addons:
+  postgresql: "9.4"
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml

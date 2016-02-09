@@ -36,12 +36,12 @@ gem 'coffee-rails'
 
 gem 'uglifier', '>= 1.0.3'
 
-group :production do
+group :production, :postgres do
   gem 'pg'
 end
+gem 'mysql2', group: :mysql
 
 group :development do
-  gem 'mysql2'
   gem 'quiet_assets'
 end
 
