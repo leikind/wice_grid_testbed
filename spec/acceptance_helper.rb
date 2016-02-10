@@ -15,6 +15,7 @@ else
   Capybara.javascript_driver = :poltergeist
 
   require 'capybara-screenshot/rspec'
+  Capybara::Screenshot.prune_strategy = :keep_last_run
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc,
