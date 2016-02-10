@@ -83,8 +83,8 @@ describe 'custom_ordering WiceGrid', type: :request, js: true do
   it 'should filter by custom filter with multiselect' do
     find(:css, '#g1 .expand-multi-select-icon').click
 
-    find(:css, "#g1_f_status option[value=\"testing\"]").click
-    find(:css, "#g1_f_status option[value=\"production\"]").click
+    select('Testing', from: 'g1_f_status')
+    select('Production', from: 'g1_f_status')
 
     find(:css, '#g1_submit_grid_icon').click
 
@@ -95,8 +95,8 @@ describe 'custom_ordering WiceGrid', type: :request, js: true do
     ###
     find(:css, '#g2 .expand-multi-select-icon').click
 
-    find(:css, "#g2_f_status option[value=\"testing\"]").click
-    find(:css, "#g2_f_status option[value=\"production\"]").click
+    select('Testing', from: 'g2_f_status')
+    select('Production', from: 'g2_f_status')
 
     find(:css, '#g2_submit_grid_icon').click
 
@@ -107,8 +107,8 @@ describe 'custom_ordering WiceGrid', type: :request, js: true do
     ###
     find(:css, '#g3 .expand-multi-select-icon').click
 
-    find(:css, "#g3_f_status option[value=\"testing\"]").click
-    find(:css, "#g3_f_status option[value=\"production\"]").click
+    select('testing', from: 'g3_f_status')
+    select('production', from: 'g3_f_status')
 
     find(:css, '#g3_submit_grid_icon').click
 
@@ -119,8 +119,8 @@ describe 'custom_ordering WiceGrid', type: :request, js: true do
     ###
     find(:css, '#g4 .expand-multi-select-icon').click
 
-    find(:css, "#g4_f_status option[value=\"testing\"]").click
-    find(:css, "#g4_f_status option[value=\"production\"]").click
+    select('testing', from: 'g4_f_status')
+    select('production', from: 'g4_f_status')
 
     find(:css, '#g4_submit_grid_icon').click
 

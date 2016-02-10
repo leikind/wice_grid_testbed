@@ -37,8 +37,8 @@ describe 'custom_ordering WiceGrid', type: :request, js: true do
   it 'should filter by custom filters' do
     first(:css, '.expand-multi-select-icon').click
 
-    find(:css, "#grid_f_priorities_name option[value=\"Normal\"]").click
-    find(:css, "#grid_f_priorities_name option[value=\"Urgent\"]").click
+    select('Normal', from: 'grid_f_priorities_name')
+    select('Urgent', from: 'grid_f_priorities_name')
 
     select 'Duplicate', from: 'grid_f_status_id'
 

@@ -30,8 +30,8 @@ describe 'custom_ordering WiceGrid', type: :request, js: true do
   it 'should filter by custom fields' do
     first(:css, '.expand-multi-select-icon').click
 
-    find(:css, "#grid_f_versions_name option[value=\"1.0\"]").click
-    find(:css, "#grid_f_versions_name option[value=\"1.1\"]").click
+    select('1.0', from: 'grid_f_versions_name')
+    select('1.1', from: 'grid_f_versions_name')
 
     find(:css, '#grid_submit_grid_icon').click
 
