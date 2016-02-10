@@ -4,7 +4,7 @@ mysql: &mysql
   password:
   database: wice_grid_test
 
-postgresql: &postgresql
+postgres: &postgres
   adapter: postgresql
   username: postgres
   password:
@@ -15,7 +15,7 @@ defaults: &defaults
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *<%= ENV['DB'] || "postgresql" %>
+  <<: *<%= ENV['DB'] || 'postgres' %>
 
 development:
   <<: *defaults
