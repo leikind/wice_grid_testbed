@@ -8,10 +8,9 @@ rvm:
 env:
   - DB=mysql
   - DB=postgres
-  - DB_NAME=wice_grid_test
 
 before_script:
-  - mysql -e 'create database $DB_NAME'
-  - psql -c 'create database $DB_NAME' -U postgres
+  - mysql -e 'create database wice_grid_test'
+  - psql -c 'create database wice_grid_test' -U postgres
   - cp config/database.travis.yml
   - RAILS_ENV=test bundle exec rake db:migrate db:seed
