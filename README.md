@@ -75,3 +75,39 @@ To run the tests without the UI :
 ```
 $ bundle exec rake
 ```
+
+### Docker
+
+In case you'd like to test things you could use Docker for that.
+
+The repository is using Docker and Docker-compose in order to containerize and
+orchestrate the containers.
+
+This approach allows you to use different versions of things like the database.
+
+After having installed Docker and Docker compose, you just need to run the
+following commands in order to get the tests running :
+
+```
+$ cd to/the/project/folder
+$ docker-compose build
+```
+
+This will build the container that will be used afterward in order to run the
+app or the tests.
+
+Now the Docker image is created, you can run the application with :
+
+```
+$ docker-compose up -d
+```
+
+(the `-d` flag stands for deamonize)
+
+Now open the URL http://localhost:3000/ and you should have the testbed web app.
+
+In order to run the test, execute the following command :
+
+```
+$ docker-compose run web rake
+```

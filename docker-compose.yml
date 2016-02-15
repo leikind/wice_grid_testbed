@@ -1,0 +1,24 @@
+mysql:
+  image: mysql:5.7
+  environment:
+    - MYSQL_ROOT_PASSWORD=wicegride
+bundle:
+  image: wicegridtestbed_web
+  command: echo Bundler data container
+  volumes:
+    - /bundle
+web:
+  build: .
+  command: bin/rails server -b 0.0.0.0
+  links:
+   - mysql
+  ports:
+   - "3001:3000"
+  environment:
+    - DB_USER=root
+    - MYSQL_ROOT_PASSWORD=wicegride
+    - RAILS_ENV=development
+  volumes:
+    - .:/gem/
+  volumes_from:
+    - bundle
