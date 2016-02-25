@@ -104,7 +104,13 @@ $ docker-compose up -d
 
 (the `-d` flag stands for deamonize)
 
-Now open the URL http://localhost:3000/ and you should have the testbed web app.
+Finally you need to create and setup the database with the following command:
+
+```
+$ docker-compose run web bundle exec rake db:create db:setup
+```
+
+Now open the URL http://localhost:3001/ and you should have the testbed web app.
 
 In order to run the test, execute the following command :
 
