@@ -34,6 +34,9 @@ if defined?(Wice::Defaults)
   # Default CSV field separator
   Wice::Defaults::CSV_FIELD_SEPARATOR = ','
 
+  # Default CSV encoding (p.e. 'CP1252:UTF-8' to make Microsoft Excel(tm) happy)
+  Wice::Defaults::CSV_ENCODING = nil
+
   # The strategy when to show the filter.
   # * <tt>:when_filtered</tt> - when the table is the result of filtering
   # * <tt>:always</tt>        - show the filter always
@@ -49,9 +52,13 @@ if defined?(Wice::Defaults)
 
   # Defining one string matching operator globally for the whole application turns is not enough
   # when you connect to two databases one of which is MySQL and the other is Postgresql.
-  # If the key for an adapter is missing it will fall back to Wice::Defaults::STRING_MATCHING_OPERATOR
+  # If the key for an adapter is missing it will fall back to Wice::Defaults::STRING_MATCHING_OPERATOR.
+  #
+  # 'CI_LIKE' is a special value. Setting a value in STRING_MATCHING_OPERATORS to CI_LIKE will result in the following SQL:
+  #
+  #    UPPER(table.field) LIKE  UPPER(?)"
   Wice::Defaults::STRING_MATCHING_OPERATORS = {
-    'ActiveRecord::ConnectionAdapters::MysqlAdapter' => 'LIKE',
+    'ActiveRecord::ConnectionAdapters::MysqlAdapter'      => 'LIKE',
     'ActiveRecord::ConnectionAdapters::PostgreSQLAdapter' => 'ILIKE'
   }
 
@@ -60,6 +67,28 @@ if defined?(Wice::Defaults)
 
   # Switch of the negation checkbox in all text filters
   Wice::Defaults::NEGATION_IN_STRING_FILTERS = false
+
+  # Each WiceGrid filter column is defined in two classes, one used for rendering the filter, the other
+  # for generating query conditions. All these columns are in lib/wice/columns/*.rb .
+  # File lib/wice/columns/column_processor_index.rb lists all predefined processors.
+  # In most cases a processor is chosen automatically based on the DB column type,
+  # for example, integer columns
+  # can have two of processors, the default one with one input field, and a processor called "range",
+  # with 2 input fields. In this case it is possible to specify a processor in the column definition:
+  #
+  #     g.column filter_type: :range
+  #
+  # It is also possible to define you own processors:
+  #
+  #     Wice::Defaults::ADDITIONAL_COLUMN_PROCESSORS = {
+  #       some_key_identifying_new_column_type:  ['AViewColumnProcessorClass', 'ConditionsGeneratorClass'],
+  #       another_key_identifying_new_column_type:  ['AnotherViewColumnProcessorClass', 'AnotherConditionsGeneratorClass']
+  #     }
+  #
+  # Column processor keys/names should not coincide with the existing keys/names (see lib/wice/columns/column_processor_index.rb)
+  # the value is a 2-element array with 2 strings, the first should be a name of view processor class inherited from
+  # Wice::Columns::ViewColumn, the second should be a name of conditions generator class inherited from
+  # Wice::Columns::ConditionsGeneratorColumn .
 
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   #                              Showing All Records                          #
@@ -92,7 +121,8 @@ if defined?(Wice::Defaults)
   # Default column filters
   # Possible values:
   # * <tt>:jquery_datepicker</tt> - Jquery datepicker (works for datetime, too)
-  # * <tt>:bootstrap_datepicker</tt> - Bootstrap datepicker (works for datetime, too)
+  # * <tt>:bootstrap_datepicker</tt> - Bootstrap datepicker (https://github.com/Nerian/bootstrap-datepicker-rails)
+  # * <tt>:bootstrap_datetimepicker</tt> - Bootstrap datetimepicker (https://github.com/TrevorS/bootstrap3-datetimepicker-rails)
   # * <tt>:rails_date_helper</tt> - standard Rails date helper
   # * <tt>:rails_datetime_helper</tt> - standard Rails datetime helper
 
@@ -142,15 +172,19 @@ if defined?(Wice::Defaults)
     if date_string.blank?
       nil
     else
-      Date.parse(date_string)
+      begin
+        Date.parse(date_string)
+      rescue ArgumentError
+        nil
+      end
     end
   end
 
   # The name of the page method (should correspond to Kaminari.config.page_method_name)
   Wice::Defaults::PAGE_METHOD_NAME = :page
 
-  # by default Wice-Grid always use unscoped,set to true to force use of default_scope by default instead
+  # By default ActiveRecord calls are always executed inside Model.unscoped{}.
+  # Setting <tt>USE_DEFAULT_SCOPE</tt> to true will use the default scope for all queries.
   Wice::Defaults::USE_DEFAULT_SCOPE = false
-
 
 end

@@ -11,8 +11,17 @@ gem 'turbolinks'
 gem 'puma'
 gem 'test-unit'
 
+# First time you build the Docker image, you'll need this line uncommented,
+# otherwise Docker will fail to build the image in case you'll use the next
+# gem line.
 gem 'wice_grid', '3.6.0.pre4'
-# gem 'wice_grid',  path: 'vendor/wice_grid'
+# Use the following line when you want to run the tests after having changed
+# some code in the wice_grid gem on your local disk.
+# In the docker-compose.yml file you need to add a new line in the `volumes`
+# node of the `web` node like the following:
+# - /home/zedtux/Developments/wice_grid:/wice_grid/
+#
+# gem 'wice_grid',  path: '/wice_grid/'
 
 gem 'font-awesome-sass',  '~> 4.3'
 
