@@ -202,7 +202,7 @@ GEM
     websocket (1.2.2)
     websocket-driver (0.6.3)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.2)
+    websocket-extensions (0.1.5)
     wice_grid (3.6.0)
       activerecord (> 3.2)
       coffee-rails (> 3.2)
